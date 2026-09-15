@@ -43,13 +43,11 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
-
     const SUPABASE_URL =
         "https://vzqpfikymnvowdypbpnb.supabase.co";
 
     const SUPABASE_KEY =
         "sb_publishable_HeLNv4p7Fc3gAzp5jHOk7Q_zPDxNaQB";
-
 
     const supabaseClient = supabase.createClient(
         SUPABASE_URL,
@@ -57,23 +55,60 @@
     );
 
 
-    // Controleer de gebruiker bij het openen
-    async function controleerGebruiker() {
+    // =====================================
+    // CONTROLEER LOGIN + ADMINROL
+    // =====================================
 
-        const { data, error } =
+    async function controleerBeheerder() {
+
+        // 1. Controleer of iemand is ingelogd
+        const { data: userData, error: userError } =
             await supabaseClient.auth.getUser();
 
 
-        // Geen geldige gebruiker?
-        if (error || !data.user) {
-
+        if (userError || !userData.user) {
             window.location.replace("login.html");
+            return;
+        }
+
+
+        const gebruiker = userData.user;
+
+
+        // 2. Profiel van deze gebruiker ophalen
+        const { data: profiel, error: profielError } =
+            await supabaseClient
+                .from("profiles")
+                .select("role")
+                .eq("id", gebruiker.id)
+                .single();
+
+
+        // 3. Kon profiel niet worden opgehaald?
+        if (profielError) {
+
+            console.error("Profiel fout:", profielError);
+
+            alert("Je hebt geen toegang tot het beheerdersoverzicht.");
+
+            window.location.replace("index.html");
 
             return;
         }
 
 
-        // Gebruiker is ingelogd
+        // 4. Controleer adminrol
+        if (profiel.role !== "admin") {
+
+            alert("Je bent geen beheerder.");
+
+            window.location.replace("index.html");
+
+            return;
+        }
+
+
+        // 5. Alles klopt: dashboard tonen
         document
             .getElementById("beheerPagina")
             .style.display = "block";
@@ -82,14 +117,17 @@
         document
             .getElementById("userEmail")
             .textContent =
-            "Ingelogd als: " + data.user.email;
+            "Ingelogd als beheerder: " + gebruiker.email;
     }
 
 
-    controleerGebruiker();
+    controleerBeheerder();
 
 
-    // Uitloggen
+    // =====================================
+    // UITLOGGEN
+    // =====================================
+
     document
         .getElementById("logoutButton")
         .addEventListener("click", async function() {
@@ -101,6 +139,5 @@
         });
 
 </script>
-
 </body>
 </html>
