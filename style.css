@@ -221,3 +221,308 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
+/* =========================
+   LOGIN PAGINA
+========================= */
+
+.login-page {
+    min-height: 100vh;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.18), transparent 30%),
+        radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.2), transparent 30%),
+        linear-gradient(135deg, #020617, #0f172a, #1e1b4b);
+}
+
+
+/* Achtergrond-effect */
+
+.login-background {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.12), transparent 35%);
+}
+
+
+/* Login container */
+
+.login-wrapper {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 440px;
+
+    padding: 20px;
+}
+
+
+/* Login kaart */
+
+.login-card {
+    padding: 45px 40px;
+
+    border-radius: 25px;
+
+    background: rgba(15, 23, 42, 0.75);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.45),
+        0 0 40px rgba(56, 189, 248, 0.08);
+
+    backdrop-filter: blur(20px);
+
+    animation: loginAppear 0.6s ease;
+}
+
+
+/* Animatie */
+
+@keyframes loginAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* Slot / icoon */
+
+.login-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    font-size: 28px;
+
+    background: linear-gradient(
+        135deg,
+        #38bdf8,
+        #7c3aed
+    );
+
+    box-shadow:
+        0 10px 30px rgba(56, 189, 248, 0.25);
+}
+
+
+/* Titel */
+
+.login-card h1 {
+    margin: 0;
+
+    font-size: 32px;
+
+    background: linear-gradient(
+        90deg,
+        #38bdf8,
+        #a78bfa
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Subtitel */
+
+.login-subtitle {
+    margin: 10px 0 30px;
+
+    color: #94a3b8;
+
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+
+/* Input groepen */
+
+.login-input {
+    text-align: left;
+
+    margin-bottom: 20px;
+}
+
+
+/* Labels */
+
+.login-input label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #cbd5e1;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* Input velden */
+
+.login-input input {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    outline: none;
+
+    background: rgba(2, 6, 23, 0.7);
+
+    color: white;
+
+    font-size: 15px;
+
+    transition: 0.25s;
+}
+
+
+/* Input focus */
+
+.login-input input:focus {
+
+    border-color: #38bdf8;
+
+    box-shadow:
+        0 0 0 3px rgba(56, 189, 248, 0.12),
+        0 0 20px rgba(56, 189, 248, 0.08);
+
+}
+
+
+/* Placeholder */
+
+.login-input input::placeholder {
+    color: #64748b;
+}
+
+
+/* Opties */
+
+.login-options {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 5px 0 25px;
+
+    font-size: 13px;
+
+    color: #94a3b8;
+}
+
+
+/* Checkbox */
+
+.login-options input {
+    accent-color: #38bdf8;
+}
+
+
+/* Link */
+
+.login-options a {
+    color: #38bdf8;
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.login-options a:hover {
+    color: #a78bfa;
+}
+
+
+/* Login knop */
+
+.login-submit {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 12px;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(59, 130, 246, 0.25);
+
+    transition: 0.25s;
+}
+
+
+.login-submit:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 15px 35px rgba(124, 58, 237, 0.4);
+}
+
+
+/* Terug naar website */
+
+.back-home {
+    display: block;
+
+    margin-top: 25px;
+
+    color: #94a3b8;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+
+.back-home:hover {
+    color: #38bdf8;
+}
