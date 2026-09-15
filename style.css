@@ -191,26 +191,33 @@ footer {
     margin: 25px auto;
 }
 
-.header-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto 20px;
-    padding: 0 20px;
-}
 
 .login-button {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+
     background: #38bdf8;
     color: #0f172a;
     text-decoration: none;
     font-weight: bold;
+
     padding: 12px 22px;
     border-radius: 10px;
+
     transition: 0.2s;
 }
 
 .login-button:hover {
     background: white;
-    transform: scale(1.05);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.nav-container {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
