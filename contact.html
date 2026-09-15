@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Mijn Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Mijn Website</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="over-ons.html">Over ons</a></li>
+                <li><a href="diensten.html">Diensten</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Contact opnemen</h2>
+        <p>Heb je vragen, opmerkingen of wil je een offerte aanvragen? Neem gerust contact met ons op via het onderstaande formulier of via onze bedrijfsgegevens.</p>
+
+        <div class="contact-container">
+            <!-- Het Contactformulier -->
+            <section class="contact-form">
+                <h3>Stuur ons een bericht</h3>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="naam">Naam:</label>
+                        <input type="text" id="naam" name="naam" required placeholder="Jouw voor- en achternaam">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mailadres:</label>
+                        <input type="email" id="email" name="email" required placeholder="je@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="onderwerp">Onderwerp:</label>
+                        <input type="text" id="onderwerp" name="onderwerp" placeholder="Waar gaat het over?">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bericht">Bericht:</label>
+                        <textarea id="bericht" name="bericht" rows="5" required placeholder="Typ hier je bericht..."></textarea>
+                    </div>
+
+                    <button type="submit">Verzenden</button>
+                </form>
+            </section>
+
+            <!-- Bedrijfsgegevens -->
+            <section class="contact-info">
+                <h3>Onze Gegevens</h3>
+                <p><strong>Adres:</strong><br>Straatnaam 123<br>1234 AB Stad</p>
+                <p><strong>Telefoon:</strong><br><a href="tel:+31612345678">06 - 12 34 56 78</a></p>
+                <p><strong>E-mail:</strong><br><a href="mailto:info@mijnwebsite.nl">info@mijnwebsite.nl</a></p>
+                <p><strong>KVK-nummer:</strong><br>12345678</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mijn Website. Alle rechten voorbehouden.</p>
+    </footer>
+
+</body>
+</html>

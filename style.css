@@ -1,0 +1,21 @@
+
+/* Algemene opmaak */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hoofdinhoud vult de ruimte */
+main {
+    flex: 1;
+}
+
+/* Footer onderaan */
+footer {
+    background-color: #172554;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
