@@ -28,7 +28,7 @@
             <!-- Het Contactformulier -->
             <section class="contact-form">
                 <h3>Stuur ons een bericht</h3>
-                <form action="https://formspree.io/f/xaenwqgw" method="POST">
+                <form id="offerteForm">
                     <div class="form-group">
                         <label for="naam">Naam:</label>
                         <input type="text" id="naam" name="naam" required placeholder="Jouw voor- en achternaam">
@@ -50,6 +50,7 @@
                     </div>
 
                     <button type="submit">Verzenden</button>
+                    <p id="formMessage"></p>
                 </form>
             </section>
 
@@ -67,6 +68,77 @@
     <footer>
         <p>&copy; 2026 Mijn Website. Alle rechten voorbehouden.</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+    const SUPABASE_URL =
+        "https://vzqpfikymnvowdypbpnb.supabase.co";
+
+    const SUPABASE_KEY =
+        "sb_publishable_HeLNv4p7Fc3gAzp5jHOk7Q_zPDxNaQB";
+
+    const supabaseClient = supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+    );
+
+    const formulier = document.getElementById("offerteForm");
+    const melding = document.getElementById("formMessage");
+
+    formulier.addEventListener("submit", async function(event) {
+
+        event.preventDefault();
+
+        const naam =
+            document.getElementById("naam").value.trim();
+
+        const email =
+            document.getElementById("email").value.trim();
+
+        const onderwerp =
+            document.getElementById("onderwerp").value.trim();
+
+        const bericht =
+            document.getElementById("bericht").value.trim();
+
+
+        melding.textContent = "Aanvraag wordt verzonden...";
+        melding.style.color = "#94a3b8";
+
+
+        const { error } = await supabaseClient
+            .from("offerte_aanvragen")
+            .insert({
+                naam: naam,
+                email: email,
+                onderwerp: onderwerp,
+                bericht: bericht,
+                status: "nieuw"
+            });
+
+
+        if (error) {
+
+            console.error("Supabase fout:", error);
+
+            melding.textContent =
+                "Er ging iets mis. Probeer het opnieuw.";
+
+            melding.style.color = "#f87171";
+
+            return;
+        }
+
+
+        melding.textContent =
+            "✓ Bedankt! Je aanvraag is succesvol verzonden.";
+
+        melding.style.color = "#4ade80";
+
+        formulier.reset();
+
+    });
+</script>
 
 </body>
 </html>
