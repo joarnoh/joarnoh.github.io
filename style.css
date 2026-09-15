@@ -190,3 +190,27 @@ footer {
     display: block;
     margin: 25px auto;
 }
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+}
+
+.login-button {
+    background: #38bdf8;
+    color: #0f172a;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 22px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.login-button:hover {
+    background: white;
+    transform: scale(1.05);
+}
