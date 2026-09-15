@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Inloggen - Mijn Website</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -17,9 +16,7 @@
 
         <div class="login-card">
 
-            <div class="login-icon">
-                🔐
-            </div>
+            <div class="login-icon">🔐</div>
 
             <h1>Welkom terug</h1>
 
@@ -27,7 +24,7 @@
                 Log in om naar het beheerdersoverzicht te gaan
             </p>
 
-            <form>
+            <form id="loginForm">
 
                 <div class="login-input">
                     <label for="email">E-mailadres</label>
@@ -35,6 +32,7 @@
                         type="email"
                         id="email"
                         placeholder="jouw@email.nl"
+                        autocomplete="email"
                         required
                     >
                 </div>
@@ -45,20 +43,14 @@
                         type="password"
                         id="password"
                         placeholder="••••••••"
+                        autocomplete="current-password"
                         required
                     >
                 </div>
 
-                <div class="login-options">
-                    <label>
-                        <input type="checkbox">
-                        Onthoud mij
-                    </label>
+                <p id="loginMessage"></p>
 
-                    <a href="#">Wachtwoord vergeten?</a>
-                </div>
-
-                <button type="submit" class="login-submit">
+                <button type="submit" class="login-submit" id="loginButton">
                     Inloggen
                 </button>
 
@@ -71,6 +63,113 @@
         </div>
 
     </main>
+
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script>
+
+        // -------------------------------
+        // Supabase instellingen
+        // -------------------------------
+
+        const SUPABASE_URL =
+            "https://vzqpfikymnvowdypbpnb.supabase.co";
+
+        const SUPABASE_KEY =
+            "sb_publishable_HeLNv4p7Fc3gAzp5jHOk7Q_zPDxNaQB";
+
+
+        // Supabase verbinden
+        const supabaseClient = supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_KEY
+        );
+
+
+        // -------------------------------
+        // Login formulier
+        // -------------------------------
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+        const loginMessage =
+            document.getElementById("loginMessage");
+
+        const loginButton =
+            document.getElementById("loginButton");
+
+
+        loginForm.addEventListener("submit", async function(event) {
+
+            // Voorkomt dat de pagina opnieuw laadt
+            event.preventDefault();
+
+
+            // Ingevulde gegevens ophalen
+            const email =
+                document.getElementById("email").value.trim();
+
+            const password =
+                document.getElementById("password").value;
+
+
+            // Knop tijdelijk uitschakelen
+            loginButton.disabled = true;
+            loginButton.textContent = "Bezig met inloggen...";
+
+            loginMessage.textContent = "";
+
+
+            // -------------------------------
+            // Supabase login
+            // -------------------------------
+
+            const { data, error } =
+                await supabaseClient.auth.signInWithPassword({
+                    email: email,
+                    password: password
+                });
+
+
+            // -------------------------------
+            // Verkeerde login
+            // -------------------------------
+
+            if (error) {
+
+                console.error(error);
+
+                loginMessage.textContent =
+                    "E-mailadres of wachtwoord is onjuist.";
+
+                loginMessage.style.color = "#f87171";
+
+                loginButton.disabled = false;
+                loginButton.textContent = "Inloggen";
+
+                return;
+            }
+
+
+            // -------------------------------
+            // Login gelukt
+            // -------------------------------
+
+            loginMessage.textContent =
+                "Login gelukt! Je wordt doorgestuurd...";
+
+            loginMessage.style.color = "#4ade80";
+
+
+            // Naar beheerderspagina
+            window.location.href = "beheer.html";
+
+        });
+
+    </script>
 
 </body>
 </html>
