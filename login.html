@@ -28,6 +28,7 @@
 
                 <div class="login-input">
                     <label for="email">E-mailadres</label>
+
                     <input
                         type="email"
                         id="email"
@@ -37,8 +38,10 @@
                     >
                 </div>
 
+
                 <div class="login-input">
                     <label for="password">Wachtwoord</label>
+
                     <input
                         type="password"
                         id="password"
@@ -48,13 +51,32 @@
                     >
                 </div>
 
+
+                <!-- CLOUDFLARE TURNSTILE -->
+                <div
+                    class="cf-turnstile"
+                    data-sitekey="0x4AAAAAAE5E6WuSA3biTqTa"
+                    data-theme="dark"
+                    data-size="flexible"
+                    data-callback="onCaptchaSuccess"
+                    data-expired-callback="onCaptchaExpired"
+                    data-error-callback="onCaptchaError"
+                ></div>
+
+
                 <p id="loginMessage"></p>
 
-                <button type="submit" class="login-submit" id="loginButton">
+
+                <button
+                    type="submit"
+                    class="login-submit"
+                    id="loginButton"
+                >
                     Inloggen
                 </button>
 
             </form>
+
 
             <a href="index.html" class="back-home">
                 ← Terug naar website
@@ -65,14 +87,23 @@
     </main>
 
 
-    <!-- Supabase -->
+    <!-- CLOUDFLARE TURNSTILE -->
+    <script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+        async
+        defer
+    ></script>
+
+
+    <!-- SUPABASE -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 
     <script>
 
-        // -------------------------------
-        // Supabase instellingen
-        // -------------------------------
+        // =====================================
+        // SUPABASE
+        // =====================================
 
         const SUPABASE_URL =
             "https://vzqpfikymnvowdypbpnb.supabase.co";
@@ -81,16 +112,16 @@
             "sb_publishable_HeLNv4p7Fc3gAzp5jHOk7Q_zPDxNaQB";
 
 
-        // Supabase verbinden
-        const supabaseClient = supabase.createClient(
-            SUPABASE_URL,
-            SUPABASE_KEY
-        );
+        const supabaseClient =
+            supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_KEY
+            );
 
 
-        // -------------------------------
-        // Login formulier
-        // -------------------------------
+        // =====================================
+        // ELEMENTEN
+        // =====================================
 
         const loginForm =
             document.getElementById("loginForm");
@@ -102,72 +133,178 @@
             document.getElementById("loginButton");
 
 
-        loginForm.addEventListener("submit", async function(event) {
+        // =====================================
+        // CAPTCHA
+        // =====================================
 
-            // Voorkomt dat de pagina opnieuw laadt
-            event.preventDefault();
-
-
-            // Ingevulde gegevens ophalen
-            const email =
-                document.getElementById("email").value.trim();
-
-            const password =
-                document.getElementById("password").value;
+        let captchaToken = null;
 
 
-            // Knop tijdelijk uitschakelen
-            loginButton.disabled = true;
-            loginButton.textContent = "Bezig met inloggen...";
+        function onCaptchaSuccess(token) {
+
+            captchaToken = token;
 
             loginMessage.textContent = "";
 
-
-            // -------------------------------
-            // Supabase login
-            // -------------------------------
-
-            const { data, error } =
-                await supabaseClient.auth.signInWithPassword({
-                    email: email,
-                    password: password
-                });
+        }
 
 
-            // -------------------------------
-            // Verkeerde login
-            // -------------------------------
+        function onCaptchaExpired() {
 
-            if (error) {
-
-                console.error(error);
-
-                loginMessage.textContent =
-                    "Fout: " + error.message;
-
-                loginMessage.style.color = "#f87171";
-
-                loginButton.disabled = false;
-                loginButton.textContent = "Inloggen";
-
-                return;
-            }
-
-
-            // -------------------------------
-            // Login gelukt
-            // -------------------------------
+            captchaToken = null;
 
             loginMessage.textContent =
-                "Login gelukt! Je wordt doorgestuurd...";
+                "De beveiligingscontrole is verlopen. Probeer opnieuw.";
 
-            loginMessage.style.color = "#4ade80";
+            loginMessage.style.color =
+                "#fbbf24";
+
+        }
 
 
-            // Naar beheerderspagina
-            window.location.href = "beheer.html";
+        function onCaptchaError() {
 
-        });
+            captchaToken = null;
+
+            loginMessage.textContent =
+                "De beveiligingscontrole kon niet worden geladen.";
+
+            loginMessage.style.color =
+                "#f87171";
+
+        }
+
+
+        // =====================================
+        // INLOGGEN
+        // =====================================
+
+        loginForm.addEventListener(
+            "submit",
+
+            async function(event) {
+
+                event.preventDefault();
+
+
+                // Eerst CAPTCHA controleren
+
+                if (!captchaToken) {
+
+                    loginMessage.textContent =
+                        "Voltooi eerst de beveiligingscontrole.";
+
+                    loginMessage.style.color =
+                        "#fbbf24";
+
+                    return;
+
+                }
+
+
+                const email =
+                    document
+                        .getElementById("email")
+                        .value
+                        .trim();
+
+
+                const password =
+                    document
+                        .getElementById("password")
+                        .value;
+
+
+                // Knop tijdelijk blokkeren
+
+                loginButton.disabled = true;
+
+                loginButton.textContent =
+                    "Bezig met inloggen...";
+
+                loginMessage.textContent = "";
+
+
+                // =================================
+                // SUPABASE LOGIN + CAPTCHA
+                // =================================
+
+                const { data, error } =
+                    await supabaseClient
+                        .auth
+                        .signInWithPassword({
+
+                            email: email,
+
+                            password: password,
+
+                            options: {
+                                captchaToken:
+                                    captchaToken
+                            }
+
+                        });
+
+
+                // Token is eenmalig
+                captchaToken = null;
+
+
+                // =================================
+                // LOGIN MISLUKT
+                // =================================
+
+                if (error) {
+
+                    console.error(
+                        "Login fout:",
+                        error
+                    );
+
+
+                    loginMessage.textContent =
+                        "E-mailadres, wachtwoord of beveiligingscontrole is onjuist.";
+
+                    loginMessage.style.color =
+                        "#f87171";
+
+
+                    loginButton.disabled = false;
+
+                    loginButton.textContent =
+                        "Inloggen";
+
+
+                    // Nieuwe CAPTCHA maken
+
+                    if (window.turnstile) {
+
+                        turnstile.reset();
+
+                    }
+
+
+                    return;
+
+                }
+
+
+                // =================================
+                // LOGIN GELUKT
+                // =================================
+
+                loginMessage.textContent =
+                    "✓ Login gelukt! Je wordt doorgestuurd...";
+
+                loginMessage.style.color =
+                    "#4ade80";
+
+
+                window.location.href =
+                    "beheer.html";
+
+            }
+        );
 
     </script>
 
