@@ -1863,3 +1863,170 @@ select {
         transition-duration: 0.01ms !important;
     }
 }
+/* =========================================================
+   PAKKETTEN PAGINA
+   ========================================================= */
+
+.packages-hero {
+    width: min(92%, var(--max-width));
+    margin: auto;
+
+    padding: 110px 0 70px;
+
+    text-align: center;
+}
+
+.packages-hero h1 {
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    font-size: clamp(48px, 6vw, 76px);
+    line-height: 1.03;
+
+    letter-spacing: -3px;
+}
+
+.packages-hero h1 span {
+    color: var(--blue);
+}
+
+.packages-hero p {
+    max-width: 650px;
+
+    margin: 25px auto 0;
+
+    color: #8f9db0;
+
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+
+/* PAKKET CARDS */
+
+.packages-page-section {
+    width: min(92%, var(--max-width));
+
+    margin: auto;
+
+    padding: 20px 0 110px;
+}
+
+
+/* UITLEG */
+
+.package-explanation {
+    width: min(92%, var(--max-width));
+
+    margin: auto;
+
+    padding: 110px 0;
+
+    border-top: 1px solid var(--border);
+}
+
+
+/* HULP BIJ KIEZEN */
+
+.package-help {
+    width: min(92%, var(--max-width));
+
+    margin: 0 auto 100px;
+
+    padding: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 60px;
+
+    border: 1px solid
+        rgba(56, 189, 248, 0.2);
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(56, 189, 248, 0.06),
+            rgba(255, 255, 255, 0.02)
+        );
+}
+
+.package-help > div {
+    max-width: 700px;
+}
+
+.package-help h2 {
+    margin: 0;
+
+    font-size: clamp(30px, 4vw, 46px);
+
+    line-height: 1.1;
+
+    letter-spacing: -1.5px;
+}
+
+.package-help p {
+    max-width: 620px;
+
+    margin: 18px 0 0;
+
+    color: #8f9db0;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+.package-help .primary-cta {
+    flex-shrink: 0;
+}
+
+
+/* MOBIEL */
+
+@media (max-width: 750px) {
+
+    .packages-hero {
+        width: 90%;
+
+        padding: 75px 0 50px;
+    }
+
+    .packages-hero h1 {
+        font-size: 43px;
+
+        letter-spacing: -2px;
+    }
+
+    .packages-hero p {
+        font-size: 15px;
+    }
+
+    .packages-page-section,
+    .package-explanation {
+        width: 90%;
+    }
+
+    .package-explanation {
+        padding: 80px 0;
+    }
+
+    .package-help {
+        width: 90%;
+
+        padding: 35px 25px;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 30px;
+    }
+
+    .package-help .primary-cta {
+        width: 100%;
+    }
+}
