@@ -1,143 +1,493 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Contact - Mijn Website</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header>
-        <h1>Mijn Website</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="overons.html">Over ons</a></li>
-                <li><a href="diensten.html">Diensten</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <h1>Mijn Website</h1>
 
-    <main>
-        <h2>Contact opnemen</h2>
-        <p>Heb je vragen, opmerkingen of wil je een offerte aanvragen? Neem gerust contact met ons op via het onderstaande formulier of via onze bedrijfsgegevens.</p>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="overons.html">Over ons</a></li>
+            <li><a href="diensten.html">Diensten</a></li>
+            <li>
+                <a href="contact.html" class="active">
+                    Contact
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
 
-        <div class="contact-container">
-            <!-- Het Contactformulier -->
-            <section class="contact-form">
-                <h3>Stuur ons een bericht</h3>
-                <form id="offerteForm">
-                    <div class="form-group">
-                        <label for="naam">Naam:</label>
-                        <input type="text" id="naam" name="naam" required placeholder="Jouw voor- en achternaam">
-                    </div>
 
-                    <div class="form-group">
-                        <label for="email">E-mailadres:</label>
-                        <input type="email" id="email" name="email" required placeholder="je@email.com">
-                    </div>
+<main>
 
-                    <div class="form-group">
-                        <label for="onderwerp">Onderwerp:</label>
-                        <input type="text" id="onderwerp" name="onderwerp" placeholder="Waar gaat het over?">
-                    </div>
+    <h2>Contact opnemen</h2>
 
-                    <div class="form-group">
-                        <label for="bericht">Bericht:</label>
-                        <textarea id="bericht" name="bericht" rows="5" required placeholder="Typ hier je bericht..."></textarea>
-                    </div>
+    <p>
+        Heb je vragen, opmerkingen of wil je een offerte
+        aanvragen? Neem gerust contact met ons op via het
+        onderstaande formulier.
+    </p>
 
-                    <button type="submit">Verzenden</button>
-                    <p id="formMessage"></p>
-                </form>
-            </section>
 
-            <!-- Bedrijfsgegevens -->
-            <section class="contact-info">
-                <h3>Onze Gegevens</h3>
-                <p><strong>Adres:</strong><br>Straatnaam 123<br>1234 AB Stad</p>
-                <p><strong>Telefoon:</strong><br><a href="tel:+31612345678">06 - 12 34 56 78</a></p>
-                <p><strong>E-mail:</strong><br><a href="mailto:info@mijnwebsite.nl">info@mijnwebsite.nl</a></p>
-                <p><strong>KVK-nummer:</strong><br>12345678</p>
-            </section>
-        </div>
-    </main>
+    <div class="contact-container">
 
-    <footer>
-        <p>&copy; 2026 Mijn Website. Alle rechten voorbehouden.</p>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <!-- CONTACTFORMULIER -->
+
+        <section class="contact-form">
+
+            <h3>Stuur ons een bericht</h3>
+
+            <form id="offerteForm">
+
+                <div class="form-group">
+
+                    <label for="naam">
+                        Naam:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="naam"
+                        name="naam"
+                        required
+                        maxlength="100"
+                        placeholder="Jouw voor- en achternaam"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        E-mailadres:
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        maxlength="254"
+                        placeholder="je@email.com"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="onderwerp">
+                        Onderwerp:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="onderwerp"
+                        name="onderwerp"
+                        maxlength="150"
+                        placeholder="Waar gaat het over?"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="bericht">
+                        Bericht:
+                    </label>
+
+                    <textarea
+                        id="bericht"
+                        name="bericht"
+                        rows="5"
+                        required
+                        maxlength="5000"
+                        placeholder="Typ hier je bericht..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- CLOUDFLARE TURNSTILE -->
+
+                <div
+                    class="cf-turnstile"
+                    data-sitekey="0x4AAAAAAE5E6WuSA3biTqTa"
+                    data-theme="dark"
+                    data-size="flexible"
+                    data-callback="onCaptchaSuccess"
+                    data-expired-callback="onCaptchaExpired"
+                    data-error-callback="onCaptchaError"
+                ></div>
+
+
+                <button
+                    type="submit"
+                    id="submitButton"
+                >
+                    Verzenden
+                </button>
+
+
+                <p id="formMessage"></p>
+
+            </form>
+
+        </section>
+
+
+        <!-- CONTACTGEGEVENS -->
+
+        <section class="contact-info">
+
+            <h3>Onze Gegevens</h3>
+
+            <p>
+                <strong>Adres:</strong><br>
+                Straatnaam 123<br>
+                1234 AB Stad
+            </p>
+
+            <p>
+                <strong>Telefoon:</strong><br>
+
+                <a href="tel:+31612345678">
+                    06 - 12 34 56 78
+                </a>
+            </p>
+
+            <p>
+                <strong>E-mail:</strong><br>
+
+                <a href="mailto:info@mijnwebsite.nl">
+                    info@mijnwebsite.nl
+                </a>
+            </p>
+
+            <p>
+                <strong>KVK-nummer:</strong><br>
+                12345678
+            </p>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<footer>
+    <p>
+        &copy; 2026 Mijn Website.
+        Alle rechten voorbehouden.
+    </p>
+</footer>
+
+
+<!-- CLOUDFLARE TURNSTILE -->
+
+<script
+    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+    async
+    defer
+></script>
+
 
 <script>
-    const SUPABASE_URL =
-        "https://vzqpfikymnvowdypbpnb.supabase.co";
 
-    const SUPABASE_KEY =
-        "sb_publishable_HeLNv4p7Fc3gAzp5jHOk7Q_zPDxNaQB";
+    // =====================================
+    // INSTELLINGEN
+    // =====================================
 
-    const supabaseClient = supabase.createClient(
-        SUPABASE_URL,
-        SUPABASE_KEY
-    );
-
-    const formulier = document.getElementById("offerteForm");
-    const melding = document.getElementById("formMessage");
-
-    formulier.addEventListener("submit", async function(event) {
-
-        event.preventDefault();
-
-        const naam =
-            document.getElementById("naam").value.trim();
-
-        const email =
-            document.getElementById("email").value.trim();
-
-        const onderwerp =
-            document.getElementById("onderwerp").value.trim();
-
-        const bericht =
-            document.getElementById("bericht").value.trim();
+    const EDGE_FUNCTION_URL =
+        "https://vzqpfikymnvowdypbpnb.supabase.co/functions/v1/verstuur-offerte";
 
 
-        melding.textContent = "Aanvraag wordt verzonden...";
-        melding.style.color = "#94a3b8";
+    // =====================================
+    // ELEMENTEN
+    // =====================================
+
+    const formulier =
+        document.getElementById("offerteForm");
+
+    const melding =
+        document.getElementById("formMessage");
+
+    const verzendKnop =
+        document.getElementById("submitButton");
 
 
-        const { error } = await supabaseClient
-            .from("offerte_aanvragen")
-            .insert({
-                naam: naam,
-                email: email,
-                onderwerp: onderwerp,
-                bericht: bericht,
-                status: "nieuw"
-            });
+    // =====================================
+    // CAPTCHA
+    // =====================================
+
+    let captchaToken = null;
 
 
-        if (error) {
+    function onCaptchaSuccess(token) {
 
-            console.error("Supabase fout:", error);
+        captchaToken = token;
 
-            melding.textContent =
-                "Er ging iets mis. Probeer het opnieuw.";
+        melding.textContent = "";
 
-            melding.style.color = "#f87171";
+    }
 
-            return;
-        }
 
+    function onCaptchaExpired() {
+
+        captchaToken = null;
 
         melding.textContent =
-            "✓ Bedankt! Je aanvraag is succesvol verzonden.";
+            "De beveiligingscontrole is verlopen. Controleer opnieuw.";
 
-        melding.style.color = "#4ade80";
+        melding.style.color =
+            "#fbbf24";
 
-        formulier.reset();
+    }
 
-    });
+
+    function onCaptchaError() {
+
+        captchaToken = null;
+
+        melding.textContent =
+            "De beveiligingscontrole kon niet worden geladen.";
+
+        melding.style.color =
+            "#f87171";
+
+    }
+
+
+    // =====================================
+    // FORMULIER VERSTUREN
+    // =====================================
+
+    formulier.addEventListener(
+        "submit",
+
+        async function(event) {
+
+            event.preventDefault();
+
+
+            // CAPTCHA moet voltooid zijn
+
+            if (!captchaToken) {
+
+                melding.textContent =
+                    "Voltooi eerst de beveiligingscontrole.";
+
+                melding.style.color =
+                    "#fbbf24";
+
+                return;
+
+            }
+
+
+            // Invoer ophalen
+
+            const naam =
+                document
+                    .getElementById("naam")
+                    .value
+                    .trim();
+
+
+            const email =
+                document
+                    .getElementById("email")
+                    .value
+                    .trim();
+
+
+            const onderwerp =
+                document
+                    .getElementById("onderwerp")
+                    .value
+                    .trim();
+
+
+            const bericht =
+                document
+                    .getElementById("bericht")
+                    .value
+                    .trim();
+
+
+            // Knop blokkeren zodat iemand niet
+            // 10x achter elkaar kan klikken
+
+            verzendKnop.disabled = true;
+
+            verzendKnop.textContent =
+                "Aanvraag wordt verzonden...";
+
+
+            melding.textContent = "";
+
+
+            try {
+
+                // =================================
+                // NAAR EDGE FUNCTION
+                // =================================
+
+                const response =
+                    await fetch(
+                        EDGE_FUNCTION_URL,
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body: JSON.stringify({
+
+                                naam: naam,
+
+                                email: email,
+
+                                onderwerp: onderwerp,
+
+                                bericht: bericht,
+
+                                captchaToken:
+                                    captchaToken
+
+                            })
+                        }
+                    );
+
+
+                const result =
+                    await response.json();
+
+
+                // Token is maar één keer bruikbaar
+
+                captchaToken = null;
+
+
+                // =================================
+                // MISLUKT
+                // =================================
+
+                if (!response.ok) {
+
+                    console.error(
+                        "Edge Function fout:",
+                        result
+                    );
+
+
+                    melding.textContent =
+                        result.error ||
+                        "Er ging iets mis. Probeer het opnieuw.";
+
+
+                    melding.style.color =
+                        "#f87171";
+
+
+                    // Nieuwe CAPTCHA aanvragen
+
+                    if (window.turnstile) {
+
+                        turnstile.reset();
+
+                    }
+
+
+                    return;
+
+                }
+
+
+                // =================================
+                // GELUKT
+                // =================================
+
+                melding.textContent =
+                    "✓ Bedankt! Je aanvraag is succesvol verzonden.";
+
+
+                melding.style.color =
+                    "#4ade80";
+
+
+                // Formulier leegmaken
+
+                formulier.reset();
+
+
+                // Nieuwe CAPTCHA klaarzetten
+
+                if (window.turnstile) {
+
+                    turnstile.reset();
+
+                }
+
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Verbindingsfout:",
+                    error
+                );
+
+
+                captchaToken = null;
+
+
+                melding.textContent =
+                    "Er kon geen verbinding worden gemaakt. Probeer het opnieuw.";
+
+
+                melding.style.color =
+                    "#f87171";
+
+
+                if (window.turnstile) {
+
+                    turnstile.reset();
+
+                }
+
+            }
+
+            finally {
+
+                verzendKnop.disabled = false;
+
+                verzendKnop.textContent =
+                    "Verzenden";
+
+            }
+
+        }
+    );
+
 </script>
 
 </body>
