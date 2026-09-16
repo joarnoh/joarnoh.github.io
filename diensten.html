@@ -5,87 +5,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Website Pakketten - Mijn Website</title>
+    <meta name="description"
+        content="Bekijk onze websitepakketten. Kies uit Simpel, Pro of Ultimate en vraag vrijblijvend een offerte aan.">
 
-    <link rel="stylesheet" href="style.css">
+    <title>Pakketten | WebDesign</title>
+
+    <link rel="stylesheet" href="public.css">
 </head>
 
-<body>
+<body class="public-page">
 
-<header>
-    <h1>Mijn Website</h1>
+<!-- HEADER -->
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="overons.html">Over ons</a></li>
-            <li><a href="diensten.html" class="active">Diensten</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+<header class="site-header">
+    <div class="header-inner">
+
+        <a href="index.html" class="brand">
+            <span class="brand-icon">&lt;/&gt;</span>
+            <span class="brand-text">
+                Web<span>Design</span>
+            </span>
+        </a>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="overons.html">Over ons</a></li>
+                <li><a href="diensten.html" class="active">Pakketten</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <a href="login.html" class="admin-link">Inloggen</a>
+
+            <a href="contact.html" class="header-cta">
+                Offerte aanvragen
+            </a>
+        </div>
+
+    </div>
 </header>
 
 
 <main>
 
-    <h2>Website laten maken</h2>
+<!-- INTRO -->
+
+<section class="packages-hero">
+
+    <span class="section-label">PAKKETTEN & PRIJZEN</span>
+
+    <h1>
+        Kies de website die
+        <span>bij jou past.</span>
+    </h1>
 
     <p>
-        Kies het pakket dat het beste bij jouw website past.
-        Van een simpele professionele website tot een uitgebreide
-        website met een volledig eigen ontwerp.
+        Van een eenvoudige professionele website tot een
+        uitgebreid maatwerkproject. Je weet vooraf wat er
+        bij ieder pakket inbegrepen is.
     </p>
 
+</section>
 
-    <div class="prijzen-container">
+
+<!-- PAKKETTEN -->
+
+<section class="packages-page-section">
+
+    <div class="home-package-grid">
 
         <!-- SIMPEL -->
-        <article class="prijs-card">
 
-            <h3>🌐 Simpel</h3>
+        <article class="home-package-card">
 
-            <div class="prijs">
-                €100
+            <div class="package-top">
+
+                <span class="package-name">
+                    Simpel
+                </span>
+
+                <p>
+                    Voor wie een kleine en professionele
+                    website nodig heeft.
+                </p>
+
             </div>
 
-            <p class="prijs-omschrijving">
-                Een nette en professionele website voor wie
-                eenvoudig online aanwezig wil zijn.
-            </p>
+            <div class="package-price">
+                <span>€</span>
+                <strong>100</strong>
+            </div>
+
+            <span class="price-note">
+                vanaf
+            </span>
 
             <ul>
                 <li>✓ Maximaal 3 pagina's</li>
-                <li>✓ Modern design</li>
+                <li>✓ Modern ontwerp</li>
                 <li>✓ Geschikt voor mobiel</li>
                 <li>✓ Contactgegevens</li>
                 <li>✓ Basis contactformulier</li>
                 <li>✓ 1 correctieronde</li>
             </ul>
 
-            <a href="contact.html" class="pakket-button">
-                Kies Simpel
+            <a
+                href="contact.html?pakket=simpel"
+                class="package-button"
+            >
+                Kies Simpel →
             </a>
 
         </article>
 
 
         <!-- PRO -->
-        <article class="prijs-card populair">
 
-            <div class="populair-label">
-                POPULAIR
+        <article class="home-package-card featured-package">
+
+            <div class="recommended">
+                MEEST GEKOZEN
             </div>
 
-            <h3>🚀 Pro</h3>
+            <div class="package-top">
 
-            <div class="prijs">
-                €250
+                <span class="package-name">
+                    Pro
+                </span>
+
+                <p>
+                    Voor bedrijven en projecten die meer
+                    mogelijkheden nodig hebben.
+                </p>
+
             </div>
 
-            <p class="prijs-omschrijving">
-                Voor bedrijven of projecten die een uitgebreidere
-                en professionelere website willen.
-            </p>
+            <div class="package-price">
+                <span>€</span>
+                <strong>250</strong>
+            </div>
+
+            <span class="price-note">
+                vanaf
+            </span>
 
             <ul>
                 <li>✓ Maximaal 5 pagina's</li>
@@ -97,70 +161,227 @@
                 <li>✓ 2 correctierondes</li>
             </ul>
 
-            <a href="contact.html" class="pakket-button">
-                Kies Pro
+            <a
+                href="contact.html?pakket=pro"
+                class="package-button featured-button"
+            >
+                Kies Pro →
             </a>
 
         </article>
 
 
         <!-- ULTIMATE -->
-        <article class="prijs-card">
 
-            <h3>💎 Ultimate</h3>
+        <article class="home-package-card">
 
-            <div class="prijs">
-                €350
+            <div class="package-top">
+
+                <span class="package-name">
+                    Ultimate
+                </span>
+
+                <p>
+                    Voor een grotere website met meer
+                    maatwerk en functionaliteit.
+                </p>
+
             </div>
 
-            <p class="prijs-omschrijving">
-                Een complete website met meer pagina's,
-                maatwerk en uitgebreide mogelijkheden.
-            </p>
+            <div class="package-price">
+                <span>€</span>
+                <strong>350</strong>
+            </div>
+
+            <span class="price-note">
+                vanaf
+            </span>
 
             <ul>
                 <li>✓ Maximaal 8 pagina's</li>
                 <li>✓ Volledig maatwerk design</li>
                 <li>✓ Geschikt voor mobiel</li>
-                <li>✓ Uitgebreid offerte/contactformulier</li>
+                <li>✓ Uitgebreid offerteformulier</li>
                 <li>✓ Basis SEO</li>
                 <li>✓ Extra functionaliteiten</li>
                 <li>✓ 3 correctierondes</li>
             </ul>
 
-            <a href="contact.html" class="pakket-button">
-                Kies Ultimate
+            <a
+                href="contact.html?pakket=ultimate"
+                class="package-button"
+            >
+                Kies Ultimate →
             </a>
 
         </article>
 
     </div>
 
+</section>
 
-    <section class="pakket-info">
 
-        <h2>Niet zeker welk pakket je nodig hebt?</h2>
+<!-- VERGELIJKING -->
+
+<section class="package-explanation">
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            WAT KRIJG JE?
+        </span>
+
+        <h2>
+            Duidelijk vanaf
+            <span>het begin.</span>
+        </h2>
 
         <p>
-            Geen probleem. Vertel wat voor website je wilt laten
-            maken en welke functies je nodig hebt. Daarna kunnen
-            we samen kijken welk pakket het beste aansluit.
+            Het pakket bepaalt de basis van jouw website.
+            Daarna bespreken we wat je precies nodig hebt
+            en hoe de website eruit moet gaan zien.
         </p>
 
-        <a href="contact.html" class="pakket-button">
-            Vraag een offerte aan
-        </a>
+    </div>
 
-    </section>
+
+    <div class="benefits-grid">
+
+        <article class="benefit-card">
+
+            <div class="benefit-number">01</div>
+
+            <div class="benefit-icon">✦</div>
+
+            <h3>Eigen uitstraling</h3>
+
+            <p>
+                De website wordt afgestemd op jouw bedrijf,
+                kleuren, inhoud en gewenste uitstraling.
+            </p>
+
+        </article>
+
+
+        <article class="benefit-card">
+
+            <div class="benefit-number">02</div>
+
+            <div class="benefit-icon">◫</div>
+
+            <h3>Responsive</h3>
+
+            <p>
+                De pagina's worden geschikt gemaakt voor
+                desktop, tablet en mobiele apparaten.
+            </p>
+
+        </article>
+
+
+        <article class="benefit-card">
+
+            <div class="benefit-number">03</div>
+
+            <div class="benefit-icon">✓</div>
+
+            <h3>Correctierondes</h3>
+
+            <p>
+                Je kunt binnen de inbegrepen correctierondes
+                feedback geven op het ontwerp en de inhoud.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- HULP BIJ KIEZEN -->
+
+<section class="package-help">
+
+    <div>
+
+        <span class="section-label">
+            NOG NIET ZEKER?
+        </span>
+
+        <h2>
+            Weet je nog niet welk
+            pakket je nodig hebt?
+        </h2>
+
+        <p>
+            Geen probleem. Kies in het offerteformulier
+            voor 'Ik weet het nog niet' en vertel wat voor
+            website je wilt. Daarna kan bekeken worden wat
+            het beste bij jouw project aansluit.
+        </p>
+
+    </div>
+
+    <a
+        href="contact.html?pakket=onbekend"
+        class="primary-cta"
+    >
+        Bespreek mijn website
+        <span>→</span>
+    </a>
+
+</section>
 
 </main>
 
 
-<footer>
-    <p>
-        &copy; 2026 Mijn Website.
-        Alle rechten voorbehouden.
-    </p>
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+
+            <a href="index.html" class="brand">
+                <span class="brand-icon">&lt;/&gt;</span>
+
+                <span class="brand-text">
+                    Web<span>Design</span>
+                </span>
+            </a>
+
+            <p>
+                Moderne websites op maat voor een
+                duidelijke prijs.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="overons.html">Over ons</a>
+            <a href="diensten.html">Pakketten</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 WebDesign. Alle rechten voorbehouden.
+        </p>
+
+        <a href="login.html">
+            Beheer
+        </a>
+
+    </div>
+
 </footer>
 
 </body>
