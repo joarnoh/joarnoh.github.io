@@ -1,44 +1,774 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>info mijn website</title>
-    <!-- Hier kun je later je CSS-bestand koppelen -->
+
+    <meta name="description"
+        content="Moderne websites op maat voor een duidelijke prijs. Kies uit Simpel, Pro of Ultimate en vraag vrijblijvend een offerte aan.">
+
+    <title>Webdesign | Moderne websites op maat</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-   <header>
-    <h1>Welkom op onze website</h1>
+<body class="public-page">
 
-    <div class="nav-container">
-        <nav>
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+        <a href="index.html" class="brand">
+            <span class="brand-icon">&lt;/&gt;</span>
+
+            <span class="brand-text">
+                Web<span>Design</span>
+            </span>
+        </a>
+
+        <nav class="main-nav">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="overons.html">Over ons</a></li>
-                <li><a href="diensten.html">Diensten</a></li>
+                <li><a href="diensten.html">Pakketten</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
 
-        <a href="login.html" class="login-button">Inloggen</a>
+        <div class="header-actions">
+            <a href="login.html" class="admin-link">
+                Inloggen
+            </a>
+
+            <a href="contact.html" class="header-cta">
+                Offerte aanvragen
+            </a>
+        </div>
+
     </div>
+
 </header>
 
-    <main>
-        <section>
-            <h2>Over deze pagina</h2>
 
-            <img src="images/website.jpg" alt="Website bouwen" class="hero-image">
-            
-            <p>Neem contact met ons op, en vraag nu je offerte aan voor uw eigen website/design.</p>
-        </section>
-    </main>
+<main class="home-main">
 
-    <footer>
-        <p>&copy; 2026 Mijn Website. Alle rechten voorbehouden.</p>
-    </footer>
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="home-hero">
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            <span></span>
+            Websites op maat vanaf €100
+        </div>
+
+        <h1>
+            Een website die jouw
+            <span>bedrijf laat opvallen.</span>
+        </h1>
+
+        <p class="hero-description">
+            Een moderne, snelle en professionele website
+            die past bij jouw bedrijf. Duidelijke prijzen,
+            persoonlijk contact en een ontwerp op maat.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="contact.html" class="primary-cta">
+                Start jouw website
+                <span>→</span>
+            </a>
+
+            <a href="diensten.html" class="secondary-cta">
+                Bekijk pakketten
+            </a>
+
+        </div>
+
+        <div class="hero-points">
+
+            <div>
+                <span>✓</span>
+                Geschikt voor mobiel
+            </div>
+
+            <div>
+                <span>✓</span>
+                Persoonlijk ontwerp
+            </div>
+
+            <div>
+                <span>✓</span>
+                Duidelijke prijzen
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- WEBSITE MOCKUP -->
+
+    <div class="hero-visual">
+
+        <div class="browser-card">
+
+            <div class="browser-top">
+
+                <div class="browser-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="browser-address">
+                    jouwwebsite.nl
+                </div>
+
+            </div>
+
+
+            <div class="browser-content">
+
+                <div class="mock-nav">
+
+                    <div class="mock-logo"></div>
+
+                    <div class="mock-links">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                </div>
+
+
+                <div class="mock-hero">
+
+                    <div class="mock-text">
+
+                        <div class="mock-small-line"></div>
+
+                        <div class="mock-title-line"></div>
+                        <div class="mock-title-line short"></div>
+
+                        <div class="mock-paragraph"></div>
+                        <div class="mock-paragraph short"></div>
+
+                        <div class="mock-button"></div>
+
+                    </div>
+
+
+                    <div class="mock-image">
+
+                        <div class="mock-image-circle">
+                            &lt;/&gt;
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="mock-cards">
+
+                    <div></div>
+                    <div></div>
+                    <div></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="floating-card floating-price">
+            <span class="floating-icon">€</span>
+
+            <div>
+                <small>Vanaf</small>
+                <strong>€100</strong>
+            </div>
+        </div>
+
+
+        <div class="floating-card floating-mobile">
+            <span>✓</span>
+
+            <div>
+                <strong>Responsive</strong>
+                <small>Mobiel & desktop</small>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     VOORDELEN
+========================= -->
+
+<section class="trust-section">
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            WAAROM EEN GOEDE WEBSITE?
+        </span>
+
+        <h2>
+            Jouw online visitekaartje,
+            <span>maar dan beter.</span>
+        </h2>
+
+        <p>
+            Je website is vaak één van de eerste dingen die
+            een potentiële klant van je bedrijf ziet.
+            Daarom moet die professioneel, duidelijk en prettig
+            in gebruik zijn.
+        </p>
+
+    </div>
+
+
+    <div class="benefits-grid">
+
+        <article class="benefit-card">
+
+            <div class="benefit-number">
+                01
+            </div>
+
+            <div class="benefit-icon">
+                ✦
+            </div>
+
+            <h3>Modern ontwerp</h3>
+
+            <p>
+                Een strak ontwerp dat aansluit bij jouw
+                bedrijf en niet aanvoelt als een standaard
+                kant-en-klaar template.
+            </p>
+
+        </article>
+
+
+        <article class="benefit-card">
+
+            <div class="benefit-number">
+                02
+            </div>
+
+            <div class="benefit-icon">
+                ◫
+            </div>
+
+            <h3>Op ieder scherm</h3>
+
+            <p>
+                Je website wordt gemaakt voor desktop,
+                tablet én mobiel zodat bezoekers overal
+                een goede ervaring hebben.
+            </p>
+
+        </article>
+
+
+        <article class="benefit-card">
+
+            <div class="benefit-number">
+                03
+            </div>
+
+            <div class="benefit-icon">
+                ⚡
+            </div>
+
+            <h3>Snel & duidelijk</h3>
+
+            <p>
+                Geen onnodig ingewikkelde website.
+                Bezoekers vinden snel de informatie
+                en actie die ze zoeken.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAKKETTEN
+========================= -->
+
+<section class="home-packages">
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            PAKKETTEN
+        </span>
+
+        <h2>
+            Een pakket voor
+            <span>ieder project.</span>
+        </h2>
+
+        <p>
+            Vooraf duidelijk wat je krijgt en wat het kost.
+            Kies het pakket dat het beste bij jouw website past.
+        </p>
+
+    </div>
+
+
+    <div class="home-package-grid">
+
+        <!-- SIMPEL -->
+
+        <article class="home-package-card">
+
+            <div class="package-top">
+
+                <span class="package-name">
+                    Simpel
+                </span>
+
+                <p>
+                    Voor een kleine, professionele website.
+                </p>
+
+            </div>
+
+            <div class="package-price">
+                <span>€</span>
+                <strong>100</strong>
+            </div>
+
+            <span class="price-note">
+                vanaf
+            </span>
+
+            <ul>
+                <li>✓ Maximaal 3 pagina's</li>
+                <li>✓ Modern ontwerp</li>
+                <li>✓ Mobielvriendelijk</li>
+                <li>✓ Contactformulier</li>
+                <li>✓ 1 correctieronde</li>
+            </ul>
+
+            <a
+                href="contact.html?pakket=simpel"
+                class="package-button"
+            >
+                Kies Simpel →
+            </a>
+
+        </article>
+
+
+        <!-- PRO -->
+
+        <article class="home-package-card featured-package">
+
+            <div class="recommended">
+                MEEST GEKOZEN
+            </div>
+
+            <div class="package-top">
+
+                <span class="package-name">
+                    Pro
+                </span>
+
+                <p>
+                    Voor een uitgebreidere professionele website.
+                </p>
+
+            </div>
+
+            <div class="package-price">
+                <span>€</span>
+                <strong>250</strong>
+            </div>
+
+            <span class="price-note">
+                vanaf
+            </span>
+
+            <ul>
+                <li>✓ Maximaal 5 pagina's</li>
+                <li>✓ Maatwerk uitstraling</li>
+                <li>✓ Mobielvriendelijk</li>
+                <li>✓ Uitgebreid contactformulier</li>
+                <li>✓ Basis SEO</li>
+                <li>✓ 2 correctierondes</li>
+            </ul>
+
+            <a
+                href="contact.html?pakket=pro"
+                class="package-button featured-button"
+            >
+                Kies Pro →
+            </a>
+
+        </article>
+
+
+        <!-- ULTIMATE -->
+
+        <article class="home-package-card">
+
+            <div class="package-top">
+
+                <span class="package-name">
+                    Ultimate
+                </span>
+
+                <p>
+                    Voor een grotere website met meer mogelijkheden.
+                </p>
+
+            </div>
+
+            <div class="package-price">
+                <span>€</span>
+                <strong>350</strong>
+            </div>
+
+            <span class="price-note">
+                vanaf
+            </span>
+
+            <ul>
+                <li>✓ Maximaal 8 pagina's</li>
+                <li>✓ Volledig maatwerk design</li>
+                <li>✓ Mobielvriendelijk</li>
+                <li>✓ Uitgebreid offerteformulier</li>
+                <li>✓ Basis SEO</li>
+                <li>✓ 3 correctierondes</li>
+            </ul>
+
+            <a
+                href="contact.html?pakket=ultimate"
+                class="package-button"
+            >
+                Kies Ultimate →
+            </a>
+
+        </article>
+
+    </div>
+
+
+    <a href="diensten.html" class="all-packages-link">
+        Bekijk alle informatie over de pakketten →
+    </a>
+
+</section>
+
+
+<!-- =========================
+     WERKWIJZE
+========================= -->
+
+<section class="process-section">
+
+    <div class="process-intro">
+
+        <span class="section-label">
+            ZO WERKT HET
+        </span>
+
+        <h2>
+            Van idee naar
+            <span>jouw website.</span>
+        </h2>
+
+        <p>
+            Een website laten maken hoeft niet ingewikkeld
+            te zijn. In een paar duidelijke stappen werken
+            we van jouw idee naar het eindresultaat.
+        </p>
+
+        <a href="contact.html" class="text-link">
+            Bespreek jouw idee →
+        </a>
+
+    </div>
+
+
+    <div class="process-steps">
+
+        <article class="process-step">
+
+            <span class="step-number">
+                01
+            </span>
+
+            <div>
+
+                <h3>Vertel wat je zoekt</h3>
+
+                <p>
+                    Kies een pakket en vertel via het
+                    offerteformulier wat voor website je
+                    in gedachten hebt.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="process-step">
+
+            <span class="step-number">
+                02
+            </span>
+
+            <div>
+
+                <h3>Ontwerp & bouwen</h3>
+
+                <p>
+                    Op basis van jouw wensen wordt de
+                    website ontworpen en opgebouwd.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="process-step">
+
+            <span class="step-number">
+                03
+            </span>
+
+            <div>
+
+                <h3>Controleren & opleveren</h3>
+
+                <p>
+                    We controleren het resultaat, verwerken
+                    afgesproken aanpassingen en maken de
+                    website klaar voor gebruik.
+                </p>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FAQ
+========================= -->
+
+<section class="faq-section">
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            VEELGESTELDE VRAGEN
+        </span>
+
+        <h2>
+            Nog iets
+            <span>onduidelijk?</span>
+        </h2>
+
+    </div>
+
+
+    <div class="faq-list">
+
+        <details>
+
+            <summary>
+                Welk pakket moet ik kiezen?
+                <span>+</span>
+            </summary>
+
+            <p>
+                Voor een kleine website is Simpel vaak voldoende.
+                Heb je meer pagina's of mogelijkheden nodig, dan
+                kun je voor Pro of Ultimate kiezen. Weet je het
+                nog niet? Kies dan bij de offerte voor
+                'Ik weet het nog niet'.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Werkt mijn website ook op een telefoon?
+                <span>+</span>
+            </summary>
+
+            <p>
+                Ja. De websites worden responsive ontworpen,
+                zodat ze geschikt zijn voor onder andere
+                computers, tablets en smartphones.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Kan ik eerst mijn wensen doorgeven?
+                <span>+</span>
+            </summary>
+
+            <p>
+                Zeker. In het offerteformulier kun je uitleggen
+                wat voor website je wilt en welke onderdelen
+                belangrijk voor je zijn.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Kan een website meer dan 8 pagina's krijgen?
+                <span>+</span>
+            </summary>
+
+            <p>
+                Dat kan besproken worden. Voor grotere of
+                afwijkende projecten kan eerst worden gekeken
+                wat er precies nodig is.
+            </p>
+
+        </details>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LAATSTE CTA
+========================= -->
+
+<section class="final-cta">
+
+    <div class="cta-glow"></div>
+
+    <div class="cta-content">
+
+        <span class="section-label">
+            KLAAR OM TE BEGINNEN?
+        </span>
+
+        <h2>
+            Tijd voor een website
+            waar je <span>trots op bent.</span>
+        </h2>
+
+        <p>
+            Vertel wat je wilt laten maken en vraag
+            vrijblijvend een offerte aan.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="contact.html" class="primary-cta">
+                Offerte aanvragen
+                <span>→</span>
+            </a>
+
+            <a href="diensten.html" class="secondary-cta">
+                Bekijk prijzen
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="site-footer">
+
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+
+            <a href="index.html" class="brand">
+                <span class="brand-icon">&lt;/&gt;</span>
+
+                <span class="brand-text">
+                    Web<span>Design</span>
+                </span>
+            </a>
+
+            <p>
+                Moderne websites op maat voor een
+                duidelijke prijs.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="overons.html">Over ons</a>
+            <a href="diensten.html">Pakketten</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 WebDesign. Alle rechten voorbehouden.
+        </p>
+
+        <a href="login.html">
+            Beheer
+        </a>
+
+    </div>
+
+</footer>
 
 </body>
 </html>
