@@ -723,7 +723,47 @@
 
     }
 
+// =====================================
+// AANVRAAG VERWIJDEREN
+// =====================================
 
+async function verwijderAanvraag(id) {
+
+    const bevestiging = confirm(
+        "Weet je zeker dat je deze offerteaanvraag wilt verwijderen?\n\nDit kan niet ongedaan worden gemaakt."
+    );
+
+    if (!bevestiging) {
+        return;
+    }
+
+
+    const { error } =
+        await supabaseClient
+            .from("offerte_aanvragen")
+            .delete()
+            .eq("id", id);
+
+
+    if (error) {
+
+        console.error(
+            "Fout bij verwijderen:",
+            error
+        );
+
+        alert(
+            "De aanvraag kon niet worden verwijderd."
+        );
+
+        return;
+    }
+
+
+    // Nieuwe gegevens ophalen zodat
+    // statistieken en filters ook kloppen
+    await laadAanvragen();
+}
 
     // =====================================
     // LIVE ZOEKEN
