@@ -589,3 +589,385 @@ footer {
 
     text-transform: uppercase;
 }
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Beheerdersoverzicht</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Beheerdersoverzicht</h1>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Website bekijken</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<main id="beheerPagina" style="display: none;">
+
+    <!-- DASHBOARD -->
+    <section>
+
+        <h2>Dashboard</h2>
+
+        <p>
+            Welkom in het beheerdersoverzicht.
+        </p>
+
+        <p id="userEmail"></p>
+
+        <button id="logoutButton">
+            Uitloggen
+        </button>
+
+    </section>
+
+
+    <!-- OFFERTEAANVRAGEN -->
+    <section class="aanvragen-section">
+
+        <h2>📩 Offerteaanvragen</h2>
+
+        <p>
+            Hier zie je de aanvragen die via het contactformulier zijn verstuurd.
+        </p>
+
+        <div id="aanvragenLijst">
+            <p>Aanvragen worden geladen...</p>
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script>
+
+    const SUPABASE_URL =
+        "https://vzqpfikymnvowdypbpnb.supabase.co";
+
+    const SUPABASE_KEY =
+        "sb_publishable_HeLNv4p7Fc3gAzp5jHOk7Q_zPDxNaQB";
+
+
+    const supabaseClient = supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+    );
+
+
+    // =====================================
+    // VEILIG TEKST TONEN
+    // =====================================
+
+    function escapeHtml(tekst) {
+
+        const div = document.createElement("div");
+
+        div.textContent = tekst ?? "";
+
+        return div.innerHTML;
+    }
+
+
+    // =====================================
+    // OFFERTEAANVRAGEN LADEN
+    // =====================================
+
+    async function laadAanvragen() {
+
+        const aanvragenLijst =
+            document.getElementById("aanvragenLijst");
+
+
+        const { data: aanvragen, error } =
+            await supabaseClient
+                .from("offerte_aanvragen")
+                .select("*")
+                .order("created_at", {
+                    ascending: false
+                });
+
+
+        if (error) {
+
+            console.error(
+                "Fout bij ophalen aanvragen:",
+                error
+            );
+
+            aanvragenLijst.innerHTML =
+                "<p>De aanvragen konden niet worden geladen.</p>";
+
+            return;
+        }
+
+
+        // Geen aanvragen
+        if (!aanvragen || aanvragen.length === 0) {
+
+            aanvragenLijst.innerHTML =
+                "<p>Er zijn nog geen offerteaanvragen.</p>";
+
+            return;
+        }
+
+
+        aanvragenLijst.innerHTML = "";
+
+
+        // Iedere aanvraag tonen
+        aanvragen.forEach(function(aanvraag) {
+
+            const kaart =
+                document.createElement("div");
+
+            kaart.className = "aanvraag-card";
+
+
+            const datum =
+                new Date(
+                    aanvraag.created_at
+                ).toLocaleString("nl-NL");
+
+
+            kaart.innerHTML = `
+
+                <div class="aanvraag-header">
+
+                    <h3>
+                        ${escapeHtml(
+                            aanvraag.onderwerp ||
+                            "Geen onderwerp"
+                        )}
+                    </h3>
+
+                    <span class="status-badge">
+                        ${escapeHtml(
+                            aanvraag.status ||
+                            "nieuw"
+                        )}
+                    </span>
+
+                </div>
+
+
+                <p>
+                    <strong>Naam:</strong>
+                    ${escapeHtml(aanvraag.naam)}
+                </p>
+
+
+                <p>
+                    <strong>E-mail:</strong>
+                    ${escapeHtml(aanvraag.email)}
+                </p>
+
+
+                <p>
+                    <strong>Datum:</strong>
+                    ${datum}
+                </p>
+
+
+                <p>
+                    <strong>Bericht:</strong><br>
+                    ${escapeHtml(aanvraag.bericht)}
+                </p>
+    ${
+    aanvraag.status === "behandeld"
+
+    ? `
+        <button
+            class="behandeld-button"
+            disabled
+        >
+            ✓ Behandeld
+        </button>
+      `
+
+    : `
+        <button
+            class="behandel-button"
+            onclick="markeerAlsBehandeld(${aanvraag.id})"
+        >
+            ✓ Markeer als behandeld
+        </button>
+      `
+}
+            `;
+
+
+            aanvragenLijst.appendChild(kaart);
+
+        });
+
+    }
+
+
+    // =====================================
+    // LOGIN + ADMIN CONTROLEREN
+    // =====================================
+async function markeerAlsBehandeld(id) {
+
+    const { error } =
+        await supabaseClient
+            .from("offerte_aanvragen")
+            .update({
+                status: "behandeld"
+            })
+            .eq("id", id);
+
+
+    if (error) {
+
+        console.error(
+            "Fout bij wijzigen status:",
+            error
+        );
+
+        alert(
+            "De status kon niet worden gewijzigd."
+        );
+
+        return;
+    }
+
+
+    // Aanvragen opnieuw laden
+    await laadAanvragen();
+}
+    async function controleerBeheerder() {
+
+        // Gebruiker ophalen
+        const {
+            data: userData,
+            error: userError
+        } = await supabaseClient.auth.getUser();
+
+
+        // Niet ingelogd
+        if (userError || !userData.user) {
+
+            window.location.replace(
+                "login.html"
+            );
+
+            return;
+        }
+
+
+        const gebruiker = userData.user;
+
+
+        // Adminrol ophalen
+        const {
+            data: profiel,
+            error: profielError
+        } = await supabaseClient
+            .from("profiles")
+            .select("role")
+            .eq("id", gebruiker.id)
+            .single();
+
+
+        // Geen profiel
+        if (profielError || !profiel) {
+
+            console.error(
+                "Profiel fout:",
+                profielError
+            );
+
+            alert(
+                "Je hebt geen toegang tot het beheerdersoverzicht."
+            );
+
+            window.location.replace(
+                "index.html"
+            );
+
+            return;
+        }
+
+
+        // Geen admin
+        if (profiel.role !== "admin") {
+
+            alert(
+                "Je bent geen beheerder."
+            );
+
+            window.location.replace(
+                "index.html"
+            );
+
+            return;
+        }
+
+
+        // =================================
+        // ADMIN IS GOEDGEKEURD
+        // =================================
+
+        document
+            .getElementById("beheerPagina")
+            .style.display = "block";
+
+
+        document
+            .getElementById("userEmail")
+            .textContent =
+            "Ingelogd als beheerder: "
+            + gebruiker.email;
+
+
+        // Offertes ophalen
+        await laadAanvragen();
+
+    }
+
+
+    // Controle starten
+    controleerBeheerder();
+
+
+    // =====================================
+    // UITLOGGEN
+    // =====================================
+
+    document
+        .getElementById("logoutButton")
+        .addEventListener(
+            "click",
+            async function() {
+
+                await supabaseClient
+                    .auth
+                    .signOut();
+
+
+                window.location.replace(
+                    "login.html"
+                );
+
+            }
+        );
+
+</script>
+
+</body>
+</html>
