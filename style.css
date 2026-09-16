@@ -1529,6 +1529,196 @@ async function markeerAlsBehandeld(id) {
     }
 
 }
+/* ================================
+   WEBSITE PAKKETTEN
+================================ */
+
+.prijzen-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 50px;
+    align-items: stretch;
+}
+
+.prijs-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 35px 25px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+
+    transition: 0.3s;
+}
+
+.prijs-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(56, 189, 248, 0.5);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+.prijs-card h3 {
+    font-size: 25px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.prijs {
+    font-size: 45px;
+    font-weight: 800;
+
+    margin: 15px 0;
+
+    background: linear-gradient(
+        90deg,
+        #38bdf8,
+        #a78bfa
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.prijs-omschrijving {
+    font-size: 15px;
+    min-height: 80px;
+}
+
+.prijs-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 30px;
+
+    text-align: left;
+
+    flex: 1;
+}
+
+.prijs-card li {
+    padding: 9px 0;
+
+    color: #dbeafe;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.07);
+}
+
+.pakket-button {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    transition: 0.3s;
+}
+
+.pakket-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(124, 58, 237, 0.4);
+}
+
+
+/* PRO PAKKET */
+
+.prijs-card.populair {
+    border: 2px solid #818cf8;
+
+    transform: scale(1.04);
+
+    box-shadow:
+        0 20px 60px rgba(99, 102, 241, 0.2);
+}
+
+.prijs-card.populair:hover {
+    transform:
+        scale(1.04)
+        translateY(-8px);
+}
+
+.populair-label {
+    position: absolute;
+
+    top: -15px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 7px 18px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* ONDERSTE INFORMATIE */
+
+.pakket-info {
+    margin-top: 60px;
+}
+
+.pakket-info h2 {
+    font-size: 30px;
+}
+
+
+/* MOBIEL */
+
+@media (max-width: 850px) {
+
+    .prijzen-container {
+        grid-template-columns: 1fr;
+    }
+
+    .prijs-card.populair {
+        transform: none;
+    }
+
+    .prijs-card.populair:hover {
+        transform: translateY(-8px);
+    }
+
+    .prijs-omschrijving {
+        min-height: auto;
+    }
+}
 </script>
 
 </body>
