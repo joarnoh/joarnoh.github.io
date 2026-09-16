@@ -1254,6 +1254,154 @@ async function markeerAlsBehandeld(id) {
     }
 
 }
+/* =========================
+   ZOEKEN + FILTERS
+========================= */
+
+.aanvraag-tools {
+    margin: 30px 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+/* Zoekbalk */
+
+#zoekAanvraag {
+    width: 100%;
+
+    padding: 15px 18px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    outline: none;
+
+    background:
+        rgba(15, 23, 42, 0.75);
+
+    color: white;
+
+    font-family: inherit;
+    font-size: 16px;
+
+    transition: 0.25s;
+}
+
+
+#zoekAanvraag::placeholder {
+    color: #64748b;
+}
+
+
+#zoekAanvraag:focus {
+    border-color: #38bdf8;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(56, 189, 248, 0.12);
+}
+
+
+/* Filterknoppen */
+
+.filter-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+.filter-button {
+    padding: 10px 20px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    color: #cbd5e1;
+
+    box-shadow: none;
+}
+
+
+.filter-button:hover {
+    background:
+        rgba(56, 189, 248, 0.12);
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* Actieve filter */
+
+.filter-button.active-filter {
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    color: white;
+
+    border-color: transparent;
+}
+
+
+/* Geen zoekresultaten */
+
+.geen-resultaten {
+    padding: 30px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================
+   MOBIEL
+========================= */
+
+@media (max-width: 750px) {
+
+    .aanvraag-tools {
+        margin: 20px 0;
+    }
+
+    .filter-buttons {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        width: 100%;
+    }
+
+    .filter-button {
+        width: 100%;
+    }
+
+}
 </script>
 
 </body>
