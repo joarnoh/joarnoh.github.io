@@ -526,3 +526,66 @@ footer {
 .back-home:hover {
     color: #38bdf8;
 }
+/* =========================
+   BEHEERDASHBOARD
+========================= */
+
+.aanvragen-section {
+    margin-top: 35px;
+}
+
+#aanvragenLijst {
+    display: grid;
+    gap: 20px;
+
+    margin-top: 30px;
+}
+
+.aanvraag-card {
+    text-align: left;
+
+    padding: 25px;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.aanvraag-card p {
+    margin: 10px 0;
+
+    max-width: none;
+}
+
+.aanvraag-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 15px;
+}
+
+.aanvraag-header h3 {
+    margin: 0;
+}
+
+.status-badge {
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background: rgba(56, 189, 248, 0.15);
+
+    color: #38bdf8;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
