@@ -196,7 +196,27 @@
                     <strong>Bericht:</strong><br>
                     ${escapeHtml(aanvraag.bericht)}
                 </p>
+    ${
+    aanvraag.status === "behandeld"
 
+    ? `
+        <button
+            class="behandeld-button"
+            disabled
+        >
+            ✓ Behandeld
+        </button>
+      `
+
+    : `
+        <button
+            class="behandel-button"
+            onclick="markeerAlsBehandeld(${aanvraag.id})"
+        >
+            ✓ Markeer als behandeld
+        </button>
+      `
+}
             `;
 
 
@@ -210,7 +230,35 @@
     // =====================================
     // LOGIN + ADMIN CONTROLEREN
     // =====================================
+async function markeerAlsBehandeld(id) {
 
+    const { error } =
+        await supabaseClient
+            .from("offerte_aanvragen")
+            .update({
+                status: "behandeld"
+            })
+            .eq("id", id);
+
+
+    if (error) {
+
+        console.error(
+            "Fout bij wijzigen status:",
+            error
+        );
+
+        alert(
+            "De status kon niet worden gewijzigd."
+        );
+
+        return;
+    }
+
+
+    // Aanvragen opnieuw laden
+    await laadAanvragen();
+}
     async function controleerBeheerder() {
 
         // Gebruiker ophalen
