@@ -1,59 +1,167 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Onze Diensten - Mijn Website</title>
+
+    <title>Website Pakketten - Mijn Website</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header>
-        <h1>Mijn Website</h1>
-        <nav>
+<header>
+    <h1>Mijn Website</h1>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="overons.html">Over ons</a></li>
+            <li><a href="diensten.html" class="active">Diensten</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<main>
+
+    <h2>Website laten maken</h2>
+
+    <p>
+        Kies het pakket dat het beste bij jouw website past.
+        Van een simpele professionele website tot een uitgebreide
+        website met een volledig eigen ontwerp.
+    </p>
+
+
+    <div class="prijzen-container">
+
+        <!-- SIMPEL -->
+        <article class="prijs-card">
+
+            <h3>🌐 Simpel</h3>
+
+            <div class="prijs">
+                €100
+            </div>
+
+            <p class="prijs-omschrijving">
+                Een nette en professionele website voor wie
+                eenvoudig online aanwezig wil zijn.
+            </p>
+
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="overons.html">Over ons</a></li>
-                <li><a href="diensten.html" class="active">Diensten</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li>✓ Maximaal 3 pagina's</li>
+                <li>✓ Modern design</li>
+                <li>✓ Geschikt voor mobiel</li>
+                <li>✓ Contactgegevens</li>
+                <li>✓ Basis contactformulier</li>
+                <li>✓ 1 correctieronde</li>
             </ul>
-        </nav>
-    </header>
 
-    <main>
-        <h2>Wat wij doen</h2>
-        <p>Wij bieden een breed scala aan professionele diensten om jou te helpen je doelen te bereiken. Ontdek hieronder wat wij voor jou kunnen betekenen.</p>
+            <a href="contact.html" class="pakket-button">
+                Kies Simpel
+            </a>
 
-        <!-- Overzicht van de diensten -->
-        <div class="services-container">
-            
-            <!-- Dienst 1 -->
-            <article class="service-card">
-                <h3>Dienst 1: Advies & Strategie</h3>
-                <p>We denken vanaf het eerste moment met je mee. Samen stellen we een helder plan op om jouw project of bedrijf naar een hoger niveau te tillen.</p>
-                <a href="contact.html" class="button">Meer informatie</a>
-            </article>
+        </article>
 
-            <!-- Dienst 2 -->
-            <article class="service-card">
-                <h3>Dienst 2: Ontwerp & Ontwikkeling</h3>
-                <p>Van concept tot realisatie. Wij bouwen moderne, snelle en gebruiksvriendelijke websites die perfect aansluiten bij jouw specifieke wensen.</p>
-                <a href="contact.html" class="button">Meer informatie</a>
-            </article>
 
-            <!-- Dienst 3 -->
-            <article class="service-card">
-                <h3>Dienst 3: Beheer & Onderhoud</h3>
-                <p>Ook na de oplevering staan we voor je klaar. Wij zorgen ervoor dat alles up-to-date blijft, veilig is en soepel blijft functioneren.</p>
-                <a href="contact.html" class="button">Meer informatie</a>
-            </article>
+        <!-- PRO -->
+        <article class="prijs-card populair">
 
-        </div>
-    </main>
+            <div class="populair-label">
+                POPULAIR
+            </div>
 
-    <footer>
-        <p>&copy; 2026 Mijn Website. Alle rechten voorbehouden.</p>
-    </footer>
+            <h3>🚀 Pro</h3>
+
+            <div class="prijs">
+                €250
+            </div>
+
+            <p class="prijs-omschrijving">
+                Voor bedrijven of projecten die een uitgebreidere
+                en professionelere website willen.
+            </p>
+
+            <ul>
+                <li>✓ Maximaal 5 pagina's</li>
+                <li>✓ Professioneel maatwerk design</li>
+                <li>✓ Geschikt voor mobiel</li>
+                <li>✓ Uitgebreid contactformulier</li>
+                <li>✓ Basis SEO</li>
+                <li>✓ Extra functies mogelijk</li>
+                <li>✓ 2 correctierondes</li>
+            </ul>
+
+            <a href="contact.html" class="pakket-button">
+                Kies Pro
+            </a>
+
+        </article>
+
+
+        <!-- ULTIMATE -->
+        <article class="prijs-card">
+
+            <h3>💎 Ultimate</h3>
+
+            <div class="prijs">
+                €350
+            </div>
+
+            <p class="prijs-omschrijving">
+                Een complete website met meer pagina's,
+                maatwerk en uitgebreide mogelijkheden.
+            </p>
+
+            <ul>
+                <li>✓ Maximaal 8 pagina's</li>
+                <li>✓ Volledig maatwerk design</li>
+                <li>✓ Geschikt voor mobiel</li>
+                <li>✓ Uitgebreid offerte/contactformulier</li>
+                <li>✓ Basis SEO</li>
+                <li>✓ Extra functionaliteiten</li>
+                <li>✓ 3 correctierondes</li>
+            </ul>
+
+            <a href="contact.html" class="pakket-button">
+                Kies Ultimate
+            </a>
+
+        </article>
+
+    </div>
+
+
+    <section class="pakket-info">
+
+        <h2>Niet zeker welk pakket je nodig hebt?</h2>
+
+        <p>
+            Geen probleem. Vertel wat voor website je wilt laten
+            maken en welke functies je nodig hebt. Daarna kunnen
+            we samen kijken welk pakket het beste aansluit.
+        </p>
+
+        <a href="contact.html" class="pakket-button">
+            Vraag een offerte aan
+        </a>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <p>
+        &copy; 2026 Mijn Website.
+        Alle rechten voorbehouden.
+    </p>
+</footer>
 
 </body>
 </html>
