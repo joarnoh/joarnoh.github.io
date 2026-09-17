@@ -1,88 +1,171 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Inloggen - Mijn Website</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Beheerder inloggen | WebDesign</title>
+
+    <link rel="stylesheet" href="public.css">
 </head>
 
-<body class="login-page">
+<body class="new-login-page">
 
-    <div class="login-background"></div>
+    <main class="new-login-layout">
 
-    <main class="login-wrapper">
+        <!-- LINKERKANT -->
+        <section class="login-brand-side">
 
-        <div class="login-card">
+            <a href="index.html" class="brand login-brand">
+                <span class="brand-mark">&lt;/&gt;</span>
 
-            <div class="login-icon">🔐</div>
+                <span class="brand-name">
+                    <span class="brand-web">Web</span><span class="brand-design">Design</span>
+                </span>
+            </a>
 
-            <h1>Welkom terug</h1>
+            <div class="login-brand-content">
 
-            <p class="login-subtitle">
-                Log in om naar het beheerdersoverzicht te gaan
-            </p>
+                <span class="section-label">
+                    BEHEERDERSOMGEVING
+                </span>
 
-            <form id="loginForm">
+                <h1>
+                    Alles beheren
+                    vanuit één
+                    <span>overzicht.</span>
+                </h1>
 
-                <div class="login-input">
-                    <label for="email">E-mailadres</label>
+                <p>
+                    Log veilig in om offerteaanvragen te bekijken
+                    en je beheerdersoverzicht te openen.
+                </p>
 
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="jouw@email.nl"
-                        autocomplete="email"
-                        required
-                    >
+                <div class="login-feature-list">
+
+                    <div>
+                        <span>✓</span>
+                        Offerteaanvragen bekijken
+                    </div>
+
+                    <div>
+                        <span>✓</span>
+                        Aanvragen beheren
+                    </div>
+
+                    <div>
+                        <span>✓</span>
+                        Beveiligde toegang
+                    </div>
+
                 </div>
 
+            </div>
 
-                <div class="login-input">
-                    <label for="password">Wachtwoord</label>
-
-                    <input
-                        type="password"
-                        id="password"
-                        placeholder="••••••••"
-                        autocomplete="current-password"
-                        required
-                    >
-                </div>
-
-
-                <!-- CLOUDFLARE TURNSTILE -->
-                <div
-                    class="cf-turnstile"
-                    data-sitekey="0x4AAAAAAE5E6WuSA3biTqTa"
-                    data-theme="dark"
-                    data-size="flexible"
-                    data-callback="onCaptchaSuccess"
-                    data-expired-callback="onCaptchaExpired"
-                    data-error-callback="onCaptchaError"
-                ></div>
-
-
-                <p id="loginMessage"></p>
-
-
-                <button
-                    type="submit"
-                    class="login-submit"
-                    id="loginButton"
-                >
-                    Inloggen
-                </button>
-
-            </form>
-
-
-            <a href="index.html" class="back-home">
+            <a href="index.html" class="login-back">
                 ← Terug naar website
             </a>
 
-        </div>
+        </section>
+
+
+        <!-- RECHTERKANT -->
+        <section class="login-form-side">
+
+            <div class="new-login-card">
+
+                <div class="login-lock">
+                    <span>⌁</span>
+                </div>
+
+                <span class="login-small-title">
+                    ALLEEN VOOR BEHEERDERS
+                </span>
+
+                <h2>Welkom terug</h2>
+
+                <p class="new-login-subtitle">
+                    Vul je gegevens in om verder te gaan.
+                </p>
+
+
+                <form id="loginForm">
+
+                    <div class="new-login-input">
+                        <label for="email">
+                            E-mailadres
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="jouw@email.nl"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="new-login-input">
+                        <label for="password">
+                            Wachtwoord
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="••••••••"
+                            autocomplete="current-password"
+                            required
+                        >
+                    </div>
+
+
+                    <!-- CLOUDFLARE TURNSTILE -->
+                    <div class="login-security">
+
+                        <div class="login-security-title">
+                            <span>◈</span>
+                            Beveiligingscontrole
+                        </div>
+
+                        <div
+                            class="cf-turnstile"
+                            data-sitekey="0x4AAAAAAE5E6WuSA3biTqTa"
+                            data-theme="dark"
+                            data-size="flexible"
+                            data-callback="onCaptchaSuccess"
+                            data-expired-callback="onCaptchaExpired"
+                            data-error-callback="onCaptchaError"
+                        ></div>
+
+                    </div>
+
+
+                    <p id="loginMessage"></p>
+
+
+                    <button
+                        type="submit"
+                        class="new-login-submit"
+                        id="loginButton"
+                    >
+                        <span>Inloggen</span>
+                        <span class="login-arrow">→</span>
+                    </button>
+
+                </form>
+
+
+                <div class="login-secure-note">
+                    <span>●</span>
+                    Beveiligde beheerdersomgeving
+                </div>
+
+            </div>
+
+        </section>
 
     </main>
 
@@ -132,6 +215,9 @@
         const loginButton =
             document.getElementById("loginButton");
 
+        const loginButtonText =
+            loginButton.querySelector("span");
+
 
         // =====================================
         // CAPTCHA
@@ -143,7 +229,6 @@
         function onCaptchaSuccess(token) {
 
             captchaToken = token;
-
             loginMessage.textContent = "";
 
         }
@@ -187,8 +272,6 @@
                 event.preventDefault();
 
 
-                // Eerst CAPTCHA controleren
-
                 if (!captchaToken) {
 
                     loginMessage.textContent =
@@ -215,19 +298,13 @@
                         .value;
 
 
-                // Knop tijdelijk blokkeren
-
                 loginButton.disabled = true;
 
-                loginButton.textContent =
+                loginButtonText.textContent =
                     "Bezig met inloggen...";
 
                 loginMessage.textContent = "";
 
-
-                // =================================
-                // SUPABASE LOGIN + CAPTCHA
-                // =================================
 
                 const { data, error } =
                     await supabaseClient
@@ -246,14 +323,10 @@
                         });
 
 
-                // Token is eenmalig
                 captchaToken = null;
 
 
-                // =================================
                 // LOGIN MISLUKT
-                // =================================
-
                 if (error) {
 
                     console.error(
@@ -271,28 +344,19 @@
 
                     loginButton.disabled = false;
 
-                    loginButton.textContent =
+                    loginButtonText.textContent =
                         "Inloggen";
 
 
-                    // Nieuwe CAPTCHA maken
-
                     if (window.turnstile) {
-
                         turnstile.reset();
-
                     }
 
-
                     return;
-
                 }
 
 
-                // =================================
                 // LOGIN GELUKT
-                // =================================
-
                 loginMessage.textContent =
                     "✓ Login gelukt! Je wordt doorgestuurd...";
 
