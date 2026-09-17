@@ -5,25 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Beheerder inloggen | JHWebDesign</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#070b12">
+
+    <title>Beheerder inloggen | JH WebDesign</title>
 
     <link rel="stylesheet" href="public.css">
 </head>
+
 
 <body class="new-login-page">
 
     <main class="new-login-layout">
 
-        <!-- LINKERKANT -->
+        <!-- =========================
+             LINKERKANT
+        ========================== -->
+
         <section class="login-brand-side">
 
-            <a href="index.html" class="brand login-brand">
-                <span class="brand-mark">&lt;/&gt;</span>
+            <a
+                href="index.html"
+                class="brand login-brand"
+                aria-label="JH WebDesign - Home"
+            >
+                <span
+                    class="brand-mark"
+                    aria-hidden="true"
+                >
+                    &lt;/&gt;
+                </span>
 
                 <span class="brand-name">
-                    <span class="brand-web">JH</span><span class="brand-design">WebDesign</span>
+                    <span class="brand-web">JH </span>
+                    <span class="brand-design">WebDesign</span>
                 </span>
             </a>
+
 
             <div class="login-brand-content">
 
@@ -42,20 +60,21 @@
                     en je beheerdersoverzicht te openen.
                 </p>
 
+
                 <div class="login-feature-list">
 
                     <div>
-                        <span>✓</span>
+                        <span aria-hidden="true">✓</span>
                         Offerteaanvragen bekijken
                     </div>
 
                     <div>
-                        <span>✓</span>
+                        <span aria-hidden="true">✓</span>
                         Aanvragen beheren
                     </div>
 
                     <div>
-                        <span>✓</span>
+                        <span aria-hidden="true">✓</span>
                         Beveiligde toegang
                     </div>
 
@@ -63,27 +82,40 @@
 
             </div>
 
-            <a href="index.html" class="login-back">
+
+            <a
+                href="index.html"
+                class="login-back"
+            >
                 ← Terug naar website
             </a>
 
         </section>
 
 
-        <!-- RECHTERKANT -->
+        <!-- =========================
+             RECHTERKANT
+        ========================== -->
+
         <section class="login-form-side">
 
             <div class="new-login-card">
 
-                <div class="login-lock">
+                <div
+                    class="login-lock"
+                    aria-hidden="true"
+                >
                     <span>⌁</span>
                 </div>
+
 
                 <span class="login-small-title">
                     ALLEEN VOOR BEHEERDERS
                 </span>
 
-                <h2>Welkom terug</h2>
+                <h2>
+                    Welkom terug
+                </h2>
 
                 <p class="new-login-subtitle">
                     Vul je gegevens in om verder te gaan.
@@ -92,7 +124,10 @@
 
                 <form id="loginForm">
 
+                    <!-- E-MAIL -->
+
                     <div class="new-login-input">
+
                         <label for="email">
                             E-mailadres
                         </label>
@@ -100,14 +135,21 @@
                         <input
                             type="email"
                             id="email"
+                            name="email"
                             placeholder="jouw@email.nl"
-                            autocomplete="email"
+                            autocomplete="username"
+                            inputmode="email"
+                            maxlength="254"
                             required
                         >
+
                     </div>
 
 
+                    <!-- WACHTWOORD -->
+
                     <div class="new-login-input">
+
                         <label for="password">
                             Wachtwoord
                         </label>
@@ -115,20 +157,31 @@
                         <input
                             type="password"
                             id="password"
+                            name="password"
                             placeholder="••••••••"
                             autocomplete="current-password"
                             required
                         >
+
                     </div>
 
 
-                    <!-- CLOUDFLARE TURNSTILE -->
+                    <!-- =========================
+                         CLOUDFLARE TURNSTILE
+                    ========================== -->
+
                     <div class="login-security">
 
                         <div class="login-security-title">
-                            <span>◈</span>
+
+                            <span aria-hidden="true">
+                                ◈
+                            </span>
+
                             Beveiligingscontrole
+
                         </div>
+
 
                         <div
                             class="cf-turnstile"
@@ -143,7 +196,11 @@
                     </div>
 
 
-                    <p id="loginMessage"></p>
+                    <p
+                        id="loginMessage"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
 
 
                     <button
@@ -151,16 +208,29 @@
                         class="new-login-submit"
                         id="loginButton"
                     >
-                        <span>Inloggen</span>
-                        <span class="login-arrow">→</span>
+                        <span id="loginButtonText">
+                            Inloggen
+                        </span>
+
+                        <span
+                            class="login-arrow"
+                            aria-hidden="true"
+                        >
+                            →
+                        </span>
                     </button>
 
                 </form>
 
 
                 <div class="login-secure-note">
-                    <span>●</span>
+
+                    <span aria-hidden="true">
+                        ●
+                    </span>
+
                     Beveiligde beheerdersomgeving
+
                 </div>
 
             </div>
@@ -170,7 +240,10 @@
     </main>
 
 
-    <!-- CLOUDFLARE TURNSTILE -->
+    <!-- =========================
+         CLOUDFLARE TURNSTILE
+    ========================== -->
+
     <script
         src="https://challenges.cloudflare.com/turnstile/v0/api.js"
         async
@@ -178,8 +251,13 @@
     ></script>
 
 
-    <!-- SUPABASE -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- =========================
+         SUPABASE
+    ========================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
 
 
     <script>
@@ -216,7 +294,33 @@
             document.getElementById("loginButton");
 
         const loginButtonText =
-            loginButton.querySelector("span");
+            document.getElementById("loginButtonText");
+
+        const emailVeld =
+            document.getElementById("email");
+
+        const wachtwoordVeld =
+            document.getElementById("password");
+
+
+        // =====================================
+        // MELDINGEN
+        // =====================================
+
+        function toonMelding(tekst, kleur) {
+
+            loginMessage.textContent = tekst;
+            loginMessage.style.color = kleur;
+
+        }
+
+
+        function wisMelding() {
+
+            loginMessage.textContent = "";
+            loginMessage.style.color = "";
+
+        }
 
 
         // =====================================
@@ -229,7 +333,7 @@
         function onCaptchaSuccess(token) {
 
             captchaToken = token;
-            loginMessage.textContent = "";
+            wisMelding();
 
         }
 
@@ -238,11 +342,10 @@
 
             captchaToken = null;
 
-            loginMessage.textContent =
-                "De beveiligingscontrole is verlopen. Probeer opnieuw.";
-
-            loginMessage.style.color =
-                "#fbbf24";
+            toonMelding(
+                "De beveiligingscontrole is verlopen. Probeer opnieuw.",
+                "#fbbf24"
+            );
 
         }
 
@@ -251,11 +354,48 @@
 
             captchaToken = null;
 
-            loginMessage.textContent =
-                "De beveiligingscontrole kon niet worden geladen.";
+            toonMelding(
+                "De beveiligingscontrole kon niet worden geladen.",
+                "#f87171"
+            );
 
-            loginMessage.style.color =
-                "#f87171";
+        }
+
+
+        function resetCaptcha() {
+
+            captchaToken = null;
+
+            if (
+                window.turnstile &&
+                typeof window.turnstile.reset === "function"
+            ) {
+                window.turnstile.reset();
+            }
+
+        }
+
+
+        // =====================================
+        // KNOPSTATUS
+        // =====================================
+
+        function zetLoginKnopBezig() {
+
+            loginButton.disabled = true;
+
+            loginButtonText.textContent =
+                "Bezig met inloggen...";
+
+        }
+
+
+        function herstelLoginKnop() {
+
+            loginButton.disabled = false;
+
+            loginButtonText.textContent =
+                "Inloggen";
 
         }
 
@@ -272,100 +412,176 @@
                 event.preventDefault();
 
 
+                // =================================
+                // WAARDEN
+                // =================================
+
+                const email =
+                    emailVeld.value.trim();
+
+                const password =
+                    wachtwoordVeld.value;
+
+
+                // =================================
+                // CONTROLES
+                // =================================
+
+                if (
+                    !email ||
+                    !emailVeld.checkValidity()
+                ) {
+
+                    toonMelding(
+                        "Vul een geldig e-mailadres in.",
+                        "#fbbf24"
+                    );
+
+                    emailVeld.focus();
+                    return;
+
+                }
+
+
+                if (!password) {
+
+                    toonMelding(
+                        "Vul je wachtwoord in.",
+                        "#fbbf24"
+                    );
+
+                    wachtwoordVeld.focus();
+                    return;
+
+                }
+
+
                 if (!captchaToken) {
 
-                    loginMessage.textContent =
-                        "Voltooi eerst de beveiligingscontrole.";
-
-                    loginMessage.style.color =
-                        "#fbbf24";
+                    toonMelding(
+                        "Voltooi eerst de beveiligingscontrole.",
+                        "#fbbf24"
+                    );
 
                     return;
 
                 }
 
 
-                const email =
-                    document
-                        .getElementById("email")
-                        .value
-                        .trim();
+                // =================================
+                // LOGIN STARTEN
+                // =================================
+
+                zetLoginKnopBezig();
+                wisMelding();
 
 
-                const password =
-                    document
-                        .getElementById("password")
-                        .value;
+                try {
 
+                    const {
+                        data,
+                        error
+                    } =
+                        await supabaseClient
+                            .auth
+                            .signInWithPassword({
 
-                loginButton.disabled = true;
+                                email,
+                                password,
 
-                loginButtonText.textContent =
-                    "Bezig met inloggen...";
-
-                loginMessage.textContent = "";
-
-
-                const { data, error } =
-                    await supabaseClient
-                        .auth
-                        .signInWithPassword({
-
-                            email: email,
-
-                            password: password,
-
-                            options: {
-                                captchaToken:
+                                options: {
                                     captchaToken
-                            }
+                                }
 
-                        });
-
-
-                captchaToken = null;
+                            });
 
 
-                // LOGIN MISLUKT
-                if (error) {
+                    // Turnstile-token is eenmalig
+                    captchaToken = null;
+
+
+                    // =================================
+                    // LOGIN MISLUKT
+                    // =================================
+
+                    if (error) {
+
+                        console.error(
+                            "Login fout:",
+                            error
+                        );
+
+
+                        toonMelding(
+                            "E-mailadres, wachtwoord of beveiligingscontrole is onjuist.",
+                            "#f87171"
+                        );
+
+
+                        resetCaptcha();
+                        herstelLoginKnop();
+
+                        return;
+
+                    }
+
+
+                    // Extra controle of er echt
+                    // een sessie is aangemaakt.
+
+                    if (
+                        !data ||
+                        !data.session
+                    ) {
+
+                        toonMelding(
+                            "Inloggen is niet gelukt. Probeer het opnieuw.",
+                            "#f87171"
+                        );
+
+                        resetCaptcha();
+                        herstelLoginKnop();
+
+                        return;
+
+                    }
+
+
+                    // =================================
+                    // LOGIN GELUKT
+                    // =================================
+
+                    toonMelding(
+                        "✓ Login gelukt! Je wordt doorgestuurd...",
+                        "#4ade80"
+                    );
+
+
+                    window.location.replace(
+                        "beheer.html"
+                    );
+
+                }
+
+
+                catch (error) {
 
                     console.error(
-                        "Login fout:",
+                        "Verbindingsfout:",
                         error
                     );
 
 
-                    loginMessage.textContent =
-                        "E-mailadres, wachtwoord of beveiligingscontrole is onjuist.";
-
-                    loginMessage.style.color =
-                        "#f87171";
-
-
-                    loginButton.disabled = false;
-
-                    loginButtonText.textContent =
-                        "Inloggen";
+                    toonMelding(
+                        "Er kon geen verbinding worden gemaakt. Probeer het opnieuw.",
+                        "#f87171"
+                    );
 
 
-                    if (window.turnstile) {
-                        turnstile.reset();
-                    }
+                    resetCaptcha();
+                    herstelLoginKnop();
 
-                    return;
                 }
-
-
-                // LOGIN GELUKT
-                loginMessage.textContent =
-                    "✓ Login gelukt! Je wordt doorgestuurd...";
-
-                loginMessage.style.color =
-                    "#4ade80";
-
-
-                window.location.href =
-                    "beheer.html";
 
             }
         );
@@ -373,4 +589,5 @@
     </script>
 
 </body>
+
 </html>
