@@ -231,7 +231,22 @@
     // VEILIG TEKST TONEN
     // =====================================
 
-    function escapeHtml(tekst) {
+   function escapeHtml(tekst) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent =
+        tekst ?? "";
+
+    return div.innerHTML;
+}
+
+
+// =====================================
+// PAKKETNAAM TONEN
+// =====================================
+
 function pakketNaam(pakket) {
 
     const pakketten = {
@@ -243,15 +258,6 @@ function pakketNaam(pakket) {
 
     return pakketten[pakket] || "Niet opgeslagen";
 }
-        const div =
-            document.createElement("div");
-
-        div.textContent =
-            tekst ?? "";
-
-        return div.innerHTML;
-
-    }
 
 
 
