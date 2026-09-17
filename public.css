@@ -3009,3 +3009,41 @@ select {
         display: none;
     }
 }
+/* LOGO FIX */
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.brand-mark {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #38bdf8;
+    color: #07111b !important;
+
+    border-radius: 11px;
+
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.brand-name {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.brand-web {
+    color: #f8fafc;
+}
+
+.brand-design {
+    color: #38bdf8;
+}
