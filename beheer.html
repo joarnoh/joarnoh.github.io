@@ -232,7 +232,17 @@
     // =====================================
 
     function escapeHtml(tekst) {
+function pakketNaam(pakket) {
 
+    const pakketten = {
+        simpel: "Simpel – €100",
+        pro: "Pro – €250",
+        ultimate: "Ultimate – €350",
+        onbekend: "Nog niet gekozen"
+    };
+
+    return pakketten[pakket] || "Niet opgeslagen";
+}
         const div =
             document.createElement("div");
 
@@ -340,15 +350,19 @@
 
                 const zoekTekst = `
 
-                    ${aanvraag.naam || ""}
+    ${aanvraag.naam || ""}
 
-                    ${aanvraag.email || ""}
+    ${aanvraag.email || ""}
 
-                    ${aanvraag.onderwerp || ""}
+    ${aanvraag.pakket || ""}
 
-                    ${aanvraag.bericht || ""}
+    ${pakketNaam(aanvraag.pakket)}
 
-                `.toLowerCase();
+    ${aanvraag.onderwerp || ""}
+
+    ${aanvraag.bericht || ""}
+
+`.toLowerCase();
 
 
                 const zoekKlopt =
@@ -500,7 +514,25 @@
                         )}
 
                     </p>
+<p class="pakket-regel">
 
+    <strong>
+        Pakket:
+    </strong>
+
+    <span class="pakket-badge pakket-${escapeHtml(
+        aanvraag.pakket || "geen"
+    )}">
+
+        ${escapeHtml(
+            pakketNaam(
+                aanvraag.pakket
+            )
+        )}
+
+    </span>
+
+</p>
 
 
                     <p>
