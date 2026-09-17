@@ -7,51 +7,223 @@
 
     <title>Beheerdersoverzicht</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="beheer.css">
 </head>
 
-<body>
+<body class="admin-page">
 
-<header>
+<header class="admin-header">
 
-    <h1>Beheerdersoverzicht</h1>
+    <div class="admin-header-inner">
 
-    <nav>
-        <ul>
-            <li>
-                <a href="index.html">
-                    Website bekijken
-                </a>
-            </li>
-        </ul>
-    </nav>
+        <a href="index.html" class="admin-brand">
+            <span class="admin-brand-mark">&lt;/&gt;</span>
+
+            <span class="admin-brand-name">
+                Web<span>Design</span>
+            </span>
+        </a>
+
+
+        <div class="admin-header-actions">
+
+            <a
+                href="index.html"
+                class="admin-view-site"
+                target="_blank"
+            >
+                Website bekijken ↗
+            </a>
+
+            <button
+                id="logoutButton"
+                class="admin-logout"
+            >
+                Uitloggen
+            </button>
+
+        </div>
+
+    </div>
 
 </header>
 
 
-<main id="beheerPagina" style="display: none;">
+<main
+    id="beheerPagina"
+    class="admin-main"
+    style="display: none;"
+>
 
+    <!-- DASHBOARD BOVENKANT -->
 
-    <!-- =========================
-         DASHBOARD
-    ========================= -->
+    <section class="admin-dashboard">
 
-    <section>
-
-        <h2>Dashboard</h2>
-
-        <p>
-            Welkom in het beheerdersoverzicht.
+        <p class="admin-eyebrow">
+            BEHEERDERSOMGEVING
         </p>
 
-        <p id="userEmail"></p>
 
-        <button id="logoutButton">
-            Uitloggen
-        </button>
+        <div class="admin-title-row">
+
+            <div class="admin-title">
+
+                <h1>Dashboard</h1>
+
+                <p>
+                    Beheer hier je offerteaanvragen
+                    en houd overzicht over nieuwe klanten.
+                </p>
+
+            </div>
+
+
+            <p id="userEmail"></p>
+
+        </div>
+
+
+        <!-- STATISTIEKEN -->
+
+        <div class="statistieken">
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+                    <span class="stat-label">
+                        Nieuwe aanvragen
+                    </span>
+
+                    <span class="stat-dot"></span>
+                </div>
+
+                <h3 id="aantalNieuw">0</h3>
+
+                <p>
+                    Nog te behandelen
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+                    <span class="stat-label">
+                        Behandeld
+                    </span>
+
+                    <span class="stat-dot"></span>
+                </div>
+
+                <h3 id="aantalBehandeld">0</h3>
+
+                <p>
+                    Afgeronde aanvragen
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+                    <span class="stat-label">
+                        Totaal
+                    </span>
+
+                    <span class="stat-dot"></span>
+                </div>
+
+                <h3 id="aantalTotaal">0</h3>
+
+                <p>
+                    Alle aanvragen
+                </p>
+
+            </div>
+
+        </div>
 
     </section>
 
+
+    <!-- OFFERTEAANVRAGEN -->
+
+    <section class="aanvragen-section">
+
+        <div class="aanvragen-heading">
+
+            <div>
+                <h2>Offerteaanvragen</h2>
+
+                <p>
+                    Bekijk en beheer aanvragen
+                    die via je website binnenkomen.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- ZOEKEN + FILTERS -->
+
+        <div class="aanvraag-tools">
+
+            <input
+                type="text"
+                id="zoekAanvraag"
+                placeholder="Zoek op naam, e-mail, pakket of bericht..."
+                autocomplete="off"
+            >
+
+
+            <div class="filter-buttons">
+
+                <button
+                    type="button"
+                    class="filter-button active-filter"
+                    data-filter="alle"
+                >
+                    Alle
+                </button>
+
+
+                <button
+                    type="button"
+                    class="filter-button"
+                    data-filter="nieuw"
+                >
+                    Nieuw
+                </button>
+
+
+                <button
+                    type="button"
+                    class="filter-button"
+                    data-filter="behandeld"
+                >
+                    Behandeld
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- AANVRAGEN -->
+
+        <div id="aanvragenLijst">
+
+            <p>
+                Aanvragen worden geladen...
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
 
 
     <!-- =========================
