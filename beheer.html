@@ -5,1251 +5,950 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Beheerdersoverzicht</title>
+    <title>Dashboard | WebDesign</title>
 
     <link rel="stylesheet" href="beheer.css">
 </head>
 
 <body class="admin-page">
 
-<header class="admin-header">
+    <!-- HEADER -->
 
-    <div class="admin-header-inner">
+    <header class="admin-header">
 
-        <a href="index.html" class="admin-brand">
-            <span class="admin-brand-mark">&lt;/&gt;</span>
+        <div class="admin-header-inner">
 
-            <span class="admin-brand-name">
-                Web<span>Design</span>
-            </span>
-        </a>
+            <a href="index.html" class="admin-brand">
 
+                <span class="admin-brand-mark">
+                    &lt;/&gt;
+                </span>
 
-        <div class="admin-header-actions">
+                <span class="admin-brand-name">
+                    Web<span>Design</span>
+                </span>
 
-            <a
-                href="index.html"
-                class="admin-view-site"
-                target="_blank"
-            >
-                Website bekijken ↗
             </a>
 
-            <button
-                id="logoutButton"
-                class="admin-logout"
-            >
-                Uitloggen
-            </button>
 
-        </div>
+            <div class="admin-header-actions">
 
-    </div>
-
-</header>
-
-
-<main
-    id="beheerPagina"
-    class="admin-main"
-    style="display: none;"
->
-
-    <!-- DASHBOARD BOVENKANT -->
-
-    <section class="admin-dashboard">
-
-        <p class="admin-eyebrow">
-            BEHEERDERSOMGEVING
-        </p>
-
-
-        <div class="admin-title-row">
-
-            <div class="admin-title">
-
-                <h1>Dashboard</h1>
-
-                <p>
-                    Beheer hier je offerteaanvragen
-                    en houd overzicht over nieuwe klanten.
-                </p>
-
-            </div>
-
-
-            <p id="userEmail"></p>
-
-        </div>
-
-
-        <!-- STATISTIEKEN -->
-
-        <div class="statistieken">
-
-            <div class="stat-card">
-
-                <div class="stat-top">
-                    <span class="stat-label">
-                        Nieuwe aanvragen
-                    </span>
-
-                    <span class="stat-dot"></span>
-                </div>
-
-                <h3 id="aantalNieuw">0</h3>
-
-                <p>
-                    Nog te behandelen
-                </p>
-
-            </div>
-
-
-            <div class="stat-card">
-
-                <div class="stat-top">
-                    <span class="stat-label">
-                        Behandeld
-                    </span>
-
-                    <span class="stat-dot"></span>
-                </div>
-
-                <h3 id="aantalBehandeld">0</h3>
-
-                <p>
-                    Afgeronde aanvragen
-                </p>
-
-            </div>
-
-
-            <div class="stat-card">
-
-                <div class="stat-top">
-                    <span class="stat-label">
-                        Totaal
-                    </span>
-
-                    <span class="stat-dot"></span>
-                </div>
-
-                <h3 id="aantalTotaal">0</h3>
-
-                <p>
-                    Alle aanvragen
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- OFFERTEAANVRAGEN -->
-
-    <section class="aanvragen-section">
-
-        <div class="aanvragen-heading">
-
-            <div>
-                <h2>Offerteaanvragen</h2>
-
-                <p>
-                    Bekijk en beheer aanvragen
-                    die via je website binnenkomen.
-                </p>
-            </div>
-
-        </div>
-
-
-        <!-- ZOEKEN + FILTERS -->
-
-        <div class="aanvraag-tools">
-
-            <input
-                type="text"
-                id="zoekAanvraag"
-                placeholder="Zoek op naam, e-mail, pakket of bericht..."
-                autocomplete="off"
-            >
-
-
-            <div class="filter-buttons">
+                <a
+                    href="index.html"
+                    class="admin-view-site"
+                    target="_blank"
+                >
+                    Website bekijken ↗
+                </a>
 
                 <button
+                    id="logoutButton"
+                    class="admin-logout"
                     type="button"
-                    class="filter-button active-filter"
-                    data-filter="alle"
                 >
-                    Alle
-                </button>
-
-
-                <button
-                    type="button"
-                    class="filter-button"
-                    data-filter="nieuw"
-                >
-                    Nieuw
-                </button>
-
-
-                <button
-                    type="button"
-                    class="filter-button"
-                    data-filter="behandeld"
-                >
-                    Behandeld
+                    Uitloggen
                 </button>
 
             </div>
 
         </div>
 
+    </header>
 
-        <!-- AANVRAGEN -->
 
-        <div id="aanvragenLijst">
+    <!-- DASHBOARD -->
 
-            <p>
-                Aanvragen worden geladen...
+    <main
+        id="beheerPagina"
+        class="admin-main"
+        style="display: none;"
+    >
+
+        <!-- INTRO -->
+
+        <section class="admin-dashboard">
+
+            <p class="admin-eyebrow">
+                BEHEERDERSOMGEVING
             </p>
 
-        </div>
 
-    </section>
+            <div class="admin-title-row">
 
-</main>
+                <div class="admin-title">
 
-
-    <!-- =========================
-         OFFERTEAANVRAGEN
-    ========================= -->
-
-    <section class="aanvragen-section">
-
-        <h2>📩 Offerteaanvragen</h2>
-
-        <p>
-            Hier zie je de aanvragen die via het
-            contactformulier zijn verstuurd.
-        </p>
-
-
-        <!-- =========================
-             STATISTIEKEN
-        ========================= -->
-
-        <div class="statistieken">
-
-            <div class="stat-card">
-
-                <span class="stat-icon">
-                    📩
-                </span>
-
-                <h3 id="aantalNieuw">
-                    0
-                </h3>
-
-                <p>Nieuwe aanvragen</p>
-
-            </div>
-
-
-            <div class="stat-card">
-
-                <span class="stat-icon">
-                    ✅
-                </span>
-
-                <h3 id="aantalBehandeld">
-                    0
-                </h3>
-
-                <p>Behandeld</p>
-
-            </div>
-
-
-            <div class="stat-card">
-
-                <span class="stat-icon">
-                    📊
-                </span>
-
-                <h3 id="aantalTotaal">
-                    0
-                </h3>
-
-                <p>Totaal</p>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =========================
-             ZOEKEN + FILTERS
-        ========================= -->
-
-        <div class="aanvraag-tools">
-
-            <input
-                type="text"
-                id="zoekAanvraag"
-                placeholder="Zoek op naam, e-mail, onderwerp of bericht..."
-                autocomplete="off"
-            >
-
-
-            <div class="filter-buttons">
-
-                <button
-                    type="button"
-                    class="filter-button active-filter"
-                    data-filter="alle"
-                >
-                    Alle
-                </button>
-
-
-                <button
-                    type="button"
-                    class="filter-button"
-                    data-filter="nieuw"
-                >
-                    📩 Nieuw
-                </button>
-
-
-                <button
-                    type="button"
-                    class="filter-button"
-                    data-filter="behandeld"
-                >
-                    ✅ Behandeld
-                </button>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =========================
-             AANVRAGEN
-        ========================= -->
-
-        <div id="aanvragenLijst">
-
-            <p>
-                Aanvragen worden geladen...
-            </p>
-
-        </div>
-
-    </section>
-
-</main>
-
-
-
-<!-- =========================
-     SUPABASE
-========================= -->
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-
-<script>
-
-    // =====================================
-    // SUPABASE
-    // =====================================
-
-    const SUPABASE_URL =
-        "https://vzqpfikymnvowdypbpnb.supabase.co";
-
-
-    const SUPABASE_KEY =
-        "sb_publishable_HeLNv4p7Fc3gAzp5jHOk7Q_zPDxNaQB";
-
-
-    const supabaseClient =
-        supabase.createClient(
-            SUPABASE_URL,
-            SUPABASE_KEY
-        );
-
-
-
-    // =====================================
-    // VARIABELEN
-    // =====================================
-
-    let alleAanvragen = [];
-
-    let huidigFilter = "alle";
-
-
-
-    // =====================================
-    // VEILIG TEKST TONEN
-    // =====================================
-
-   function escapeHtml(tekst) {
-
-    const div =
-        document.createElement("div");
-
-    div.textContent =
-        tekst ?? "";
-
-    return div.innerHTML;
-}
-
-
-// =====================================
-// PAKKETNAAM TONEN
-// =====================================
-
-function pakketNaam(pakket) {
-
-    const pakketten = {
-        simpel: "Simpel – €100",
-        pro: "Pro – €250",
-        ultimate: "Ultimate – €350",
-        onbekend: "Nog niet gekozen"
-    };
-
-    return pakketten[pakket] || "Niet opgeslagen";
-}
-
-
-
-    // =====================================
-    // STATISTIEKEN BIJWERKEN
-    // =====================================
-
-    function updateStatistieken() {
-
-        const totaal =
-            alleAanvragen.length;
-
-
-        const behandeld =
-            alleAanvragen.filter(
-                aanvraag =>
-                    aanvraag.status === "behandeld"
-            ).length;
-
-
-        const nieuw =
-            alleAanvragen.filter(
-                aanvraag =>
-                    aanvraag.status !== "behandeld"
-            ).length;
-
-
-        document
-            .getElementById("aantalNieuw")
-            .textContent = nieuw;
-
-
-        document
-            .getElementById("aantalBehandeld")
-            .textContent = behandeld;
-
-
-        document
-            .getElementById("aantalTotaal")
-            .textContent = totaal;
-
-    }
-
-
-
-    // =====================================
-    // AANVRAGEN FILTEREN
-    // =====================================
-
-    function filterAanvragen() {
-
-        const zoekterm =
-            document
-                .getElementById("zoekAanvraag")
-                .value
-                .toLowerCase()
-                .trim();
-
-
-        return alleAanvragen.filter(
-            function(aanvraag) {
-
-
-                // -------------------------
-                // STATUS FILTER
-                // -------------------------
-
-                let statusKlopt = true;
-
-
-                if (huidigFilter === "nieuw") {
-
-                    statusKlopt =
-                        aanvraag.status !==
-                        "behandeld";
-
-                }
-
-
-                if (
-                    huidigFilter ===
-                    "behandeld"
-                ) {
-
-                    statusKlopt =
-                        aanvraag.status ===
-                        "behandeld";
-
-                }
-
-
-
-                // -------------------------
-                // ZOEKEN
-                // -------------------------
-
-                const zoekTekst = `
-
-    ${aanvraag.naam || ""}
-
-    ${aanvraag.email || ""}
-
-    ${aanvraag.pakket || ""}
-
-    ${pakketNaam(aanvraag.pakket)}
-
-    ${aanvraag.onderwerp || ""}
-
-    ${aanvraag.bericht || ""}
-
-`.toLowerCase();
-
-
-                const zoekKlopt =
-                    zoekTekst.includes(
-                        zoekterm
-                    );
-
-
-                return (
-                    statusKlopt &&
-                    zoekKlopt
-                );
-
-            }
-        );
-
-    }
-
-
-
-    // =====================================
-    // AANVRAGEN OP SCHERM TONEN
-    // =====================================
-
-    function toonAanvragen() {
-
-        const aanvragenLijst =
-            document.getElementById(
-                "aanvragenLijst"
-            );
-
-
-        const aanvragen =
-            filterAanvragen();
-
-
-        aanvragenLijst.innerHTML = "";
-
-
-
-        // =================================
-        // GEEN RESULTATEN
-        // =================================
-
-        if (aanvragen.length === 0) {
-
-            aanvragenLijst.innerHTML = `
-
-                <div class="geen-resultaten">
+                    <h1>Dashboard</h1>
 
                     <p>
-                        🔎 Geen aanvragen gevonden.
+                        Beheer hier je offerteaanvragen
+                        en houd overzicht over nieuwe klanten.
                     </p>
 
                 </div>
 
-            `;
 
-            return;
+                <p id="userEmail"></p>
 
-        }
-
+            </div>
 
 
-        // =================================
-        // KAARTEN MAKEN
-        // =================================
+            <!-- STATISTIEKEN -->
 
-        aanvragen.forEach(
-            function(aanvraag) {
+            <div class="statistieken">
 
+                <div class="stat-card">
 
-                const kaart =
-                    document.createElement(
-                        "div"
-                    );
+                    <div class="stat-top">
 
-
-                kaart.className =
-                    "aanvraag-card";
-
-
-
-                // Datum omzetten
-
-                const datum =
-                    new Date(
-                        aanvraag.created_at
-                    )
-                    .toLocaleString(
-                        "nl-NL"
-                    );
-
-
-
-                // =================================
-                // KAART
-                // =================================
-
-                kaart.innerHTML = `
-
-                    <div class="aanvraag-header">
-
-                        <h3>
-
-                            ${escapeHtml(
-                                aanvraag.onderwerp ||
-                                "Geen onderwerp"
-                            )}
-
-                        </h3>
-
-
-                        <span class="status-badge">
-
-                            ${escapeHtml(
-                                aanvraag.status ||
-                                "nieuw"
-                            )}
-
+                        <span class="stat-label">
+                            Nieuwe aanvragen
                         </span>
+
+                        <span class="stat-dot"></span>
 
                     </div>
 
+                    <h3 id="aantalNieuw">0</h3>
 
+                    <p>Nog te behandelen</p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span class="stat-label">
+                            Behandeld
+                        </span>
+
+                        <span class="stat-dot"></span>
+
+                    </div>
+
+                    <h3 id="aantalBehandeld">0</h3>
+
+                    <p>Afgeronde aanvragen</p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span class="stat-label">
+                            Totaal
+                        </span>
+
+                        <span class="stat-dot"></span>
+
+                    </div>
+
+                    <h3 id="aantalTotaal">0</h3>
+
+                    <p>Alle aanvragen</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- OFFERTEAANVRAGEN -->
+
+        <section class="aanvragen-section">
+
+            <div class="aanvragen-heading">
+
+                <div>
+
+                    <h2>Offerteaanvragen</h2>
 
                     <p>
-
-                        <strong>
-                            Naam:
-                        </strong>
-
-                        ${escapeHtml(
-                            aanvraag.naam
-                        )}
-
+                        Bekijk en beheer aanvragen
+                        die via je website binnenkomen.
                     </p>
 
+                </div>
+
+            </div>
 
 
-                    <p>
+            <!-- ZOEKEN + FILTERS -->
 
-                        <strong>
-                            E-mail:
-                        </strong>
+            <div class="aanvraag-tools">
 
-                        ${escapeHtml(
-                            aanvraag.email
-                        )}
-
-                    </p>
-<p class="pakket-regel">
-
-    <strong>
-        Pakket:
-    </strong>
-
-    <span class="pakket-badge pakket-${escapeHtml(
-        aanvraag.pakket || "geen"
-    )}">
-
-        ${escapeHtml(
-            pakketNaam(
-                aanvraag.pakket
-            )
-        )}
-
-    </span>
-
-</p>
+                <input
+                    type="search"
+                    id="zoekAanvraag"
+                    placeholder="Zoek op naam, e-mail, pakket of bericht..."
+                    autocomplete="off"
+                >
 
 
-                    <p>
-
-                        <strong>
-                            Datum:
-                        </strong>
-
-                        ${datum}
-
-                    </p>
-
-
-
-                    <p>
-
-                        <strong>
-                            Bericht:
-                        </strong>
-
-                        <br>
-
-                        ${escapeHtml(
-                            aanvraag.bericht
-                        )}
-
-                    </p>
-
-
-
-                    ${
-                        aanvraag.status ===
-                        "behandeld"
-
-                        ?
-
-                        `
-
-                        <button
-                            class="behandeld-button"
-                            disabled
-                        >
-
-                            ✓ Behandeld
-
-                        </button>
-
-                        `
-
-                        :
-
-                        `
-
-                        <button
-                            class="behandel-button"
-                            onclick="markeerAlsBehandeld(${aanvraag.id})"
-                        >
-
-                            ✓ Markeer als behandeld
-
-                        </button>
-
-                        `
-                    }
+                <div class="filter-buttons">
 
                     <button
-    class="verwijder-button"
-    onclick="verwijderAanvraag(${aanvraag.id})"
->
-    🗑 Verwijderen
-</button>
-                `;
+                        type="button"
+                        class="filter-button active-filter"
+                        data-filter="alle"
+                    >
+                        Alle
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="nieuw"
+                    >
+                        Nieuw
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="behandeld"
+                    >
+                        Behandeld
+                    </button>
+
+                </div>
+
+            </div>
 
 
+            <!-- AANVRAGEN -->
 
-                aanvragenLijst
-                    .appendChild(
-                        kaart
-                    );
+            <div id="aanvragenLijst">
 
-            }
-        );
+                <p>
+                    Aanvragen worden geladen...
+                </p>
 
-    }
+            </div>
+
+        </section>
+
+    </main>
 
 
+    <!-- SUPABASE -->
 
-    // =====================================
-    // AANVRAGEN UIT SUPABASE LADEN
-    // =====================================
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-    async function laadAanvragen() {
 
-        const aanvragenLijst =
-            document.getElementById(
-                "aanvragenLijst"
+    <script>
+
+        // =====================================
+        // SUPABASE
+        // =====================================
+
+        const SUPABASE_URL =
+            "https://vzqpfikymnvowdypbpnb.supabase.co";
+
+        const SUPABASE_KEY =
+            "sb_publishable_HeLNv4p7Fc3gAzp5jHOk7Q_zPDxNaQB";
+
+
+        const supabaseClient =
+            supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_KEY
             );
 
 
-        aanvragenLijst.innerHTML =
-            "<p>Aanvragen worden geladen...</p>";
+        // =====================================
+        // VARIABELEN
+        // =====================================
+
+        let alleAanvragen = [];
+        let huidigFilter = "alle";
 
 
+        // =====================================
+        // VEILIG TEKST TONEN
+        // =====================================
 
-        const {
-            data: aanvragen,
-            error
-        } =
-            await supabaseClient
+        function escapeHtml(tekst) {
 
-                .from(
-                    "offerte_aanvragen"
-                )
+            const div =
+                document.createElement("div");
 
-                .select("*")
+            div.textContent =
+                tekst ?? "";
 
-                .order(
-                    "created_at",
-                    {
-                        ascending: false
+            return div.innerHTML;
+        }
+
+
+        // =====================================
+        // PAKKETNAAM
+        // =====================================
+
+        function pakketNaam(pakket) {
+
+            const pakketten = {
+                simpel: "Simpel – €100",
+                pro: "Pro – €250",
+                ultimate: "Ultimate – €350",
+                onbekend: "Nog niet gekozen"
+            };
+
+            return pakketten[pakket] ||
+                "Niet opgeslagen";
+        }
+
+
+        // =====================================
+        // STATISTIEKEN
+        // =====================================
+
+        function updateStatistieken() {
+
+            const totaal =
+                alleAanvragen.length;
+
+
+            const behandeld =
+                alleAanvragen.filter(
+                    aanvraag =>
+                        aanvraag.status === "behandeld"
+                ).length;
+
+
+            const nieuw =
+                alleAanvragen.filter(
+                    aanvraag =>
+                        aanvraag.status !== "behandeld"
+                ).length;
+
+
+            document
+                .getElementById("aantalNieuw")
+                .textContent = nieuw;
+
+
+            document
+                .getElementById("aantalBehandeld")
+                .textContent = behandeld;
+
+
+            document
+                .getElementById("aantalTotaal")
+                .textContent = totaal;
+        }
+
+
+        // =====================================
+        // FILTEREN + ZOEKEN
+        // =====================================
+
+        function filterAanvragen() {
+
+            const zoekterm =
+                document
+                    .getElementById("zoekAanvraag")
+                    .value
+                    .toLowerCase()
+                    .trim();
+
+
+            return alleAanvragen.filter(
+                function (aanvraag) {
+
+                    let statusKlopt = true;
+
+
+                    if (huidigFilter === "nieuw") {
+
+                        statusKlopt =
+                            aanvraag.status !==
+                            "behandeld";
                     }
+
+
+                    if (huidigFilter === "behandeld") {
+
+                        statusKlopt =
+                            aanvraag.status ===
+                            "behandeld";
+                    }
+
+
+                    const zoekTekst = `
+
+                        ${aanvraag.naam || ""}
+                        ${aanvraag.email || ""}
+                        ${aanvraag.pakket || ""}
+                        ${pakketNaam(aanvraag.pakket)}
+                        ${aanvraag.onderwerp || ""}
+                        ${aanvraag.bericht || ""}
+
+                    `.toLowerCase();
+
+
+                    return (
+                        statusKlopt &&
+                        zoekTekst.includes(zoekterm)
+                    );
+                }
+            );
+        }
+
+
+        // =====================================
+        // AANVRAGEN TONEN
+        // =====================================
+
+        function toonAanvragen() {
+
+            const aanvragenLijst =
+                document.getElementById(
+                    "aanvragenLijst"
                 );
 
 
+            const aanvragen =
+                filterAanvragen();
 
-        // =================================
-        // FOUT
-        // =================================
 
-        if (error) {
+            aanvragenLijst.innerHTML = "";
 
-            console.error(
-                "Fout bij ophalen aanvragen:",
-                error
+
+            // GEEN RESULTATEN
+
+            if (aanvragen.length === 0) {
+
+                aanvragenLijst.innerHTML = `
+
+                    <div class="geen-resultaten">
+
+                        <p>
+                            Geen aanvragen gevonden.
+                        </p>
+
+                    </div>
+
+                `;
+
+                return;
+            }
+
+
+            // KAARTEN
+
+            aanvragen.forEach(
+                function (aanvraag) {
+
+                    const kaart =
+                        document.createElement("div");
+
+
+                    kaart.className =
+                        "aanvraag-card";
+
+
+                    const datum =
+                        new Date(
+                            aanvraag.created_at
+                        )
+                        .toLocaleString(
+                            "nl-NL",
+                            {
+                                dateStyle: "medium",
+                                timeStyle: "short"
+                            }
+                        );
+
+
+                    const status =
+                        aanvraag.status === "behandeld"
+                            ? "behandeld"
+                            : "nieuw";
+
+
+                    kaart.innerHTML = `
+
+                        <div class="aanvraag-header">
+
+                            <h3>
+                                ${escapeHtml(
+                                    aanvraag.onderwerp ||
+                                    "Nieuwe websiteaanvraag"
+                                )}
+                            </h3>
+
+
+                            <span class="status-badge">
+
+                                ${escapeHtml(status)}
+
+                            </span>
+
+                        </div>
+
+
+                        <p>
+                            <strong>Naam</strong><br>
+
+                            ${escapeHtml(
+                                aanvraag.naam
+                            )}
+                        </p>
+
+
+                        <p>
+                            <strong>E-mail</strong><br>
+
+                            ${escapeHtml(
+                                aanvraag.email
+                            )}
+                        </p>
+
+
+                        <p class="pakket-regel">
+
+                            <strong>Pakket</strong>
+
+                            <span
+                                class="
+                                    pakket-badge
+                                    pakket-${escapeHtml(
+                                        aanvraag.pakket ||
+                                        "geen"
+                                    )}
+                                "
+                            >
+
+                                ${escapeHtml(
+                                    pakketNaam(
+                                        aanvraag.pakket
+                                    )
+                                )}
+
+                            </span>
+
+                        </p>
+
+
+                        <p>
+                            <strong>Ontvangen</strong><br>
+
+                            ${escapeHtml(datum)}
+                        </p>
+
+
+                        <p>
+                            <strong>Bericht</strong><br>
+
+                            ${escapeHtml(
+                                aanvraag.bericht ||
+                                "Geen bericht toegevoegd."
+                            )}
+                        </p>
+
+
+                        ${
+                            status === "behandeld"
+
+                            ?
+
+                            `
+                                <button
+                                    class="behandeld-button"
+                                    type="button"
+                                    disabled
+                                >
+                                    ✓ Behandeld
+                                </button>
+                            `
+
+                            :
+
+                            `
+                                <button
+                                    class="behandel-button"
+                                    type="button"
+                                    onclick="markeerAlsBehandeld(${Number(
+                                        aanvraag.id
+                                    )})"
+                                >
+                                    ✓ Markeer als behandeld
+                                </button>
+                            `
+                        }
+
+
+                        <button
+                            class="verwijder-button"
+                            type="button"
+                            onclick="verwijderAanvraag(${Number(
+                                aanvraag.id
+                            )})"
+                        >
+                            Verwijderen
+                        </button>
+
+                    `;
+
+
+                    aanvragenLijst
+                        .appendChild(kaart);
+                }
             );
+        }
+
+
+        // =====================================
+        // AANVRAGEN LADEN
+        // =====================================
+
+        async function laadAanvragen() {
+
+            const aanvragenLijst =
+                document.getElementById(
+                    "aanvragenLijst"
+                );
 
 
             aanvragenLijst.innerHTML =
-
-                "<p>De aanvragen konden niet worden geladen.</p>";
-
-
-            return;
-
-        }
+                "<p>Aanvragen worden geladen...</p>";
 
 
-
-        // Aanvragen bewaren
-
-        alleAanvragen =
-            aanvragen || [];
-
-
-
-        // Statistieken
-
-        updateStatistieken();
-
-
-
-        // Aanvragen tekenen
-
-        toonAanvragen();
-
-    }
-
-
-
-    // =====================================
-    // MARKEREN ALS BEHANDELD
-    // =====================================
-
-    async function markeerAlsBehandeld(id) {
-
-
-        const { error } =
-            await supabaseClient
-
-                .from(
-                    "offerte_aanvragen"
-                )
-
-                .update({
-
-                    status:
-                        "behandeld"
-
-                })
-
-                .eq(
-                    "id",
-                    id
-                );
-
-
-
-        if (error) {
-
-            console.error(
-                "Fout bij wijzigen status:",
+            const {
+                data: aanvragen,
                 error
-            );
-
-
-            alert(
-                "De status kon niet worden gewijzigd."
-            );
-
-
-            return;
-
-        }
-
-
-
-        // Alles opnieuw ophalen
-
-        await laadAanvragen();
-
-    }
-
-// =====================================
-// AANVRAAG VERWIJDEREN
-// =====================================
-
-async function verwijderAanvraag(id) {
-
-    const bevestiging = confirm(
-        "Weet je zeker dat je deze offerteaanvraag wilt verwijderen?\n\nDit kan niet ongedaan worden gemaakt."
-    );
-
-    if (!bevestiging) {
-        return;
-    }
-
-
-    const { error } =
-        await supabaseClient
-            .from("offerte_aanvragen")
-            .delete()
-            .eq("id", id);
-
-
-    if (error) {
-
-        console.error(
-            "Fout bij verwijderen:",
-            error
-        );
-
-        alert(
-            "De aanvraag kon niet worden verwijderd."
-        );
-
-        return;
-    }
-
-
-    // Nieuwe gegevens ophalen zodat
-    // statistieken en filters ook kloppen
-    await laadAanvragen();
-}
-
-    // =====================================
-    // LIVE ZOEKEN
-    // =====================================
-
-    document
-        .getElementById(
-            "zoekAanvraag"
-        )
-        .addEventListener(
-
-            "input",
-
-            function() {
-
-                toonAanvragen();
-
-            }
-
-        );
-
-
-
-    // =====================================
-    // FILTERKNOPPEN
-    // =====================================
-
-    const filterKnoppen =
-        document.querySelectorAll(
-            ".filter-button"
-        );
-
-
-    filterKnoppen.forEach(
-        function(knop) {
-
-
-            knop.addEventListener(
-                "click",
-
-                function() {
-
-
-                    // Filter opslaan
-
-                    huidigFilter =
-                        knop.dataset.filter;
-
-
-
-                    // Active class verwijderen
-
-                    filterKnoppen.forEach(
-                        function(andereKnop) {
-
-                            andereKnop
-                                .classList
-                                .remove(
-                                    "active-filter"
-                                );
-
+            } =
+                await supabaseClient
+                    .from("offerte_aanvragen")
+                    .select("*")
+                    .order(
+                        "created_at",
+                        {
+                            ascending: false
                         }
                     );
 
 
+            if (error) {
 
-                    // Geselecteerde knop actief
+                console.error(
+                    "Fout bij ophalen aanvragen:",
+                    error
+                );
 
-                    knop
-                        .classList
-                        .add(
-                            "active-filter"
+
+                aanvragenLijst.innerHTML = `
+
+                    <div class="geen-resultaten">
+
+                        <p>
+                            De aanvragen konden
+                            niet worden geladen.
+                        </p>
+
+                    </div>
+
+                `;
+
+                return;
+            }
+
+
+            alleAanvragen =
+                aanvragen || [];
+
+
+            updateStatistieken();
+            toonAanvragen();
+        }
+
+
+        // =====================================
+        // MARKEREN ALS BEHANDELD
+        // =====================================
+
+        async function markeerAlsBehandeld(id) {
+
+            const { error } =
+                await supabaseClient
+                    .from("offerte_aanvragen")
+                    .update({
+                        status: "behandeld"
+                    })
+                    .eq("id", id);
+
+
+            if (error) {
+
+                console.error(
+                    "Fout bij wijzigen status:",
+                    error
+                );
+
+                alert(
+                    "De status kon niet worden gewijzigd."
+                );
+
+                return;
+            }
+
+
+            await laadAanvragen();
+        }
+
+
+        // =====================================
+        // VERWIJDEREN
+        // =====================================
+
+        async function verwijderAanvraag(id) {
+
+            const bevestiging =
+                confirm(
+                    "Weet je zeker dat je deze offerteaanvraag wilt verwijderen?\n\nDit kan niet ongedaan worden gemaakt."
+                );
+
+
+            if (!bevestiging) {
+                return;
+            }
+
+
+            const { error } =
+                await supabaseClient
+                    .from("offerte_aanvragen")
+                    .delete()
+                    .eq("id", id);
+
+
+            if (error) {
+
+                console.error(
+                    "Fout bij verwijderen:",
+                    error
+                );
+
+                alert(
+                    "De aanvraag kon niet worden verwijderd."
+                );
+
+                return;
+            }
+
+
+            await laadAanvragen();
+        }
+
+
+        // =====================================
+        // LIVE ZOEKEN
+        // =====================================
+
+        document
+            .getElementById("zoekAanvraag")
+            .addEventListener(
+                "input",
+                toonAanvragen
+            );
+
+
+        // =====================================
+        // FILTERKNOPPEN
+        // =====================================
+
+        const filterKnoppen =
+            document.querySelectorAll(
+                ".filter-button"
+            );
+
+
+        filterKnoppen.forEach(
+            function (knop) {
+
+                knop.addEventListener(
+                    "click",
+                    function () {
+
+                        huidigFilter =
+                            knop.dataset.filter;
+
+
+                        filterKnoppen.forEach(
+                            function (andereKnop) {
+
+                                andereKnop
+                                    .classList
+                                    .remove(
+                                        "active-filter"
+                                    );
+                            }
                         );
 
 
+                        knop
+                            .classList
+                            .add(
+                                "active-filter"
+                            );
 
-                    // Aanvragen opnieuw tekenen
 
-                    toonAanvragen();
+                        toonAanvragen();
+                    }
+                );
+            }
+        );
 
-                }
-            );
 
-        }
-    );
+        // =====================================
+        // LOGIN + ADMIN CONTROLEREN
+        // =====================================
 
+        async function controleerBeheerder() {
 
-
-    // =====================================
-    // LOGIN + ADMIN CONTROLEREN
-    // =====================================
-
-    async function controleerBeheerder() {
-
-
-        const {
-            data: userData,
-            error: userError
-        } =
-            await supabaseClient
-                .auth
-                .getUser();
-
-
-
-        // =================================
-        // NIET INGELOGD
-        // =================================
-
-        if (
-            userError ||
-            !userData.user
-        ) {
-
-            window.location.replace(
-                "login.html"
-            );
-
-            return;
-
-        }
-
-
-
-        const gebruiker =
-            userData.user;
-
-
-
-        // =================================
-        // ADMINROL OPHALEN
-        // =================================
-
-        const {
-            data: profiel,
-            error: profielError
-        } =
-            await supabaseClient
-
-                .from("profiles")
-
-                .select("role")
-
-                .eq(
-                    "id",
-                    gebruiker.id
-                )
-
-                .single();
-
-
-
-        // =================================
-        // GEEN PROFIEL
-        // =================================
-
-        if (
-            profielError ||
-            !profiel
-        ) {
-
-            console.error(
-                "Profiel fout:",
-                profielError
-            );
-
-
-            alert(
-                "Je hebt geen toegang tot het beheerdersoverzicht."
-            );
-
-
-            window.location.replace(
-                "index.html"
-            );
-
-
-            return;
-
-        }
-
-
-
-        // =================================
-        // GEEN ADMIN
-        // =================================
-
-        if (
-            profiel.role !== "admin"
-        ) {
-
-            alert(
-                "Je bent geen beheerder."
-            );
-
-
-            window.location.replace(
-                "index.html"
-            );
-
-
-            return;
-
-        }
-
-
-
-        // =================================
-        // ADMIN GOEDGEKEURD
-        // =================================
-
-        document
-            .getElementById(
-                "beheerPagina"
-            )
-            .style
-            .display =
-            "block";
-
-
-        document
-            .getElementById(
-                "userEmail"
-            )
-            .textContent =
-
-            "Ingelogd als beheerder: " +
-            gebruiker.email;
-
-
-
-        // Aanvragen laden
-
-        await laadAanvragen();
-
-    }
-
-
-
-    // =====================================
-    // ADMINCONTROLE STARTEN
-    // =====================================
-
-    controleerBeheerder();
-
-
-
-    // =====================================
-    // UITLOGGEN
-    // =====================================
-
-    document
-        .getElementById(
-            "logoutButton"
-        )
-        .addEventListener(
-
-            "click",
-
-            async function() {
-
-
+            const {
+                data: userData,
+                error: userError
+            } =
                 await supabaseClient
                     .auth
-                    .signOut();
+                    .getUser();
 
+
+            // NIET INGELOGD
+
+            if (
+                userError ||
+                !userData.user
+            ) {
 
                 window.location.replace(
                     "login.html"
                 );
 
+                return;
             }
 
-        );
 
-</script>
+            const gebruiker =
+                userData.user;
+
+
+            // ADMINROL OPHALEN
+
+            const {
+                data: profiel,
+                error: profielError
+            } =
+                await supabaseClient
+                    .from("profiles")
+                    .select("role")
+                    .eq(
+                        "id",
+                        gebruiker.id
+                    )
+                    .single();
+
+
+            // GEEN GELDIG PROFIEL
+
+            if (
+                profielError ||
+                !profiel
+            ) {
+
+                console.error(
+                    "Profiel fout:",
+                    profielError
+                );
+
+                alert(
+                    "Je hebt geen toegang tot het beheerdersoverzicht."
+                );
+
+                window.location.replace(
+                    "index.html"
+                );
+
+                return;
+            }
+
+
+            // GEEN ADMIN
+
+            if (
+                profiel.role !== "admin"
+            ) {
+
+                alert(
+                    "Je bent geen beheerder."
+                );
+
+                window.location.replace(
+                    "index.html"
+                );
+
+                return;
+            }
+
+
+            // ADMIN GOEDGEKEURD
+
+            document
+                .getElementById(
+                    "beheerPagina"
+                )
+                .style
+                .display = "block";
+
+
+            document
+                .getElementById(
+                    "userEmail"
+                )
+                .textContent =
+                    "Ingelogd als beheerder: " +
+                    gebruiker.email;
+
+
+            await laadAanvragen();
+        }
+
+
+        // =====================================
+        // UITLOGGEN
+        // =====================================
+
+        document
+            .getElementById("logoutButton")
+            .addEventListener(
+                "click",
+
+                async function () {
+
+                    await supabaseClient
+                        .auth
+                        .signOut();
+
+
+                    window.location.replace(
+                        "login.html"
+                    );
+                }
+            );
+
+
+        // =====================================
+        // START
+        // =====================================
+
+        controleerBeheerder();
+
+    </script>
 
 </body>
+
 </html>
