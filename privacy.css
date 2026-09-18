@@ -463,14 +463,13 @@ button:focus-visible {
 
 .hero-visual {
     position: relative;
+    isolation: isolate;
 
     min-height: 500px;
 
     padding-left: 40px;
 
     perspective: 1400px;
-
-    transform-style: preserve-3d;
 }
 
 .hero-visual::before {
@@ -535,30 +534,27 @@ button:focus-visible {
 .visual-shadow-card {
     position: absolute;
 
-    z-index: 2;
+    z-index: 1;
 
-    left: -35px;
-    bottom: 25px;
+    left: -45px;
+    bottom: 5px;
 
-    width: 320px;
-    min-height: 190px;
+    width: 275px;
+    min-height: 170px;
 
-    padding: 30px;
+    padding: 28px;
 
-    border-radius: 25px;
+    border-radius: 24px;
 
     background: var(--dark);
-
     color: white;
 
     box-shadow:
-        0 30px 80px
-        rgba(23, 23, 23, 0.16);
+        0 25px 65px
+        rgba(23, 23, 23, 0.18);
 
     transform:
-        perspective(1000px)
-        rotateY(6deg)
-        rotateZ(-5deg);
+        rotate(-5deg);
 }
 
 .visual-shadow-card > span {
@@ -604,10 +600,10 @@ button:focus-visible {
 
     z-index: 5;
 
-    right: 20px;
-    top: 15px;
+    right: 5px;
+    top: 25px;
 
-    width: min(100%, 390px);
+    width: min(100%, 395px);
 
     padding: 42px;
 
@@ -618,7 +614,7 @@ button:focus-visible {
     border-radius: 28px;
 
     background:
-        rgba(255, 255, 255, 0.96);
+        rgba(255, 255, 255, 0.97);
 
     box-shadow:
         0 35px 100px
@@ -629,10 +625,7 @@ button:focus-visible {
     backdrop-filter: blur(15px);
 
     transform:
-        perspective(1200px)
-        rotateY(-5deg)
-        rotateX(2deg)
-        rotateZ(1deg);
+        rotate(-1deg);
 
     transition:
         transform 0.35s,
@@ -641,11 +634,8 @@ button:focus-visible {
 
 .visual-main-card:hover {
     transform:
-        perspective(1200px)
-        rotateY(-1deg)
-        rotateX(1deg)
-        rotateZ(0)
         translateY(-6px)
+        rotate(0deg)
         scale(1.015);
 
     box-shadow:
@@ -654,6 +644,7 @@ button:focus-visible {
         8px 8px 0
         rgba(183, 243, 74, 0.55);
 }
+
 .visual-top {
     display: flex;
 
