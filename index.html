@@ -3,89 +3,125 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO -->
-    <meta name="description"
-        content="JH WebDesign maakt moderne, snelle en professionele websites op maat. Kies uit Simpel, Pro of Ultimate en vraag vrijblijvend een offerte aan.">
-
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#070b12">
-    
     <meta
-    http-equiv="Content-Security-Policy"
-    content="
-        default-src 'self';
-        script-src 'self';
-        style-src 'self';
-        img-src 'self' data:;
-        font-src 'self' data:;
-        connect-src 'self';
-        form-action 'self';
-        base-uri 'self';
-        object-src 'none';
-    "
->
-    <title>JH WebDesign | Moderne websites op maat</title>
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="public.css">
+    <meta
+        http-equiv="Content-Security-Policy"
+        content="
+            default-src 'self';
+            script-src 'self';
+            style-src 'self';
+            img-src 'self' data:;
+            font-src 'self' data:;
+            connect-src 'self';
+            form-action 'self';
+            base-uri 'self';
+            object-src 'none';
+        "
+    >
+
+    <meta
+        name="description"
+        content="JH WebDesign maakt moderne, snelle en professionele websites op maat. Kies uit Simpel, Pro of Ultimate en vraag vrijblijvend een offerte aan."
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <meta
+        name="theme-color"
+        content="#f7f7f2"
+    >
+
+    <title>
+        JH WebDesign | Moderne websites op maat
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="index.css"
+    >
 </head>
 
-<body class="public-page">
 
-    <!-- =========================
+<body>
+
+    <!-- =====================================
          HEADER
-    ========================== -->
+    ====================================== -->
 
     <header class="site-header">
 
         <div class="header-inner">
 
-            <a href="index.html" class="brand" aria-label="JH WebDesign - Home">
-                <span class="brand-icon" aria-hidden="true">&lt;/&gt;</span>
+            <a
+                href="index.html"
+                class="brand"
+                aria-label="JH WebDesign - Home"
+            >
+                <span
+                    class="brand-mark"
+                    aria-hidden="true"
+                >
+                    &lt;/&gt;
+                </span>
 
-                <span class="brand-text">
-                    JH <span>WebDesign</span>
+                <span class="brand-name">
+                    JH WebDesign
                 </span>
             </a>
 
-            <nav class="main-nav" aria-label="Hoofdnavigatie">
-                <ul>
-                    <li>
-                        <a href="index.html" class="active" aria-current="page">
-                            Home
-                        </a>
-                    </li>
 
-                    <li>
-                        <a href="overons.html">
-                            Over ons
-                        </a>
-                    </li>
+            <nav
+                class="main-nav"
+                aria-label="Hoofdnavigatie"
+            >
+                <a
+                    href="index.html"
+                    class="active"
+                    aria-current="page"
+                >
+                    Home
+                </a>
 
-                    <li>
-                        <a href="diensten.html">
-                            Pakketten
-                        </a>
-                    </li>
+                <a href="overons.html">
+                    Over ons
+                </a>
 
-                    <li>
-                        <a href="contact.html">
-                            Contact
-                        </a>
-                    </li>
-                </ul>
+                <a href="diensten.html">
+                    Pakketten
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
             </nav>
+
 
             <div class="header-actions">
 
-                <a href="login.html" class="admin-link">
+                <a
+                    href="login.html"
+                    class="admin-link"
+                >
                     Inloggen
                 </a>
 
-                <a href="contact.html" class="header-cta">
-                    Offerte aanvragen
+                <a
+                    href="contact.html"
+                    class="header-cta"
+                >
+                    Start project
+
+                    <span aria-hidden="true">
+                        ↗
+                    </span>
                 </a>
 
             </div>
@@ -95,25 +131,36 @@
     </header>
 
 
-    <main class="home-main">
 
-        <!-- =========================
+    <main>
+
+        <!-- =====================================
              HERO
-        ========================== -->
+        ====================================== -->
 
         <section class="home-hero">
 
-            <div class="hero-content">
+            <div class="hero-copy">
 
                 <div class="hero-badge">
-                    <span aria-hidden="true"></span>
+
+                    <span
+                        class="badge-dot"
+                        aria-hidden="true"
+                    ></span>
+
                     Websites op maat vanaf €150
+
                 </div>
+
 
                 <h1>
                     Een website die jouw
-                    <span>bedrijf laat opvallen.</span>
+                    <span>
+                        bedrijf laat opvallen.
+                    </span>
                 </h1>
+
 
                 <p class="hero-description">
                     Een moderne, snelle en professionele website
@@ -121,33 +168,45 @@
                     persoonlijk contact en een ontwerp op maat.
                 </p>
 
+
                 <div class="hero-buttons">
 
-                    <a href="contact.html" class="primary-cta">
+                    <a
+                        href="contact.html"
+                        class="primary-button"
+                    >
                         Start jouw website
-                        <span aria-hidden="true">→</span>
+
+                        <span aria-hidden="true">
+                            ↗
+                        </span>
                     </a>
 
-                    <a href="diensten.html" class="secondary-cta">
+
+                    <a
+                        href="diensten.html"
+                        class="secondary-button"
+                    >
                         Bekijk pakketten
                     </a>
 
                 </div>
 
+
                 <div class="hero-points">
 
                     <div>
-                        <span aria-hidden="true">✓</span>
+                        <span>✓</span>
                         Geschikt voor mobiel
                     </div>
 
                     <div>
-                        <span aria-hidden="true">✓</span>
+                        <span>✓</span>
                         Persoonlijk ontwerp
                     </div>
 
                     <div>
-                        <span aria-hidden="true">✓</span>
+                        <span>✓</span>
                         Duidelijke prijzen
                     </div>
 
@@ -156,9 +215,40 @@
             </div>
 
 
-            <!-- WEBSITE MOCKUP -->
 
-            <div class="hero-visual" aria-hidden="true">
+            <!-- =====================================
+                 3D HERO VISUAL
+            ====================================== -->
+
+            <div
+                class="hero-visual"
+                aria-hidden="true"
+            >
+
+                <div class="hero-orbit orbit-one"></div>
+                <div class="hero-orbit orbit-two"></div>
+
+
+                <div class="visual-back-card">
+
+                    <span class="visual-small-label">
+                        WEB DESIGN
+                    </span>
+
+                    <strong>
+                        Modern.
+                        <br>
+                        Responsive.
+                    </strong>
+
+                    <div class="back-lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                </div>
+
 
                 <div class="browser-card">
 
@@ -177,11 +267,13 @@
                     </div>
 
 
-                    <div class="browser-content">
+                    <div class="browser-body">
 
                         <div class="mock-nav">
 
-                            <div class="mock-logo"></div>
+                            <div class="mock-logo">
+                                &lt;/&gt;
+                            </div>
 
                             <div class="mock-links">
                                 <span></span>
@@ -192,26 +284,33 @@
                         </div>
 
 
-                        <div class="mock-hero">
+                        <div class="mock-main">
 
-                            <div class="mock-text">
+                            <div class="mock-copy">
 
-                                <div class="mock-small-line"></div>
+                                <span class="mock-label">
+                                    JOUW BEDRIJF
+                                </span>
 
-                                <div class="mock-title-line"></div>
-                                <div class="mock-title-line short"></div>
+                                <div class="mock-title"></div>
 
-                                <div class="mock-paragraph"></div>
-                                <div class="mock-paragraph short"></div>
+                                <div class="mock-title short"></div>
+
+                                <div class="mock-text"></div>
+
+                                <div class="mock-text short"></div>
 
                                 <div class="mock-button"></div>
 
                             </div>
 
 
-                            <div class="mock-image">
+                            <div class="mock-visual">
 
-                                <div class="mock-image-circle">
+                                <div class="mock-shape one"></div>
+                                <div class="mock-shape two"></div>
+
+                                <div class="mock-code">
                                     &lt;/&gt;
                                 </div>
 
@@ -220,10 +319,12 @@
                         </div>
 
 
-                        <div class="mock-cards">
+                        <div class="mock-bottom">
+
                             <div></div>
                             <div></div>
                             <div></div>
+
                         </div>
 
                     </div>
@@ -233,23 +334,37 @@
 
                 <div class="floating-card floating-price">
 
-                    <span class="floating-icon">€</span>
+                    <span class="floating-icon">
+                        €
+                    </span>
 
                     <div>
-                        <small>Vanaf</small>
-                        <strong>€150</strong>
+                        <small>
+                            VANAF
+                        </small>
+
+                        <strong>
+                            €150
+                        </strong>
                     </div>
 
                 </div>
 
 
-                <div class="floating-card floating-mobile">
+                <div class="floating-card floating-responsive">
 
-                    <span>✓</span>
+                    <span class="floating-check">
+                        ✓
+                    </span>
 
                     <div>
-                        <strong>Responsive</strong>
-                        <small>Mobiel & desktop</small>
+                        <small>
+                            RESPONSIVE
+                        </small>
+
+                        <strong>
+                            Elk scherm
+                        </strong>
                     </div>
 
                 </div>
@@ -259,46 +374,66 @@
         </section>
 
 
-        <!-- =========================
-             VOORDELEN
-        ========================== -->
 
-        <section class="trust-section">
+        <!-- =====================================
+             INTRO / WAAROM
+        ====================================== -->
 
-            <div class="section-heading">
+        <section class="intro-section">
 
-                <span class="section-label">
-                    WAAROM EEN GOEDE WEBSITE?
+            <div class="intro-heading">
+
+                <span class="section-number">
+                    01
                 </span>
 
                 <h2>
                     Jouw online visitekaartje,
-                    <span>maar dan beter.</span>
+                    <span>
+                        maar dan beter.
+                    </span>
                 </h2>
-
-                <p>
-                    Je website is vaak één van de eerste dingen die
-                    een potentiële klant van je bedrijf ziet.
-                    Daarom moet die professioneel, duidelijk en prettig
-                    in gebruik zijn.
-                </p>
 
             </div>
 
 
+            <p>
+                Je website is vaak één van de eerste dingen
+                die een potentiële klant van je bedrijf ziet.
+                Daarom moet die professioneel, duidelijk en
+                prettig in gebruik zijn.
+            </p>
+
+        </section>
+
+
+
+        <!-- =====================================
+             VOORDELEN
+        ====================================== -->
+
+        <section class="benefits-section">
+
             <div class="benefits-grid">
+
 
                 <article class="benefit-card">
 
-                    <div class="benefit-number">
-                        01
+                    <div class="benefit-top">
+
+                        <span class="benefit-number">
+                            01
+                        </span>
+
+                        <div class="benefit-icon">
+                            ✦
+                        </div>
+
                     </div>
 
-                    <div class="benefit-icon" aria-hidden="true">
-                        ✦
-                    </div>
-
-                    <h3>Modern ontwerp</h3>
+                    <h3>
+                        Modern ontwerp
+                    </h3>
 
                     <p>
                         Een strak ontwerp dat aansluit bij jouw
@@ -309,17 +444,24 @@
                 </article>
 
 
-                <article class="benefit-card">
 
-                    <div class="benefit-number">
-                        02
+                <article class="benefit-card dark-benefit">
+
+                    <div class="benefit-top">
+
+                        <span class="benefit-number">
+                            02
+                        </span>
+
+                        <div class="benefit-icon">
+                            ◫
+                        </div>
+
                     </div>
 
-                    <div class="benefit-icon" aria-hidden="true">
-                        ◫
-                    </div>
-
-                    <h3>Op ieder scherm</h3>
+                    <h3>
+                        Op ieder scherm
+                    </h3>
 
                     <p>
                         Je website wordt gemaakt voor desktop,
@@ -330,17 +472,24 @@
                 </article>
 
 
+
                 <article class="benefit-card">
 
-                    <div class="benefit-number">
-                        03
+                    <div class="benefit-top">
+
+                        <span class="benefit-number">
+                            03
+                        </span>
+
+                        <div class="benefit-icon">
+                            ⚡
+                        </div>
+
                     </div>
 
-                    <div class="benefit-icon" aria-hidden="true">
-                        ⚡
-                    </div>
-
-                    <h3>Snel & duidelijk</h3>
+                    <h3>
+                        Snel &amp; duidelijk
+                    </h3>
 
                     <p>
                         Geen onnodig ingewikkelde website.
@@ -355,22 +504,34 @@
         </section>
 
 
-        <!-- =========================
-             PAKKETTEN
-        ========================== -->
 
-        <section class="home-packages">
+        <!-- =====================================
+             PAKKETTEN
+        ====================================== -->
+
+        <section class="packages-section">
 
             <div class="section-heading">
 
-                <span class="section-label">
-                    PAKKETTEN
-                </span>
+                <div>
 
-                <h2>
-                    Een pakket voor
-                    <span>ieder project.</span>
-                </h2>
+                    <span class="section-number">
+                        02
+                    </span>
+
+                    <span class="eyebrow">
+                        PAKKETTEN
+                    </span>
+
+                    <h2>
+                        Een pakket voor
+                        <span>
+                            ieder project.
+                        </span>
+                    </h2>
+
+                </div>
+
 
                 <p>
                     Vooraf duidelijk wat je krijgt en wat het kost.
@@ -380,132 +541,203 @@
             </div>
 
 
-            <div class="home-package-grid">
+
+            <div class="packages-grid">
+
 
                 <!-- SIMPEL -->
 
-                <article class="home-package-card">
+                <article class="package-card">
 
-                    <div class="package-top">
+                    <div class="package-header">
 
                         <span class="package-name">
                             Simpel
                         </span>
 
-                        <p>
-                            Voor een kleine, professionele website.
-                        </p>
+                        <span class="package-number">
+                            01
+                        </span>
 
                     </div>
+
+
+                    <p class="package-description">
+                        Voor een kleine, professionele website.
+                    </p>
+
 
                     <div class="package-price">
-                        <span>€</span>
-                        <strong>150</strong>
+
+                        <span>
+                            €
+                        </span>
+
+                        <strong>
+                            150
+                        </strong>
+
                     </div>
+
 
                     <span class="price-note">
                         vanaf
                     </span>
 
+
                     <ul>
-                        <li>✓ Maximaal 3 pagina's</li>
-                        <li>✓ Modern ontwerp</li>
-                        <li>✓ Mobielvriendelijk</li>
-                        <li>✓ Contactformulier</li>
-                        <li>✓ 1 correctieronde</li>
+                        <li>Maximaal 3 pagina's</li>
+                        <li>Modern ontwerp</li>
+                        <li>Mobielvriendelijk</li>
+                        <li>Contactformulier</li>
+                        <li>1 correctieronde</li>
                     </ul>
 
-                    <a href="contact.html?pakket=simpel"
-                        class="package-button">
-                        Kies Simpel →
+
+                    <a
+                        href="contact.html?pakket=simpel"
+                        class="package-button"
+                    >
+                        Kies Simpel
+
+                        <span>
+                            ↗
+                        </span>
                     </a>
 
                 </article>
 
 
+
                 <!-- PRO -->
 
-                <article class="home-package-card featured-package">
+                <article class="package-card package-featured">
 
-                    <div class="recommended">
-                        MEEST GEKOZEN
+                    <div class="package-tag">
+                        UITGEBREID
                     </div>
 
-                    <div class="package-top">
+
+                    <div class="package-header">
 
                         <span class="package-name">
                             Pro
                         </span>
 
-                        <p>
-                            Voor een uitgebreidere professionele website.
-                        </p>
+                        <span class="package-number">
+                            02
+                        </span>
 
                     </div>
+
+
+                    <p class="package-description">
+                        Voor een uitgebreidere professionele website.
+                    </p>
+
 
                     <div class="package-price">
-                        <span>€</span>
-                        <strong>250</strong>
+
+                        <span>
+                            €
+                        </span>
+
+                        <strong>
+                            250
+                        </strong>
+
                     </div>
+
 
                     <span class="price-note">
                         vanaf
                     </span>
 
+
                     <ul>
-                        <li>✓ Maximaal 5 pagina's</li>
-                        <li>✓ Maatwerk uitstraling</li>
-                        <li>✓ Mobielvriendelijk</li>
-                        <li>✓ Uitgebreid contactformulier</li>
-                        <li>✓ Basis SEO</li>
-                        <li>✓ 2 correctierondes</li>
+                        <li>Maximaal 5 pagina's</li>
+                        <li>Maatwerk uitstraling</li>
+                        <li>Mobielvriendelijk</li>
+                        <li>Uitgebreid contactformulier</li>
+                        <li>Basis SEO</li>
+                        <li>2 correctierondes</li>
                     </ul>
 
-                    <a href="contact.html?pakket=pro"
-                        class="package-button featured-button">
-                        Kies Pro →
+
+                    <a
+                        href="contact.html?pakket=pro"
+                        class="package-button lime-button"
+                    >
+                        Kies Pro
+
+                        <span>
+                            ↗
+                        </span>
                     </a>
 
                 </article>
 
 
+
                 <!-- ULTIMATE -->
 
-                <article class="home-package-card">
+                <article class="package-card">
 
-                    <div class="package-top">
+                    <div class="package-header">
 
                         <span class="package-name">
                             Ultimate
                         </span>
 
-                        <p>
-                            Voor een grotere website met meer mogelijkheden.
-                        </p>
+                        <span class="package-number">
+                            03
+                        </span>
 
                     </div>
+
+
+                    <p class="package-description">
+                        Voor een grotere website met meer mogelijkheden.
+                    </p>
+
 
                     <div class="package-price">
-                        <span>€</span>
-                        <strong>350</strong>
+
+                        <span>
+                            €
+                        </span>
+
+                        <strong>
+                            350
+                        </strong>
+
                     </div>
+
 
                     <span class="price-note">
                         vanaf
                     </span>
 
+
                     <ul>
-                        <li>✓ Maximaal 8 pagina's</li>
-                        <li>✓ Volledig maatwerk design</li>
-                        <li>✓ Mobielvriendelijk</li>
-                        <li>✓ Uitgebreid offerteformulier</li>
-                        <li>✓ Basis SEO</li>
-                        <li>✓ 3 correctierondes</li>
+                        <li>Maximaal 8 pagina's</li>
+                        <li>Volledig maatwerk design</li>
+                        <li>Mobielvriendelijk</li>
+                        <li>Uitgebreid offerteformulier</li>
+                        <li>Basis SEO</li>
+                        <li>3 correctierondes</li>
                     </ul>
 
-                    <a href="contact.html?pakket=ultimate"
-                        class="package-button">
-                        Kies Ultimate →
+
+                    <a
+                        href="contact.html?pakket=ultimate"
+                        class="package-button"
+                    >
+                        Kies Ultimate
+
+                        <span>
+                            ↗
+                        </span>
                     </a>
 
                 </article>
@@ -513,28 +745,42 @@
             </div>
 
 
-            <a href="diensten.html" class="all-packages-link">
-                Bekijk alle informatie over de pakketten →
+            <a
+                href="diensten.html"
+                class="all-packages-link"
+            >
+                Alle pakketinformatie bekijken
+
+                <span>
+                    ↗
+                </span>
             </a>
 
         </section>
 
 
-        <!-- =========================
+
+        <!-- =====================================
              WERKWIJZE
-        ========================== -->
+        ====================================== -->
 
         <section class="process-section">
 
-            <div class="process-intro">
+            <div class="process-copy">
 
-                <span class="section-label">
+                <span class="section-number">
+                    03
+                </span>
+
+                <span class="eyebrow">
                     ZO WERKT HET
                 </span>
 
                 <h2>
                     Van idee naar
-                    <span>jouw website.</span>
+                    <span>
+                        jouw website.
+                    </span>
                 </h2>
 
                 <p>
@@ -543,14 +789,24 @@
                     we van jouw idee naar het eindresultaat.
                 </p>
 
-                <a href="contact.html" class="text-link">
-                    Bespreek jouw idee →
+
+                <a
+                    href="contact.html"
+                    class="text-link"
+                >
+                    Bespreek jouw idee
+
+                    <span>
+                        ↗
+                    </span>
                 </a>
 
             </div>
 
 
-            <div class="process-steps">
+
+            <div class="process-list">
+
 
                 <article class="process-step">
 
@@ -560,7 +816,9 @@
 
                     <div>
 
-                        <h3>Vertel wat je zoekt</h3>
+                        <h3>
+                            Vertel wat je zoekt
+                        </h3>
 
                         <p>
                             Kies een pakket en vertel via het
@@ -570,7 +828,12 @@
 
                     </div>
 
+                    <span class="step-arrow">
+                        ↗
+                    </span>
+
                 </article>
+
 
 
                 <article class="process-step">
@@ -581,7 +844,9 @@
 
                     <div>
 
-                        <h3>Ontwerp & bouwen</h3>
+                        <h3>
+                            Ontwerp &amp; bouwen
+                        </h3>
 
                         <p>
                             Op basis van jouw wensen wordt de
@@ -590,7 +855,12 @@
 
                     </div>
 
+                    <span class="step-arrow">
+                        ↗
+                    </span>
+
                 </article>
+
 
 
                 <article class="process-step">
@@ -601,15 +871,21 @@
 
                     <div>
 
-                        <h3>Controleren & opleveren</h3>
+                        <h3>
+                            Controleren &amp; opleveren
+                        </h3>
 
                         <p>
-                            We controleren het resultaat, verwerken
-                            afgesproken aanpassingen en maken de
-                            website klaar voor gebruik.
+                            We controleren het resultaat,
+                            verwerken afgesproken aanpassingen
+                            en maken de website klaar voor gebruik.
                         </p>
 
                     </div>
+
+                    <span class="step-arrow">
+                        ↗
+                    </span>
 
                 </article>
 
@@ -618,24 +894,36 @@
         </section>
 
 
-        <!-- =========================
+
+        <!-- =====================================
              FAQ
-        ========================== -->
+        ====================================== -->
 
         <section class="faq-section">
 
             <div class="section-heading">
 
-                <span class="section-label">
-                    VEELGESTELDE VRAGEN
-                </span>
+                <div>
 
-                <h2>
-                    Nog iets
-                    <span>onduidelijk?</span>
-                </h2>
+                    <span class="section-number">
+                        04
+                    </span>
+
+                    <span class="eyebrow">
+                        VEELGESTELDE VRAGEN
+                    </span>
+
+                    <h2>
+                        Nog iets
+                        <span>
+                            onduidelijk?
+                        </span>
+                    </h2>
+
+                </div>
 
             </div>
+
 
 
             <div class="faq-list">
@@ -644,14 +932,18 @@
 
                     <summary>
                         Welk pakket moet ik kiezen?
-                        <span aria-hidden="true">+</span>
+
+                        <span>
+                            +
+                        </span>
                     </summary>
 
                     <p>
-                        Voor een kleine website is Simpel vaak voldoende.
-                        Heb je meer pagina's of mogelijkheden nodig, dan
-                        kun je voor Pro of Ultimate kiezen. Weet je het
-                        nog niet? Kies dan bij de offerte voor
+                        Voor een kleine website is Simpel vaak
+                        voldoende. Heb je meer pagina's of
+                        mogelijkheden nodig, dan kun je voor
+                        Pro of Ultimate kiezen. Weet je het nog
+                        niet? Kies dan bij de offerte voor
                         'Ik weet het nog niet'.
                     </p>
 
@@ -662,13 +954,16 @@
 
                     <summary>
                         Werkt mijn website ook op een telefoon?
-                        <span aria-hidden="true">+</span>
+
+                        <span>
+                            +
+                        </span>
                     </summary>
 
                     <p>
                         Ja. De websites worden responsive ontworpen,
-                        zodat ze geschikt zijn voor onder andere
-                        computers, tablets en smartphones.
+                        zodat ze geschikt zijn voor computers,
+                        tablets en smartphones.
                     </p>
 
                 </details>
@@ -678,13 +973,16 @@
 
                     <summary>
                         Kan ik eerst mijn wensen doorgeven?
-                        <span aria-hidden="true">+</span>
+
+                        <span>
+                            +
+                        </span>
                     </summary>
 
                     <p>
-                        Zeker. In het offerteformulier kun je uitleggen
-                        wat voor website je wilt en welke onderdelen
-                        belangrijk voor je zijn.
+                        Zeker. In het offerteformulier kun je
+                        uitleggen wat voor website je wilt en
+                        welke onderdelen belangrijk voor je zijn.
                     </p>
 
                 </details>
@@ -694,13 +992,16 @@
 
                     <summary>
                         Kan een website meer dan 8 pagina's krijgen?
-                        <span aria-hidden="true">+</span>
+
+                        <span>
+                            +
+                        </span>
                     </summary>
 
                     <p>
-                        Dat kan besproken worden. Voor grotere of
-                        afwijkende projecten kan eerst worden gekeken
-                        wat er precies nodig is.
+                        Dat kan besproken worden. Voor grotere
+                        of afwijkende projecten kan eerst worden
+                        gekeken wat er precies nodig is.
                     </p>
 
                 </details>
@@ -710,23 +1011,25 @@
         </section>
 
 
-        <!-- =========================
-             LAATSTE CTA
-        ========================== -->
+
+        <!-- =====================================
+             CTA
+        ====================================== -->
 
         <section class="final-cta">
 
-            <div class="cta-glow" aria-hidden="true"></div>
+            <div class="cta-copy">
 
-            <div class="cta-content">
-
-                <span class="section-label">
+                <span class="eyebrow">
                     KLAAR OM TE BEGINNEN?
                 </span>
 
                 <h2>
                     Tijd voor een website
-                    waar je <span>trots op bent.</span>
+                    waar je
+                    <span>
+                        trots op bent.
+                    </span>
                 </h2>
 
                 <p>
@@ -734,35 +1037,33 @@
                     vrijblijvend een offerte aan.
                 </p>
 
-                <div class="hero-buttons">
-
-                    <a href="contact.html" class="primary-cta">
-                        Offerte aanvragen
-                        <span aria-hidden="true">→</span>
-                    </a>
-
-                    <a href="diensten.html" class="secondary-cta">
-                        Bekijk prijzen
-                    </a>
-
-                </div>
-
             </div>
+
+
+            <a
+                href="contact.html"
+                class="primary-button"
+            >
+                Offerte aanvragen
+
+                <span>
+                    ↗
+                </span>
+            </a>
 
         </section>
 
     </main>
 
 
-    <!-- =========================
+
+    <!-- =====================================
          FOOTER
-    ========================== -->
+    ====================================== -->
 
     <footer class="site-footer">
 
-    <div class="footer-inner">
-
-        <div class="footer-brand">
+        <div class="footer-main">
 
             <a
                 href="index.html"
@@ -770,70 +1071,63 @@
                 aria-label="JH WebDesign - Home"
             >
                 <span
-                    class="brand-icon"
+                    class="brand-mark"
                     aria-hidden="true"
                 >
                     &lt;/&gt;
                 </span>
 
-                <span class="brand-text">
-                    JH <span>WebDesign</span>
+                <span class="brand-name">
+                    JH WebDesign
                 </span>
             </a>
 
-            <p>
-                Moderne websites op maat voor een
-                duidelijke prijs.
-            </p>
+
+            <nav
+                class="footer-nav"
+                aria-label="Footernavigatie"
+            >
+                <a
+                    href="index.html"
+                    aria-current="page"
+                >
+                    Home
+                </a>
+
+                <a href="overons.html">
+                    Over ons
+                </a>
+
+                <a href="diensten.html">
+                    Pakketten
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+            </nav>
 
         </div>
 
 
-        <nav
-            class="footer-links"
-            aria-label="Footernavigatie"
-        >
-            <a
-                href="index.html"
-                aria-current="page"
-            >
-                Home
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 JH WebDesign.
+                Alle rechten voorbehouden.
+            </p>
+
+            <a href="login.html">
+                Beheer
             </a>
 
-            <a href="overons.html">
-                Over ons
-            </a>
+        </div>
 
-            <a href="diensten.html">
-                Pakketten
-            </a>
-
-            <a href="contact.html">
-                Contact
-            </a>
-
-            <a href="privacy.html">
-                Privacy
-            </a>
-        </nav>
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-        <p>
-            © 2026 JH WebDesign.
-            Alle rechten voorbehouden.
-        </p>
-
-        <a href="login.html">
-            Beheer
-        </a>
-
-    </div>
-
-</footer>
+    </footer>
 
 </body>
 
