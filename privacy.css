@@ -402,15 +402,17 @@ button:focus-visible {
             88px
         );
 
-    line-height: 0.96;
+    line-height: 1.04;
 
-    letter-spacing: -4.5px;
+    letter-spacing: -4px;
 
     font-weight: 850;
 }
 
 .privacy-hero h1 span {
     display: block;
+
+    margin-top: 8px;
 
     color: var(--lime-dark);
 }
@@ -533,11 +535,11 @@ button:focus-visible {
 
     z-index: 1;
 
-    left: 0;
-    bottom: 20px;
+    left: 15px;
+    bottom: 15px;
 
-    width: 330px;
-    min-height: 190px;
+    width: 300px;
+    min-height: 180px;
 
     padding: 30px;
 
@@ -553,11 +555,11 @@ button:focus-visible {
 
     transform:
         perspective(1000px)
-        rotateY(9deg)
-        rotateZ(-6deg)
-        translateZ(-30px);
+        rotateY(8deg)
+        rotateZ(-5deg)
+        translateX(-20px)
+        translateZ(-60px);
 }
-
 .visual-shadow-card > span {
     color: var(--lime);
 
@@ -601,13 +603,13 @@ button:focus-visible {
 
     z-index: 4;
 
-    right: 0;
-    top: 35px;
+    right: 10px;
+    top: 40px;
 
     width:
         min(
             100%,
-            420px
+            410px
         );
 
     padding: 42px;
@@ -619,7 +621,7 @@ button:focus-visible {
     border-radius: 28px;
 
     background:
-        rgba(255, 255, 255, 0.94);
+        rgba(255, 255, 255, 0.96);
 
     box-shadow:
         0 35px 100px
@@ -631,23 +633,22 @@ button:focus-visible {
 
     transform:
         perspective(1200px)
-        rotateY(-10deg)
-        rotateX(5deg)
-        rotateZ(2deg);
+        rotateY(-6deg)
+        rotateX(3deg)
+        rotateZ(1deg);
 
     transition:
         transform 0.35s,
         box-shadow 0.35s;
 }
-
 .visual-main-card:hover {
     transform:
         perspective(1200px)
-        rotateY(-2deg)
+        rotateY(-1deg)
         rotateX(1deg)
         rotateZ(0)
-        translateY(-8px)
-        scale(1.02);
+        translateY(-6px)
+        scale(1.015);
 
     box-shadow:
         0 45px 110px
@@ -655,7 +656,6 @@ button:focus-visible {
         8px 8px 0
         rgba(183, 243, 74, 0.55);
 }
-
 .visual-top {
     display: flex;
 
@@ -780,10 +780,10 @@ button:focus-visible {
 .floating-security {
     position: absolute;
 
-    z-index: 6;
+    z-index: 8;
 
-    right: -30px;
-    bottom: 20px;
+    right: -5px;
+    bottom: 5px;
 
     display: flex;
 
@@ -807,8 +807,7 @@ button:focus-visible {
         rgba(23, 23, 23, 0.13);
 
     transform:
-        rotate(5deg)
-        translateZ(40px);
+        rotate(3deg);
 }
 
 .floating-check {
@@ -1782,6 +1781,28 @@ button:focus-visible {
    ========================================================= */
 
 @media (max-width: 650px) {
+
+    .privacy-hero h1 {
+    line-height: 1.03;
+}
+
+.privacy-hero h1 span {
+    margin-top: 6px;
+}
+
+.visual-shadow-card {
+    left: -5px;
+    bottom: 25px;
+}
+
+.visual-main-card {
+    right: 0;
+}
+
+.floating-security {
+    right: 0;
+    bottom: -5px;
+}
 
     .header-inner {
         width: 90%;
