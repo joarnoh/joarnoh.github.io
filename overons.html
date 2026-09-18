@@ -3,43 +3,56 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO -->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        http-equiv="Content-Security-Policy"
+        content="
+            default-src 'self';
+            script-src 'self';
+            style-src 'self';
+            img-src 'self' data:;
+            font-src 'self' data:;
+            connect-src 'self';
+            form-action 'self';
+            base-uri 'self';
+            object-src 'none';
+        "
+    >
+
     <meta
         name="description"
         content="Lees meer over JH WebDesign, onze werkwijze en hoe wij moderne, duidelijke en betaalbare websites op maat maken."
     >
 
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#070b12">
-    
     <meta
-    http-equiv="Content-Security-Policy"
-    content="
-        default-src 'self';
-        script-src 'self';
-        style-src 'self';
-        img-src 'self' data:;
-        font-src 'self' data:;
-        connect-src 'self';
-        form-action 'self';
-        base-uri 'self';
-        object-src 'none';
-    "
->
-    <title>Over ons | JH WebDesign</title>
+        name="robots"
+        content="index, follow"
+    >
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="public.css">
+    <meta
+        name="theme-color"
+        content="#f7f7f2"
+    >
+
+    <title>
+        Over ons | JH WebDesign
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="overons.css"
+    >
 </head>
 
 
-<body class="public-page">
+<body>
 
-    <!-- =========================
-         HEADER
-    ========================== -->
+    <!-- HEADER -->
 
     <header class="site-header">
 
@@ -50,7 +63,6 @@
                 class="brand"
                 aria-label="JH WebDesign - Home"
             >
-
                 <span
                     class="brand-mark"
                     aria-hidden="true"
@@ -59,10 +71,8 @@
                 </span>
 
                 <span class="brand-name">
-                    <span class="brand-web">JH </span>
-                    <span class="brand-design">WebDesign</span>
+                    JH WebDesign
                 </span>
-
             </a>
 
 
@@ -70,7 +80,6 @@
                 class="main-nav"
                 aria-label="Hoofdnavigatie"
             >
-
                 <a href="index.html">
                     Home
                 </a>
@@ -90,7 +99,6 @@
                 <a href="contact.html">
                     Contact
                 </a>
-
             </nav>
 
 
@@ -107,7 +115,8 @@
                     href="contact.html"
                     class="header-cta"
                 >
-                    Offerte aanvragen
+                    Start project
+                    <span>↗</span>
                 </a>
 
             </div>
@@ -117,27 +126,24 @@
     </header>
 
 
-    <!-- =========================
-         MAIN
-    ========================== -->
 
     <main>
 
-        <!-- =========================
-             HERO
-        ========================== -->
+        <!-- HERO -->
 
         <section class="about-hero">
 
-            <div class="about-hero-content">
+            <div class="about-copy">
 
-                <span class="section-label">
+                <span class="eyebrow">
                     OVER ONS
                 </span>
 
                 <h1>
                     Een goede website hoeft
-                    <span>niet ingewikkeld</span>
+                    <span>
+                        niet ingewikkeld
+                    </span>
                     te zijn.
                 </h1>
 
@@ -152,15 +158,15 @@
 
                     <a
                         href="contact.html"
-                        class="primary-cta"
+                        class="primary-button"
                     >
                         Start jouw website
-                        <span aria-hidden="true">→</span>
+                        <span>↗</span>
                     </a>
 
                     <a
                         href="diensten.html"
-                        class="secondary-cta"
+                        class="secondary-button"
                     >
                         Bekijk pakketten
                     </a>
@@ -170,18 +176,42 @@
             </div>
 
 
-            <!-- =========================
-                 CODE VISUAL
-            ========================== -->
+
+            <!-- 3D CODE VISUAL -->
 
             <div
                 class="about-visual"
                 aria-hidden="true"
             >
 
+                <div class="visual-orbit orbit-one"></div>
+                <div class="visual-orbit orbit-two"></div>
+
+
+                <div class="visual-back-card">
+
+                    <span>
+                        DESIGN SYSTEM
+                    </span>
+
+                    <strong>
+                        Clean.
+                        <br>
+                        Duidelijk.
+                    </strong>
+
+                    <div class="back-lines">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+
+                </div>
+
+
                 <div class="code-window">
 
-                    <div class="code-window-top">
+                    <div class="code-top">
 
                         <div class="browser-dots">
                             <span></span>
@@ -189,85 +219,42 @@
                             <span></span>
                         </div>
 
-                        <span>
+                        <div class="file-name">
                             website.html
-                        </span>
+                        </div>
 
                     </div>
 
 
-                    <div class="code-content">
+                    <div class="code-body">
 
-                        <div>
-                            <span class="code-purple">
-                                &lt;section
-                            </span>
-
-                            <span class="code-blue">
-                                class
-                            </span>=
-
-                            <span class="code-green">
-                                "jouw-website"
-                            </span>
-
-                            <span class="code-purple">
-                                &gt;
-                            </span>
+                        <div class="code-row">
+                            <span class="code-lime">&lt;section</span>
+                            <span class="code-muted"> class=</span>
+                            <span class="code-string">"jouw-website"</span>
+                            <span class="code-lime">&gt;</span>
                         </div>
 
-
-                        <div class="code-indent">
-
-                            <span class="code-purple">
-                                &lt;h1&gt;
-                            </span>
-
-                            Jouw idee.
-
-                            <span class="code-purple">
-                                &lt;/h1&gt;
-                            </span>
-
+                        <div class="code-row indent">
+                            <span class="code-lime">&lt;h1&gt;</span>
+                            <span>Jouw idee.</span>
+                            <span class="code-lime">&lt;/h1&gt;</span>
                         </div>
 
-
-                        <div class="code-indent">
-
-                            <span class="code-purple">
-                                &lt;p&gt;
-                            </span>
-
-                            Modern. Duidelijk. Responsive.
-
-                            <span class="code-purple">
-                                &lt;/p&gt;
-                            </span>
-
+                        <div class="code-row indent">
+                            <span class="code-lime">&lt;p&gt;</span>
+                            <span>Modern. Duidelijk. Responsive.</span>
+                            <span class="code-lime">&lt;/p&gt;</span>
                         </div>
 
-
-                        <div class="code-indent">
-
-                            <span class="code-purple">
-                                &lt;button&gt;
-                            </span>
-
-                            Start project
-
-                            <span class="code-purple">
-                                &lt;/button&gt;
-                            </span>
-
+                        <div class="code-row indent">
+                            <span class="code-lime">&lt;button&gt;</span>
+                            <span>Start project</span>
+                            <span class="code-lime">&lt;/button&gt;</span>
                         </div>
 
-
-                        <div>
-
-                            <span class="code-purple">
-                                &lt;/section&gt;
-                            </span>
-
+                        <div class="code-row">
+                            <span class="code-lime">&lt;/section&gt;</span>
                         </div>
 
                     </div>
@@ -275,21 +262,21 @@
                 </div>
 
 
-                <div class="about-floating-card">
+                <div class="floating-card">
 
-                    <span>
+                    <span class="floating-check">
                         ✓
                     </span>
 
                     <div>
 
-                        <strong>
-                            Klaar voor ieder scherm
-                        </strong>
-
                         <small>
-                            Desktop · Tablet · Mobiel
+                            RESPONSIVE
                         </small>
+
+                        <strong>
+                            Elk scherm
+                        </strong>
 
                     </div>
 
@@ -300,42 +287,57 @@
         </section>
 
 
-        <!-- =========================
-             DE AANPAK
-        ========================== -->
 
-        <section class="about-philosophy">
+        <!-- AANPAK -->
 
-            <div class="about-section-heading">
+        <section class="approach-section">
 
-                <span class="section-label">
-                    DE AANPAK
+            <div class="section-heading">
+
+                <span class="section-number">
+                    01
                 </span>
 
                 <h2>
-                    Persoonlijk, duidelijk
-                    <br>
-                    en zonder gedoe.
+                    Persoonlijk,
+                    duidelijk
+                    <span>
+                        en zonder gedoe.
+                    </span>
                 </h2>
 
             </div>
 
 
-            <div class="about-values">
+            <p>
+                Geen standaardtemplate waar jouw bedrijf
+                in wordt geperst. We kijken naar wat jij nodig hebt
+                en bouwen daar een duidelijke website omheen.
+            </p>
 
-                <!-- WAARDE 1 -->
+        </section>
 
-                <article class="about-value-card">
 
-                    <span class="about-value-number">
-                        01
-                    </span>
 
-                    <div
-                        class="about-value-icon"
-                        aria-hidden="true"
-                    >
-                        ◎
+        <!-- VALUES -->
+
+        <section class="values-section">
+
+            <div class="values-grid">
+
+
+                <article class="value-card">
+
+                    <div class="value-top">
+
+                        <span class="value-number">
+                            01
+                        </span>
+
+                        <div class="value-icon">
+                            ◎
+                        </div>
+
                     </div>
 
                     <h3>
@@ -351,19 +353,19 @@
                 </article>
 
 
-                <!-- WAARDE 2 -->
 
-                <article class="about-value-card">
+                <article class="value-card dark-card">
 
-                    <span class="about-value-number">
-                        02
-                    </span>
+                    <div class="value-top">
 
-                    <div
-                        class="about-value-icon"
-                        aria-hidden="true"
-                    >
-                        ◇
+                        <span class="value-number">
+                            02
+                        </span>
+
+                        <div class="value-icon">
+                            ◇
+                        </div>
+
                     </div>
 
                     <h3>
@@ -379,19 +381,19 @@
                 </article>
 
 
-                <!-- WAARDE 3 -->
 
-                <article class="about-value-card">
+                <article class="value-card">
 
-                    <span class="about-value-number">
-                        03
-                    </span>
+                    <div class="value-top">
 
-                    <div
-                        class="about-value-icon"
-                        aria-hidden="true"
-                    >
-                        ↗
+                        <span class="value-number">
+                            03
+                        </span>
+
+                        <div class="value-icon">
+                            ↗
+                        </div>
+
                     </div>
 
                     <h3>
@@ -411,21 +413,26 @@
         </section>
 
 
-        <!-- =========================
-             WERKWIJZE
-        ========================== -->
 
-        <section class="about-process">
+        <!-- PROCESS -->
 
-            <div class="about-process-content">
+        <section class="process-section">
 
-                <span class="section-label">
+            <div class="process-copy">
+
+                <span class="section-number">
+                    02
+                </span>
+
+                <span class="eyebrow">
                     VAN IDEE NAAR WEBSITE
                 </span>
 
                 <h2>
                     Zo komt jouw website
-                    tot leven.
+                    <span>
+                        tot leven.
+                    </span>
                 </h2>
 
                 <p>
@@ -438,19 +445,19 @@
                     href="contact.html"
                     class="text-link"
                 >
-                    Bespreek jouw idee →
+                    Bespreek jouw idee
+                    <span>↗</span>
                 </a>
 
             </div>
 
 
-            <div class="about-process-list">
 
-                <!-- STAP 1 -->
+            <div class="process-list">
 
-                <div class="about-process-item">
+                <article class="process-step">
 
-                    <span>
+                    <span class="step-number">
                         01
                     </span>
 
@@ -468,14 +475,17 @@
 
                     </div>
 
-                </div>
+                    <span class="step-arrow">
+                        ↗
+                    </span>
+
+                </article>
 
 
-                <!-- STAP 2 -->
 
-                <div class="about-process-item">
+                <article class="process-step">
 
-                    <span>
+                    <span class="step-number">
                         02
                     </span>
 
@@ -493,14 +503,17 @@
 
                     </div>
 
-                </div>
+                    <span class="step-arrow">
+                        ↗
+                    </span>
+
+                </article>
 
 
-                <!-- STAP 3 -->
 
-                <div class="about-process-item">
+                <article class="process-step">
 
-                    <span>
+                    <span class="step-number">
                         03
                     </span>
 
@@ -518,33 +531,33 @@
 
                     </div>
 
-                </div>
+                    <span class="step-arrow">
+                        ↗
+                    </span>
+
+                </article>
 
             </div>
 
         </section>
 
 
-        <!-- =========================
-             CTA
-        ========================== -->
 
-        <section class="final-cta about-final-cta">
+        <!-- CTA -->
 
-            <div
-                class="cta-glow"
-                aria-hidden="true"
-            ></div>
+        <section class="final-cta">
 
-            <div class="cta-content">
+            <div>
 
-                <span class="section-label">
+                <span class="eyebrow">
                     JOUW IDEE
                 </span>
 
                 <h2>
                     Klaar om iets
-                    <span>moois te bouwen?</span>
+                    <span>
+                        moois te bouwen?
+                    </span>
                 </h2>
 
                 <p>
@@ -552,42 +565,28 @@
                     het pakket dat het beste bij jouw website past.
                 </p>
 
-
-                <div class="hero-buttons">
-
-                    <a
-                        href="contact.html"
-                        class="primary-cta"
-                    >
-                        Offerte aanvragen
-                        <span aria-hidden="true">→</span>
-                    </a>
-
-                    <a
-                        href="diensten.html"
-                        class="secondary-cta"
-                    >
-                        Bekijk prijzen
-                    </a>
-
-                </div>
-
             </div>
+
+
+            <a
+                href="contact.html"
+                class="primary-button"
+            >
+                Offerte aanvragen
+                <span>↗</span>
+            </a>
 
         </section>
 
     </main>
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
+
+    <!-- FOOTER -->
 
     <footer class="site-footer">
 
-    <div class="footer-inner">
-
-        <div class="footer-brand">
+        <div class="footer-main">
 
             <a
                 href="index.html"
@@ -595,70 +594,63 @@
                 aria-label="JH WebDesign - Home"
             >
                 <span
-                    class="brand-icon"
+                    class="brand-mark"
                     aria-hidden="true"
                 >
                     &lt;/&gt;
                 </span>
 
-                <span class="brand-text">
-                    JH <span>WebDesign</span>
+                <span class="brand-name">
+                    JH WebDesign
                 </span>
             </a>
 
-            <p>
-                Moderne websites op maat voor een
-                duidelijke prijs.
-            </p>
+
+            <nav
+                class="footer-nav"
+                aria-label="Footernavigatie"
+            >
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a
+                    href="overons.html"
+                    aria-current="page"
+                >
+                    Over ons
+                </a>
+
+                <a href="diensten.html">
+                    Pakketten
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+            </nav>
 
         </div>
 
 
-        <nav
-            class="footer-links"
-            aria-label="Footernavigatie"
-        >
-            <a href="index.html">
-                Home
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 JH WebDesign.
+                Alle rechten voorbehouden.
+            </p>
+
+            <a href="login.html">
+                Beheer
             </a>
 
-            <a
-                href="overons.html"
-                aria-current="page"
-            >
-                Over ons
-            </a>
+        </div>
 
-            <a href="diensten.html">
-                Pakketten
-            </a>
-
-            <a href="contact.html">
-                Contact
-            </a>
-
-            <a href="privacy.html">
-                Privacy
-            </a>
-        </nav>
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-        <p>
-            © 2026 JH WebDesign.
-            Alle rechten voorbehouden.
-        </p>
-
-        <a href="login.html">
-            Beheer
-        </a>
-
-    </div>
-
-</footer>
+    </footer>
 
 </body>
 
