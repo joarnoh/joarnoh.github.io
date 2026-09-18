@@ -11,7 +11,21 @@
 
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#070b12">
-
+    
+    <meta
+    http-equiv="Content-Security-Policy"
+    content="
+        default-src 'self';
+        script-src 'self';
+        style-src 'self';
+        img-src 'self' data:;
+        font-src 'self' data:;
+        connect-src 'self';
+        form-action 'self';
+        base-uri 'self';
+        object-src 'none';
+    "
+>
     <title>JH WebDesign | Moderne websites op maat</title>
 
     <!-- CSS -->
