@@ -67,6 +67,11 @@ body {
             rgba(183, 243, 74, 0.16),
             transparent 24%
         ),
+        radial-gradient(
+            circle at 5% 45%,
+            rgba(23, 23, 23, 0.025),
+            transparent 30%
+        ),
         var(--bg);
 
     color: var(--text);
@@ -110,7 +115,6 @@ summary:focus-visible {
 
 .site-header {
     position: sticky;
-
     top: 0;
 
     z-index: 1000;
@@ -120,7 +124,7 @@ summary:focus-visible {
         rgba(23, 23, 23, 0.07);
 
     background:
-        rgba(247, 247, 242, 0.87);
+        rgba(247, 247, 242, 0.88);
 
     backdrop-filter: blur(22px);
     -webkit-backdrop-filter: blur(22px);
@@ -385,7 +389,9 @@ summary:focus-visible {
 
     gap: 85px;
 
-    padding: 100px 0 120px;
+    padding:
+        100px 0
+        120px;
 }
 
 .hero-copy {
@@ -450,9 +456,9 @@ summary:focus-visible {
             86px
         );
 
-    line-height: 1.01;
+    line-height: 1.02;
 
-    letter-spacing: -4.5px;
+    letter-spacing: -4.4px;
 
     font-weight: 850;
 }
@@ -460,7 +466,7 @@ summary:focus-visible {
 .home-hero h1 span {
     display: block;
 
-    margin-top: 7px;
+    margin-top: 8px;
 
     color: var(--lime-dark);
 }
@@ -468,7 +474,8 @@ summary:focus-visible {
 .hero-description {
     max-width: 620px;
 
-    margin: 30px 0 0;
+    margin:
+        30px 0 0;
 
     color: var(--text-soft);
 
@@ -532,9 +539,11 @@ summary:focus-visible {
 }
 
 .primary-button:hover {
-    transform: translateY(3px);
+    transform:
+        translateY(3px);
 
-    background: var(--lime-bright);
+    background:
+        var(--lime-bright);
 
     box-shadow:
         0 3px 0
@@ -555,7 +564,8 @@ summary:focus-visible {
 }
 
 .secondary-button:hover {
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
 
     box-shadow:
         var(--shadow-medium);
@@ -597,7 +607,7 @@ summary:focus-visible {
 
 
 /* =========================================================
-   HERO 3D VISUAL
+   HERO VISUAL
    ========================================================= */
 
 .hero-visual {
@@ -672,7 +682,7 @@ summary:focus-visible {
 
 
 /* =========================================================
-   BACK CARD
+   HERO BACK CARD
    ========================================================= */
 
 .visual-back-card {
@@ -680,25 +690,26 @@ summary:focus-visible {
 
     z-index: 1;
 
-    left: -35px;
-    bottom: 10px;
+    left: -25px;
+    bottom: 15px;
 
-    width: 280px;
-    min-height: 190px;
+    width: 265px;
+    min-height: 180px;
 
-    padding: 30px;
+    padding: 28px;
 
-    border-radius: 26px;
+    border-radius: 24px;
 
     background: var(--dark);
 
     color: white;
 
     box-shadow:
-        var(--shadow-large);
+        0 25px 70px
+        rgba(23, 23, 23, 0.18);
 
     transform:
-        rotate(-6deg);
+        rotate(-5deg);
 }
 
 .visual-small-label {
@@ -762,12 +773,12 @@ summary:focus-visible {
     z-index: 5;
 
     right: 5px;
-    top: 35px;
+    top: 30px;
 
     width:
         min(
             100%,
-            435px
+            420px
         );
 
     overflow: hidden;
@@ -783,8 +794,8 @@ summary:focus-visible {
     box-shadow:
         0 40px 110px
         rgba(23, 23, 23, 0.15),
-        13px 14px 0
-        rgba(183, 243, 74, 0.46);
+        12px 13px 0
+        rgba(183, 243, 74, 0.48);
 
     transform:
         rotate(-1deg);
@@ -796,8 +807,8 @@ summary:focus-visible {
 
 .browser-card:hover {
     transform:
-        translateY(-7px)
-        rotate(0)
+        translateY(-6px)
+        rotate(0deg)
         scale(1.012);
 
     box-shadow:
@@ -839,19 +850,23 @@ summary:focus-visible {
 
     border-radius: 50%;
 
-    background: #bcbcb5;
+    background:
+        #bcbcb5;
 }
 
 .browser-dots span:first-child {
-    background: #171717;
+    background:
+        #171717;
 }
 
 .browser-dots span:nth-child(2) {
-    background: var(--lime-dark);
+    background:
+        var(--lime-dark);
 }
 
 .browser-dots span:nth-child(3) {
-    background: #d2d2ca;
+    background:
+        #d2d2ca;
 }
 
 .browser-address {
@@ -926,7 +941,8 @@ summary:focus-visible {
 
     border-radius: 20px;
 
-    background: #d9d9d2;
+    background:
+        #d9d9d2;
 }
 
 .mock-main {
@@ -979,7 +995,8 @@ summary:focus-visible {
 
     border-radius: 5px;
 
-    background: #d1d1ca;
+    background:
+        #d1d1ca;
 }
 
 .mock-text.short {
@@ -1134,16 +1151,16 @@ summary:focus-visible {
 }
 
 .floating-price {
-    left: -15px;
-    top: 65px;
+    left: -5px;
+    top: 70px;
 
     transform:
         rotate(-4deg);
 }
 
 .floating-responsive {
-    right: -10px;
-    bottom: 5px;
+    right: -5px;
+    bottom: 0;
 
     transform:
         rotate(3deg);
@@ -1194,7 +1211,7 @@ summary:focus-visible {
 
 
 /* =========================================================
-   COMMON SECTION
+   COMMON SECTIONS
    ========================================================= */
 
 .section-number {
@@ -1431,7 +1448,8 @@ summary:focus-visible {
 }
 
 .dark-benefit {
-    background: var(--dark);
+    background:
+        var(--dark);
 
     color: white;
 
@@ -1536,7 +1554,8 @@ summary:focus-visible {
 }
 
 .package-featured {
-    background: var(--dark);
+    background:
+        var(--dark);
 
     color: white;
 
@@ -1568,7 +1587,8 @@ summary:focus-visible {
 
     border-radius: 100px;
 
-    background: var(--lime);
+    background:
+        var(--lime);
 
     color: var(--dark);
 
@@ -1685,7 +1705,7 @@ summary:focus-visible {
 
 .package-featured ul {
     border-color:
-        rgba(255,255,255,0.1);
+        rgba(255, 255, 255, 0.1);
 }
 
 .package-card li {
@@ -1737,7 +1757,8 @@ summary:focus-visible {
 
     border-radius: 100px;
 
-    background: var(--surface-soft);
+    background:
+        var(--surface-soft);
 
     color: var(--text);
 
@@ -1772,7 +1793,8 @@ summary:focus-visible {
 }
 
 .lime-button:hover {
-    background: var(--lime-bright);
+    background:
+        var(--lime-bright);
 
     transform:
         translateY(3px);
@@ -2192,7 +2214,8 @@ summary:focus-visible {
         1px solid
         var(--border);
 
-    background: #eeeeE8;
+    background:
+        #eeeee8;
 }
 
 .footer-main,
@@ -2233,7 +2256,8 @@ summary:focus-visible {
 
     font-size: 13px;
 
-    transition: color 0.2s;
+    transition:
+        color 0.2s;
 }
 
 .footer-nav a:hover,
@@ -2306,7 +2330,8 @@ summary:focus-visible {
                 650px
             );
 
-        margin: 0 auto;
+        margin:
+            0 auto;
     }
 
     .intro-section,
@@ -2348,7 +2373,6 @@ summary:focus-visible {
 
         gap: 25px;
     }
-
 }
 
 
@@ -2412,9 +2436,13 @@ summary:focus-visible {
     .home-hero h1 {
         font-size: 48px;
 
-        line-height: 1.03;
+        line-height: 1.04;
 
         letter-spacing: -2.8px;
+    }
+
+    .home-hero h1 span {
+        margin-top: 6px;
     }
 
     .hero-description {
@@ -2450,7 +2478,7 @@ summary:focus-visible {
 
         right: 0;
 
-        top: 35px;
+        top: 42px;
     }
 
     .browser-body {
@@ -2472,12 +2500,16 @@ summary:focus-visible {
         left: -10px;
 
         bottom: 25px;
+
+        min-height: 160px;
+
+        padding: 23px;
     }
 
     .floating-price {
         left: 0;
 
-        top: 15px;
+        top: 10px;
     }
 
     .floating-responsive {
@@ -2592,7 +2624,6 @@ summary:focus-visible {
 
         flex-direction: column;
     }
-
 }
 
 
@@ -2618,5 +2649,4 @@ summary:focus-visible {
         transition-duration:
             0.01ms !important;
     }
-
 }
