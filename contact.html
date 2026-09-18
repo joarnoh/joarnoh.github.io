@@ -3,45 +3,60 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta
-  http-equiv="Content-Security-Policy"
-  content="
-    default-src 'self';
-    script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://challenges.cloudflare.com;
-    style-src 'self' 'unsafe-inline';
-    img-src 'self' data:;
-    font-src 'self' data:;
-    connect-src 'self'
-      https://vzqpfikymnvowdypbpnb.supabase.co
-      wss://vzqpfikymnvowdypbpnb.supabase.co
-      https://challenges.cloudflare.com;
-    frame-src https://challenges.cloudflare.com;
-    form-action 'self';
-    base-uri 'self';
-    object-src 'none';
-  "
->
-    <!-- SEO -->
-    <meta
-        name="description"
-        content="Vraag vrijblijvend een offerte aan bij JH WebDesign voor een moderne website op maat."
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
     >
 
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#070b12">
+    <meta
+        http-equiv="Content-Security-Policy"
+        content="
+            default-src 'self';
+            script-src 'self' https://challenges.cloudflare.com;
+            style-src 'self' 'unsafe-inline';
+            img-src 'self' data:;
+            font-src 'self' data:;
+            connect-src 'self'
+                https://vzqpfikymnvowdypbpnb.supabase.co
+                wss://vzqpfikymnvowdypbpnb.supabase.co
+                https://challenges.cloudflare.com;
+            frame-src https://challenges.cloudflare.com;
+            form-action 'self';
+            base-uri 'self';
+            object-src 'none';
+        "
+    >
 
-    <title>Contact &amp; Offerte | JH WebDesign</title>
+    <meta
+        name="description"
+        content="Vraag vrijblijvend een offerte aan voor jouw nieuwe website bij JH WebDesign."
+    >
 
-    <link rel="stylesheet" href="public.css">
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <meta
+        name="theme-color"
+        content="#f7f7f2"
+    >
+
+    <title>
+        Contact & Offerte | JH WebDesign
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="contact.css"
+    >
 </head>
 
 
-<body class="public-page">
+<body>
 
-    <!-- =========================
-         HEADER
-    ========================== -->
+    <!-- HEADER -->
 
     <header class="site-header">
 
@@ -53,14 +68,14 @@
                 aria-label="JH WebDesign - Home"
             >
                 <span
-                    class="brand-icon"
+                    class="brand-mark"
                     aria-hidden="true"
                 >
                     &lt;/&gt;
                 </span>
 
-                <span class="brand-text">
-                    JH <span>WebDesign</span>
+                <span class="brand-name">
+                    JH WebDesign
                 </span>
             </a>
 
@@ -69,37 +84,25 @@
                 class="main-nav"
                 aria-label="Hoofdnavigatie"
             >
-                <ul>
+                <a href="index.html">
+                    Home
+                </a>
 
-                    <li>
-                        <a href="index.html">
-                            Home
-                        </a>
-                    </li>
+                <a href="overons.html">
+                    Over ons
+                </a>
 
-                    <li>
-                        <a href="overons.html">
-                            Over ons
-                        </a>
-                    </li>
+                <a href="diensten.html">
+                    Pakketten
+                </a>
 
-                    <li>
-                        <a href="diensten.html">
-                            Pakketten
-                        </a>
-                    </li>
-
-                    <li>
-                        <a
-                            href="contact.html"
-                            class="active"
-                            aria-current="page"
-                        >
-                            Contact
-                        </a>
-                    </li>
-
-                </ul>
+                <a
+                    href="contact.html"
+                    class="active"
+                    aria-current="page"
+                >
+                    Contact
+                </a>
             </nav>
 
 
@@ -117,6 +120,7 @@
                     class="header-cta"
                 >
                     Offerte aanvragen
+                    <span>↗</span>
                 </a>
 
             </div>
@@ -126,101 +130,225 @@
     </header>
 
 
-    <!-- =========================
-         MAIN
-    ========================== -->
 
     <main>
 
-        <!-- =========================
-             INTRO
-        ========================== -->
+        <!-- HERO -->
 
         <section class="contact-hero">
 
-            <span class="section-label">
-                CONTACT &amp; OFFERTE
-            </span>
+            <div class="hero-copy">
 
-            <h1>
-                Vertel ons over
-                <span>jouw idee.</span>
-            </h1>
-
-            <p>
-                Wil je een nieuwe website laten maken?
-                Vul het formulier in en vertel wat je zoekt.
-                Je kunt direct een pakket kiezen of aangeven
-                dat je het nog niet weet.
-            </p>
-
-        </section>
-
-
-        <!-- =========================
-             CONTACT
-        ========================== -->
-
-        <section
-            class="contact-page"
-            id="offerte"
-        >
-
-            <!-- LINKERKANT -->
-
-            <div class="contact-intro">
-
-                <span class="section-label">
-                    JOUW PROJECT
+                <span class="eyebrow">
+                    CONTACT &amp; OFFERTE
                 </span>
 
-                <h2>
-                    Klaar voor een
-                    nieuwe website?
-                </h2>
+                <h1>
+                    Vertel over
+                    <span>
+                        jouw idee.
+                    </span>
+                </h1>
 
                 <p>
-                    Geef hieronder aan wat je ongeveer nodig hebt.
-                    Hoe meer informatie je geeft, hoe duidelijker
-                    jouw aanvraag is.
+                    Wil je een nieuwe website laten maken?
+                    Vertel wat je zoekt, kies een pakket
+                    en stuur vrijblijvend je aanvraag.
                 </p>
 
 
-                <div class="contact-benefits">
+                <a
+                    href="#offerte"
+                    class="hero-link"
+                >
+                    Start je aanvraag
+                    <span>↓</span>
+                </a>
 
-                    <div class="contact-benefit">
+            </div>
 
-                        <span aria-hidden="true">
-                            01
+
+
+            <!-- 3D VISUAL -->
+
+            <div
+                class="hero-visual"
+                aria-hidden="true"
+            >
+
+                <div class="visual-orbit orbit-one"></div>
+                <div class="visual-orbit orbit-two"></div>
+
+
+                <div class="visual-back-card">
+
+                    <span>
+                        JOUW PROJECT
+                    </span>
+
+                    <strong>
+                        Van idee naar
+                        website.
+                    </strong>
+
+                    <div class="back-lines">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+
+                </div>
+
+
+                <div class="visual-main-card">
+
+                    <div class="visual-top">
+
+                        <span>
+                            OFFERTEAANVRAAG
                         </span>
 
-                        <div>
-
-                            <strong>
-                                Kies een pakket
-                            </strong>
-
-                            <p>
-                                Simpel, Pro, Ultimate of laat ons
-                                helpen met kiezen.
-                            </p>
-
+                        <div class="visual-icon">
+                            ↗
                         </div>
 
                     </div>
 
 
-                    <div class="contact-benefit">
+                    <div class="visual-field">
 
-                        <span aria-hidden="true">
+                        <small>
+                            PAKKET
+                        </small>
+
+                        <strong>
+                            Pro
+                        </strong>
+
+                    </div>
+
+
+                    <div class="visual-field">
+
+                        <small>
+                            PROJECT
+                        </small>
+
+                        <strong>
+                            Nieuwe website
+                        </strong>
+
+                    </div>
+
+
+                    <div class="visual-submit">
+                        Versturen
+                        <span>↗</span>
+                    </div>
+
+                </div>
+
+
+                <div class="floating-card">
+
+                    <span class="floating-check">
+                        ✓
+                    </span>
+
+                    <div>
+
+                        <small>
+                            BEVEILIGD
+                        </small>
+
+                        <strong>
+                            Anti-spam actief
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CONTACT / FORM -->
+
+        <section
+            class="contact-section"
+            id="offerte"
+        >
+
+            <!-- LINKERKANT -->
+
+            <div class="contact-info">
+
+                <span class="section-number">
+                    01
+                </span>
+
+                <span class="eyebrow">
+                    JOUW PROJECT
+                </span>
+
+                <h2>
+                    Klaar voor een
+                    <span>
+                        nieuwe website?
+                    </span>
+                </h2>
+
+                <p class="contact-description">
+                    Geef aan wat je ongeveer nodig hebt.
+                    Hoe meer informatie je geeft, hoe duidelijker
+                    jouw aanvraag kan worden beoordeeld.
+                </p>
+
+
+
+                <div class="steps">
+
+                    <article class="step-card">
+
+                        <span class="step-number">
+                            01
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Kies een pakket
+                            </h3>
+
+                            <p>
+                                Simpel, Pro, Ultimate
+                                of laat helpen met kiezen.
+                            </p>
+
+                        </div>
+
+                        <span class="step-icon">
+                            ↗
+                        </span>
+
+                    </article>
+
+
+
+                    <article class="step-card">
+
+                        <span class="step-number">
                             02
                         </span>
 
                         <div>
 
-                            <strong>
+                            <h3>
                                 Vertel je wensen
-                            </strong>
+                            </h3>
 
                             <p>
                                 Beschrijf wat voor website je wilt
@@ -229,20 +357,25 @@
 
                         </div>
 
-                    </div>
+                        <span class="step-icon">
+                            ↗
+                        </span>
+
+                    </article>
 
 
-                    <div class="contact-benefit">
 
-                        <span aria-hidden="true">
+                    <article class="step-card">
+
+                        <span class="step-number">
                             03
                         </span>
 
                         <div>
 
-                            <strong>
+                            <h3>
                                 Verstuur je aanvraag
-                            </strong>
+                            </h3>
 
                             <p>
                                 Controleer je gegevens en verstuur
@@ -251,7 +384,11 @@
 
                         </div>
 
-                    </div>
+                        <span class="step-icon">
+                            ↗
+                        </span>
+
+                    </article>
 
                 </div>
 
@@ -260,246 +397,365 @@
                     href="diensten.html"
                     class="text-link"
                 >
-                    ← Pakketten nog eens bekijken
+                    ← Bekijk de pakketten nog eens
                 </a>
 
             </div>
 
 
-            <!-- =========================
-                 FORMULIER
-            ========================== -->
 
-            <div class="quote-form-card">
+            <!-- FORMULIER -->
 
-                <div class="form-card-header">
+            <div class="form-wrapper">
 
-                    <div>
+                <div class="form-shadow-card">
 
-                        <span class="form-small-title">
-                            OFFERTEAANVRAAG
-                        </span>
+                    <span>
+                        SECURE FORM
+                    </span>
 
-                        <h2>
-                            Start jouw project
-                        </h2>
-
-                    </div>
-
-                    <div
-                        class="form-icon"
-                        aria-hidden="true"
-                    >
-                        ↗
-                    </div>
+                    <strong>
+                        Beschermd tegen
+                        automatische spam.
+                    </strong>
 
                 </div>
 
 
-                <form id="offerteForm">
+                <div class="quote-form-card">
 
-                    <!-- NAAM -->
+                    <div class="form-card-header">
 
-                    <div class="form-group">
+                        <div>
 
-                        <label for="naam">
-                            Naam
-                        </label>
-
-                        <input
-                            type="text"
-                            id="naam"
-                            name="naam"
-                            required
-                            minlength="2"
-                            maxlength="100"
-                            autocomplete="name"
-                            placeholder="Jouw naam"
-                        >
-
-                    </div>
-
-
-                    <!-- E-MAIL -->
-
-                    <div class="form-group">
-
-                        <label for="email">
-                            E-mailadres
-                        </label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            required
-                            maxlength="254"
-                            autocomplete="email"
-                            inputmode="email"
-                            placeholder="naam@email.nl"
-                        >
-
-                    </div>
-
-
-                    <!-- PAKKET -->
-
-                    <div class="form-group">
-
-                        <label for="pakket">
-                            Welk pakket wil je?
-                        </label>
-
-                        <select
-                            id="pakket"
-                            name="pakket"
-                            required
-                        >
-
-                            <option value="">
-                                Kies een pakket
-                            </option>
-
-                            <option value="simpel">
-                                Simpel – €150
-                            </option>
-
-                            <option value="pro">
-                                Pro – €250
-                            </option>
-
-                            <option value="ultimate">
-                                Ultimate – €350
-                            </option>
-
-                            <option value="onbekend">
-                                Ik weet het nog niet
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <!-- ONDERWERP -->
-
-                    <div class="form-group">
-
-                        <label for="onderwerp">
-                            Onderwerp
-
-                            <span class="optional">
-                                optioneel
-                            </span>
-                        </label>
-
-                        <input
-                            type="text"
-                            id="onderwerp"
-                            name="onderwerp"
-                            maxlength="150"
-                            placeholder="Bijvoorbeeld: website voor mijn bedrijf"
-                        >
-
-                    </div>
-
-
-                    <!-- BERICHT -->
-
-                    <div class="form-group">
-
-                        <label for="bericht">
-                            Vertel over jouw website
-                        </label>
-
-                        <textarea
-                            id="bericht"
-                            name="bericht"
-                            rows="7"
-                            required
-                            minlength="10"
-                            maxlength="5000"
-                            aria-describedby="berichtHelp"
-                            placeholder="Vertel bijvoorbeeld wat voor website je wilt, welke pagina's je nodig hebt en welke functies belangrijk zijn..."
-                        ></textarea>
-
-                        <span
-                            class="field-help"
-                            id="berichtHelp"
-                        >
-                            Minimaal 10 en maximaal 5000 tekens
-                        </span>
-
-                    </div>
-
-
-                    <!-- =========================
-                         CAPTCHA
-                    ========================== -->
-
-                    <div class="security-area">
-
-                        <div class="security-title">
-
-                            <span aria-hidden="true">
-                                ✓
+                            <span class="form-small-title">
+                                OFFERTEAANVRAAG
                             </span>
 
-                            Beveiligingscontrole
+                            <h2>
+                                Start jouw project
+                            </h2>
 
                         </div>
 
 
                         <div
-                            class="cf-turnstile"
-                            data-sitekey="0x4AAAAAAE5E6WuSA3biTqTa"
-                            data-theme="dark"
-                            data-size="flexible"
-                            data-callback="onCaptchaSuccess"
-                            data-expired-callback="onCaptchaExpired"
-                            data-error-callback="onCaptchaError"
-                        ></div>
+                            class="form-icon"
+                            aria-hidden="true"
+                        >
+                            ↗
+                        </div>
 
                     </div>
 
 
-                    <!-- =========================
-                         VERSTUREN
-                    ========================== -->
 
-                    <button
-                        type="submit"
-                        id="submitButton"
-                        class="quote-submit"
-                    >
+                    <form id="offerteForm">
 
-                        <span id="submitButtonText">
-                            Offerte aanvragen
-                        </span>
+                        <!-- NAAM -->
 
-                        <span
-                            class="submit-arrow"
-                            aria-hidden="true"
+                        <div class="form-group">
+
+                            <label for="naam">
+                                Naam
+                            </label>
+
+                            <input
+                                type="text"
+                                id="naam"
+                                name="naam"
+                                required
+                                minlength="2"
+                                maxlength="100"
+                                autocomplete="name"
+                                placeholder="Jouw naam"
+                            >
+
+                        </div>
+
+
+
+                        <!-- EMAIL -->
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                E-mailadres
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                maxlength="254"
+                                autocomplete="email"
+                                inputmode="email"
+                                placeholder="naam@email.nl"
+                            >
+
+                        </div>
+
+
+
+                        <!-- PAKKET -->
+
+                        <div class="form-group">
+
+                            <label for="pakket">
+                                Welk pakket wil je?
+                            </label>
+
+                            <select
+                                id="pakket"
+                                name="pakket"
+                                required
+                            >
+
+                                <option value="">
+                                    Kies een pakket
+                                </option>
+
+                                <option value="simpel">
+                                    Simpel – €150
+                                </option>
+
+                                <option value="pro">
+                                    Pro – €250
+                                </option>
+
+                                <option value="ultimate">
+                                    Ultimate – €350
+                                </option>
+
+                                <option value="onbekend">
+                                    Ik weet het nog niet
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- ONDERWERP -->
+
+                        <div class="form-group">
+
+                            <label for="onderwerp">
+
+                                Onderwerp
+
+                                <span class="optional">
+                                    optioneel
+                                </span>
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="onderwerp"
+                                name="onderwerp"
+                                maxlength="150"
+                                placeholder="Bijvoorbeeld: website voor mijn bedrijf"
+                            >
+
+                        </div>
+
+
+
+                        <!-- BERICHT -->
+
+                        <div class="form-group">
+
+                            <label for="bericht">
+                                Vertel over jouw website
+                            </label>
+
+                            <textarea
+                                id="bericht"
+                                name="bericht"
+                                rows="7"
+                                required
+                                minlength="10"
+                                maxlength="5000"
+                                placeholder="Vertel bijvoorbeeld wat voor website je wilt, welke pagina's je nodig hebt en welke functies belangrijk zijn..."
+                            ></textarea>
+
+                            <span class="field-help">
+                                Maximaal 5000 tekens
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- CAPTCHA -->
+
+                        <div class="security-area">
+
+                            <div class="security-title">
+
+                                <span>
+                                    ✓
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Beveiligingscontrole
+                                    </strong>
+
+                                    <small>
+                                        Bescherming tegen automatische spam
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="cf-turnstile"
+                                data-sitekey="0x4AAAAAAE5E6WuSA3biTqTa"
+                                data-theme="light"
+                                data-size="flexible"
+                                data-callback="onCaptchaSuccess"
+                                data-expired-callback="onCaptchaExpired"
+                                data-error-callback="onCaptchaError"
+                            ></div>
+
+                        </div>
+
+
+
+                        <!-- VERSTUREN -->
+
+                        <button
+                            type="submit"
+                            id="submitButton"
+                            class="quote-submit"
                         >
-                            →
-                        </span>
 
-                    </button>
+                            <span>
+                                Offerte aanvragen
+                            </span>
+
+                            <span
+                                class="submit-arrow"
+                                aria-hidden="true"
+                            >
+                                ↗
+                            </span>
+
+                        </button>
 
 
-                    <p
-                        id="formMessage"
-                        role="status"
-                        aria-live="polite"
-                    ></p>
+                        <p
+                            id="formMessage"
+                            aria-live="polite"
+                        ></p>
 
 
-                    <p class="form-privacy">
-                        Verstuur geen wachtwoorden, betaalgegevens
-                        of andere gevoelige gegevens via het formulier.
+                        <p class="form-privacy">
+
+                            Verstuur geen wachtwoorden of andere
+                            gevoelige gegevens via het formulier.
+
+                            <a href="privacy.html">
+                                Lees de privacyverklaring.
+                            </a>
+
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SECURITY BLOCK -->
+
+        <section class="security-section">
+
+            <div>
+
+                <span class="section-number">
+                    02
+                </span>
+
+                <span class="eyebrow">
+                    VEILIG VERSTUREN
+                </span>
+
+                <h2>
+                    Jouw aanvraag
+                    <span>
+                        beveiligd verstuurd.
+                    </span>
+                </h2>
+
+            </div>
+
+
+            <div class="security-grid">
+
+                <article>
+
+                    <span>
+                        01
+                    </span>
+
+                    <strong>
+                        HTTPS
+                    </strong>
+
+                    <p>
+                        Versleutelde verbinding tussen
+                        jouw browser en de website.
                     </p>
 
-                </form>
+                </article>
+
+
+                <article>
+
+                    <span>
+                        02
+                    </span>
+
+                    <strong>
+                        Anti-spam
+                    </strong>
+
+                    <p>
+                        Turnstile helpt geautomatiseerde
+                        aanvragen tegen te houden.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <span>
+                        03
+                    </span>
+
+                    <strong>
+                        Rate limiting
+                    </strong>
+
+                    <p>
+                        Grote hoeveelheden aanvragen in
+                        korte tijd worden beperkt.
+                    </p>
+
+                </article>
 
             </div>
 
@@ -508,485 +764,96 @@
     </main>
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
+
+    <!-- FOOTER -->
 
     <footer class="site-footer">
 
-    <div class="footer-inner">
-
-        <div class="footer-brand">
+        <div class="footer-main">
 
             <a
                 href="index.html"
                 class="brand"
                 aria-label="JH WebDesign - Home"
             >
+
                 <span
-                    class="brand-icon"
+                    class="brand-mark"
                     aria-hidden="true"
                 >
                     &lt;/&gt;
                 </span>
 
-                <span class="brand-text">
-                    JH <span>WebDesign</span>
+                <span class="brand-name">
+                    JH WebDesign
                 </span>
+
             </a>
 
-            <p>
-                Moderne websites op maat voor een
-                duidelijke prijs.
-            </p>
+
+            <nav
+                class="footer-nav"
+                aria-label="Footernavigatie"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="overons.html">
+                    Over ons
+                </a>
+
+                <a href="diensten.html">
+                    Pakketten
+                </a>
+
+                <a
+                    href="contact.html"
+                    aria-current="page"
+                >
+                    Contact
+                </a>
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+            </nav>
 
         </div>
 
 
-        <nav
-            class="footer-links"
-            aria-label="Footernavigatie"
-        >
-            <a href="index.html">
-                Home
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 JH WebDesign.
+                Alle rechten voorbehouden.
+            </p>
+
+            <a href="login.html">
+                Beheer
             </a>
 
-            <a href="overons.html">
-                Over ons
-            </a>
+        </div>
 
-            <a href="diensten.html">
-                Pakketten
-            </a>
-
-            <a
-                href="contact.html"
-                aria-current="page"
-            >
-                Contact
-            </a>
-
-            <a href="privacy.html">
-                Privacy
-            </a>
-        </nav>
-
-    </div>
+    </footer>
 
 
-    <div class="footer-bottom">
 
-        <p>
-            © 2026 JH WebDesign.
-            Alle rechten voorbehouden.
-        </p>
-
-        <a href="login.html">
-            Beheer
-        </a>
-
-    </div>
-
-</footer>
-
-
-    <!-- =========================
-         CLOUDFLARE TURNSTILE
-    ========================== -->
+    <!-- CLOUDFLARE TURNSTILE -->
 
     <script
         src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-        async
         defer
     ></script>
 
-
-    <!-- =========================
-         FORMULIER JAVASCRIPT
-    ========================== -->
-
-    <script>
-
-        // =====================================
-        // INSTELLINGEN
-        // =====================================
-
-        const EDGE_FUNCTION_URL =
-            "https://vzqpfikymnvowdypbpnb.supabase.co/functions/v1/verstuur-offerte";
-
-        const toegestanePakketten = [
-            "simpel",
-            "pro",
-            "ultimate",
-            "onbekend"
-        ];
-
-
-        // =====================================
-        // ELEMENTEN
-        // =====================================
-
-        const formulier =
-            document.getElementById("offerteForm");
-
-        const melding =
-            document.getElementById("formMessage");
-
-        const verzendKnop =
-            document.getElementById("submitButton");
-
-        const verzendKnopTekst =
-            document.getElementById("submitButtonText");
-
-        const pakketSelect =
-            document.getElementById("pakket");
-
-        const naamVeld =
-            document.getElementById("naam");
-
-        const emailVeld =
-            document.getElementById("email");
-
-        const onderwerpVeld =
-            document.getElementById("onderwerp");
-
-        const berichtVeld =
-            document.getElementById("bericht");
-
-
-        // =====================================
-        // PAKKET UIT URL
-        // =====================================
-
-        const urlParameters =
-            new URLSearchParams(window.location.search);
-
-        const pakketUitUrl =
-            urlParameters.get("pakket");
-
-        if (
-            pakketUitUrl &&
-            toegestanePakketten.includes(pakketUitUrl)
-        ) {
-            pakketSelect.value = pakketUitUrl;
-        }
-
-
-        // =====================================
-        // MELDING
-        // =====================================
-
-        function toonMelding(tekst, kleur) {
-
-            melding.textContent = tekst;
-            melding.style.color = kleur;
-
-        }
-
-
-        function wisMelding() {
-
-            melding.textContent = "";
-            melding.style.color = "";
-
-        }
-
-
-        // =====================================
-        // CAPTCHA
-        // =====================================
-
-        let captchaToken = null;
-
-
-        function onCaptchaSuccess(token) {
-
-            captchaToken = token;
-            wisMelding();
-
-        }
-
-
-        function onCaptchaExpired() {
-
-            captchaToken = null;
-
-            toonMelding(
-                "De beveiligingscontrole is verlopen. Controleer opnieuw.",
-                "#fbbf24"
-            );
-
-        }
-
-
-        function onCaptchaError() {
-
-            captchaToken = null;
-
-            toonMelding(
-                "De beveiligingscontrole kon niet worden geladen.",
-                "#f87171"
-            );
-
-        }
-
-
-        // =====================================
-        // TURNSTILE RESET
-        // =====================================
-
-        function resetCaptcha() {
-
-            captchaToken = null;
-
-            if (
-                window.turnstile &&
-                typeof window.turnstile.reset === "function"
-            ) {
-                window.turnstile.reset();
-            }
-
-        }
-
-
-        // =====================================
-        // FORMULIER VERSTUREN
-        // =====================================
-
-        formulier.addEventListener(
-            "submit",
-
-            async function(event) {
-
-                event.preventDefault();
-
-
-                // =================================
-                // WAARDEN
-                // =================================
-
-                const naam =
-                    naamVeld.value.trim();
-
-                const email =
-                    emailVeld.value.trim();
-
-                const pakket =
-                    pakketSelect.value;
-
-                const onderwerp =
-                    onderwerpVeld.value.trim();
-
-                const bericht =
-                    berichtVeld.value.trim();
-
-
-                // =================================
-                // EXTRA CONTROLES
-                // =================================
-
-                if (naam.length < 2) {
-
-                    toonMelding(
-                        "Vul een geldige naam in.",
-                        "#fbbf24"
-                    );
-
-                    naamVeld.focus();
-                    return;
-
-                }
-
-
-                if (
-                    !email ||
-                    !emailVeld.checkValidity()
-                ) {
-
-                    toonMelding(
-                        "Vul een geldig e-mailadres in.",
-                        "#fbbf24"
-                    );
-
-                    emailVeld.focus();
-                    return;
-
-                }
-
-
-                if (
-                    !toegestanePakketten.includes(pakket)
-                ) {
-
-                    toonMelding(
-                        "Kies eerst een geldig pakket.",
-                        "#fbbf24"
-                    );
-
-                    pakketSelect.focus();
-                    return;
-
-                }
-
-
-                if (bericht.length < 10) {
-
-                    toonMelding(
-                        "Vertel iets meer over de website die je wilt laten maken.",
-                        "#fbbf24"
-                    );
-
-                    berichtVeld.focus();
-                    return;
-
-                }
-
-
-                if (!captchaToken) {
-
-                    toonMelding(
-                        "Voltooi eerst de beveiligingscontrole.",
-                        "#fbbf24"
-                    );
-
-                    return;
-
-                }
-
-
-                // =================================
-                // KNOP BLOKKEREN
-                // =================================
-
-                verzendKnop.disabled = true;
-
-                verzendKnopTekst.textContent =
-                    "Aanvraag wordt verzonden...";
-
-                wisMelding();
-
-
-                try {
-
-                    // =================================
-                    // EDGE FUNCTION
-                    // =================================
-
-                    const response =
-                        await fetch(
-                            EDGE_FUNCTION_URL,
-                            {
-                                method: "POST",
-
-                                headers: {
-                                    "Content-Type":
-                                        "application/json"
-                                },
-
-                                body: JSON.stringify({
-                                    naam,
-                                    email,
-                                    pakket,
-                                    onderwerp,
-                                    bericht,
-                                    captchaToken
-                                })
-                            }
-                        );
-
-
-                    // =================================
-                    // RESPONSE ROBUUST UITLEZEN
-                    // =================================
-
-                    let result = {};
-
-                    try {
-
-                        result = await response.json();
-
-                    }
-                    catch {
-
-                        result = {};
-
-                    }
-
-
-                    // CAPTCHA-token kan maar één keer
-                    // gebruikt worden.
-                    captchaToken = null;
-
-
-                    // =================================
-                    // FOUT
-                    // =================================
-
-                    if (!response.ok) {
-
-                        console.error(
-                            "Edge Function fout:",
-                            result
-                        );
-
-                        toonMelding(
-                            result.error ||
-                            "Er ging iets mis. Probeer het opnieuw.",
-                            "#f87171"
-                        );
-
-                        resetCaptcha();
-                        return;
-
-                    }
-
-
-                    // =================================
-                    // GELUKT
-                    // =================================
-
-                    toonMelding(
-                        "✓ Bedankt! Je aanvraag is succesvol verzonden.",
-                        "#4ade80"
-                    );
-
-                    formulier.reset();
-
-                    resetCaptcha();
-
-                }
-
-
-                catch (error) {
-
-                    console.error(
-                        "Verbindingsfout:",
-                        error
-                    );
-
-                    toonMelding(
-                        "Er kon geen verbinding worden gemaakt. Probeer het opnieuw.",
-                        "#f87171"
-                    );
-
-                    resetCaptcha();
-
-                }
-
-
-                finally {
-
-                    verzendKnop.disabled = false;
-
-                    verzendKnopTekst.textContent =
-                        "Offerte aanvragen";
-
-                }
-
-            }
-        );
-
-    </script>
+    <!-- EIGEN FORMULIERCODE -->
+
+    <script
+        src="contact.js"
+        defer
+    ></script>
 
 </body>
 
